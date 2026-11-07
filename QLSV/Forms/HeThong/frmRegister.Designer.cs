@@ -34,7 +34,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblThongBao = new System.Windows.Forms.Label();
             this.txtMaSV = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTenDangNhap = new System.Windows.Forms.TextBox();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
@@ -95,12 +95,12 @@
             this.txtMaSV.Size = new System.Drawing.Size(191, 22);
             this.txtMaSV.TabIndex = 5;
             // 
-            // textBox1
+            // txtTenDangNhap
             // 
-            this.textBox1.Location = new System.Drawing.Point(250, 174);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 22);
-            this.textBox1.TabIndex = 6;
+            this.txtTenDangNhap.Location = new System.Drawing.Point(250, 174);
+            this.txtTenDangNhap.Name = "txtTenDangNhap";
+            this.txtTenDangNhap.Size = new System.Drawing.Size(191, 22);
+            this.txtTenDangNhap.TabIndex = 6;
             // 
             // dtpNgaySinh
             // 
@@ -162,7 +162,7 @@
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dtpNgaySinh);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTenDangNhap);
             this.Controls.Add(this.txtMaSV);
             this.Controls.Add(this.lblThongBao);
             this.Controls.Add(this.label4);
@@ -185,7 +185,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblThongBao;
         private System.Windows.Forms.TextBox txtMaSV;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTenDangNhap;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtMatKhau;
