@@ -60,4 +60,10 @@ namespace QLSV.Helpers
        //Cảnh báo học vụ: số tín chỉ nợ vượt mức này
         public const int NguongTinChiNo = 8;
     }
+    //Các hằng số liên quan đến tài khoản người dùng
+    public static class TaiKhoan
+    {
+        public const string MatKhauMacDinh = "123456";
+        public const int DoDaiMatKhauToiThieu = 6;
+    }
 }
