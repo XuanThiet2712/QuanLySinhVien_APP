@@ -49,5 +49,34 @@ namespace QLSV.Services
             SessionManager.Logout();
         }
 
+        //Đổi mật khẩu kiểm tra mật khẩu cũ
+        public Result DoiMatKhau(string tenDangNhap, string matKhauCu, string matKhauMoi)
+        {
+            if (string.IsNullOrEmpty(matKhauCu) || string.IsNullOrEmpty(matKhauMoi))
+                return Result.Fail("Vui lòng nhập đủ mật khẩu cũ và mật khẩu mới");
+            if (matKhauMoi.Length < TaiKhoan.DoDaiMatKhauToiThieu)
+                return Result.Fail("Mat khau moi phai co it nhat " + TaiKhoan.DoDaiMatKhauToiThieu + " ký tự.");
+            if (matKhauMoi == matKhauCu)
+                return Result.Fail("Mat khau moi phai khac mat khau cu");
+
+            try
+            {
+                using (var db = DbFactory.Create())
+                {
+                    NguoiDung user = new NguoiDungRepository(db).GetByUsername(tenDangNhap);
+                    if (user == null || !PasswordHasher.Verify(matKhauCu, user.Salt, user.MatKhauHash))
+                        return Result.Fail("Mat khau cu ko dung");
+
+                    user.Salt = PasswordHasher.GenerateSalt();
+                    user.MatKhauHash = PasswordHasher.Hash(matKhauMoi, user.Salt);
+                    db.SubmitChanges();
+                    return Result.Ok("Doi mk thanh cog");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Result.Fail("Lỗi CSDL: " + ex.Message);
+            }
+        }
     }
 }
