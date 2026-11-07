@@ -57,7 +57,12 @@ namespace QLSV.Forms.HeThong
 
         private void LuuTenDangNhap()
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (chkNho.Checked) File.WriteAllText(FileNho, txtTenDangNhap.Text.Trim());
+                else if (File.Exists(FileNho)) File.Delete(FileNho);
+            }
+            catch (Exception) { }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
