@@ -33,8 +33,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblThongBao = new System.Windows.Forms.Label();
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
-            this.txtMauKhau = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.txtMatKhau = new System.Windows.Forms.TextBox();
+            this.chkNho = new System.Windows.Forms.CheckBox();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -82,22 +82,22 @@
             this.txtTenDangNhap.Size = new System.Drawing.Size(126, 22);
             this.txtTenDangNhap.TabIndex = 4;
             // 
-            // txtMauKhau
+            // txtMatKhau
             // 
-            this.txtMauKhau.Location = new System.Drawing.Point(140, 92);
-            this.txtMauKhau.Name = "txtMauKhau";
-            this.txtMauKhau.Size = new System.Drawing.Size(126, 22);
-            this.txtMauKhau.TabIndex = 5;
+            this.txtMatKhau.Location = new System.Drawing.Point(140, 92);
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.Size = new System.Drawing.Size(126, 22);
+            this.txtMatKhau.TabIndex = 5;
             // 
-            // checkBox1
+            // chkNho
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(41, 204);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(95, 20);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkNho.AutoSize = true;
+            this.chkNho.Location = new System.Drawing.Point(41, 204);
+            this.chkNho.Name = "chkNho";
+            this.chkNho.Size = new System.Drawing.Size(95, 20);
+            this.chkNho.TabIndex = 6;
+            this.chkNho.Text = "checkBox1";
+            this.chkNho.UseVisualStyleBackColor = true;
             // 
             // btnDangNhap
             // 
@@ -107,6 +107,7 @@
             this.btnDangNhap.TabIndex = 7;
             this.btnDangNhap.Text = "button1";
             this.btnDangNhap.UseVisualStyleBackColor = true;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // btnThoat
             // 
@@ -116,6 +117,7 @@
             this.btnThoat.TabIndex = 8;
             this.btnThoat.Text = "button2";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // frmLogin
             // 
@@ -124,8 +126,8 @@
             this.ClientSize = new System.Drawing.Size(362, 283);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangNhap);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.txtMauKhau);
+            this.Controls.Add(this.chkNho);
+            this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.txtTenDangNhap);
             this.Controls.Add(this.lblThongBao);
             this.Controls.Add(this.label3);
@@ -136,6 +138,7 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập - Quản lý sinh viên";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,8 +151,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblThongBao;
         private System.Windows.Forms.TextBox txtTenDangNhap;
-        private System.Windows.Forms.TextBox txtMauKhau;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox txtMatKhau;
+        private System.Windows.Forms.CheckBox chkNho;
         private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.Button btnThoat;
     }
