@@ -37,6 +37,7 @@
             this.chkNho = new System.Windows.Forms.CheckBox();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
+            this.lnkDangKy = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -119,11 +120,23 @@
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
+            // lnkDangKy
+            // 
+            this.lnkDangKy.AutoSize = true;
+            this.lnkDangKy.Location = new System.Drawing.Point(265, 149);
+            this.lnkDangKy.Name = "lnkDangKy";
+            this.lnkDangKy.Size = new System.Drawing.Size(172, 16);
+            this.lnkDangKy.TabIndex = 9;
+            this.lnkDangKy.TabStop = true;
+            this.lnkDangKy.Text = "Chưa có tài khoản? Đăng ký";
+            this.lnkDangKy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkDangKy_LinkClicked);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 283);
+            this.ClientSize = new System.Drawing.Size(528, 283);
+            this.Controls.Add(this.lnkDangKy);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.chkNho);
@@ -155,5 +168,6 @@
         private System.Windows.Forms.CheckBox chkNho;
         private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.LinkLabel lnkDangKy;
     }
 }
