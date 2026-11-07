@@ -44,5 +44,20 @@ namespace QLSV.Helpers
         public const int ToiDa = 25;
     }
 
+    //Tỉ lệ tính điểm tổng kết và các ngưỡng liên quan đến điểm
+    public static class ThangDiem
+    {
+        public const double TyLeChuyenCan = 0.1;
+        public const double TyLeGiuaKy = 0.3;
+        public const double TyLeCuoiKy = 0.6;
 
+      //Điểm tổng kết tối thiểu để tính là ĐẠT 
+        public const double DiemDat = 4.0;
+
+    //Cảnh báo học vụ: GPA học kỳ thấp hơn mức này
+        public const double NguongGpaCanhBao = 1.0;
+
+       //Cảnh báo học vụ: số tín chỉ nợ vượt mức này
+        public const int NguongTinChiNo = 8;
+    }
 }
