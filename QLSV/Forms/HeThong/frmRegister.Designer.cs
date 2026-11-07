@@ -140,6 +140,7 @@
             this.btnDangKy.TabIndex = 11;
             this.btnDangKy.Text = "button1";
             this.btnDangKy.UseVisualStyleBackColor = true;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // btnHuy
             // 
@@ -170,6 +171,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmRegister";
             this.Text = "Đăng ký tài khoản";
+            this.Load += new System.EventHandler(this.frmRegister_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
