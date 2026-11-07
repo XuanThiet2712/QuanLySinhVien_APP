@@ -66,8 +66,10 @@
     <Compile Include="Helpers\PasswordHasher.cs" />
     <Compile Include="Helpers\Result.cs" />
     <Compile Include="Helpers\SessionManager.cs" />
+    <Compile Include="Repositories\NguoiDungRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\PhanQuyenRepositories.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -102,7 +104,6 @@
     <Folder Include="DTOs\" />
     <Folder Include="Forms\" />
     <Folder Include="Models\" />
-    <Folder Include="Repositories\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
