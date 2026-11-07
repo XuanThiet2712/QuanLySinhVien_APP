@@ -104,5 +104,56 @@ namespace QLSV.Services
             }
         }
 
+        // Sinh viên tự tạo tài khoản
+        // Phải nhập đúng mã sinh viên và ngày sinh trùng với dữ liệu trong bảng SinhVien
+        public Result DangKyTaiKhoan(string maSV, DateTime ngaySinh, string tenDangNhap, string matKhau)
+        {
+            if (string.IsNullOrWhiteSpace(maSV) || string.IsNullOrWhiteSpace(tenDangNhap) || string.IsNullOrEmpty(matKhau))
+                return Result.Fail("Vui lòng nhập đủ mã sinh viên, tên đăng nhập và mật khẩu");
+
+            maSV = maSV.Trim();
+            tenDangNhap = tenDangNhap.Trim();
+
+            if (tenDangNhap.Length < 4 || tenDangNhap.Contains(" "))
+                return Result.Fail("Tên đăng nhập phải từ 4 ký tự và không có khoảng trắng");
+            if (matKhau.Length < TaiKhoan.DoDaiMatKhauToiThieu)
+                return Result.Fail("Mật khẩu phải có ít nhất " + TaiKhoan.DoDaiMatKhauToiThieu + " ký tự");
+
+            try
+            {
+                using (var db = DbFactory.Create())
+                {
+                    var repo = new NguoiDungRepository(db);
+
+                    SinhVien sv = repo.GetSinhVien(maSV);
+                    // Cùng một câu cho "không có mã" và "sai ngày sinh" để người ngoài không dò được mã sinh viên.
+                    if (sv == null || sv.NgaySinh.Date != ngaySinh.Date)
+                        return Result.Fail("Mã sinh viên hoặc ngày sinh không đúng");
+                    if (repo.ExistsMaSV(maSV))
+                        return Result.Fail("Sinh viên này đã có tài khoản");
+                    if (repo.ExistsUsername(tenDangNhap))
+                        return Result.Fail("Tên đăng nhập đã được dùng, hãy chọn tên khác");
+
+                    string salt = PasswordHasher.GenerateSalt();
+                    repo.Add(new NguoiDung
+                    {
+                        TenDangNhap = tenDangNhap,
+                        Salt = salt,
+                        MatKhauHash = PasswordHasher.Hash(matKhau, salt),
+                        MaNhom = MaNhom.SV,
+                        MaSV = maSV,
+                        TrangThai = true   
+                        // đổi thành false nếu muốn Admin duyệt trước khi dùng
+                    });
+                    db.SubmitChanges();
+                    return Result.Ok("Tạo tài khoản thành công. Bạn có thể đăng nhập.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Result.Fail("Lỗi CSDL: " + ex.Message);
+            }
+        }
     }
 }
+
