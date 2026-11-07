@@ -43,6 +43,11 @@ namespace QLSV.Services
             }
         }
 
-      
+        //Đăng xuất, xóa session
+        public void DangXuat()
+        {
+            SessionManager.Logout();
+        }
+
     }
 }
