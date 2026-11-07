@@ -78,5 +78,31 @@ namespace QLSV.Services
                 return Result.Fail("Lỗi CSDL: " + ex.Message);
             }
         }
+
+        /// Dat lai mk mac dinh, chi nguoi co quyen QL_USER moi lam duoc , admin ay
+        public Result ResetMatKhau(int maND)
+        {
+            if (!SessionManager.HasPermission(MaChucNang.QL_USER))
+                return Result.Fail("Ban ko co quyen dat lai mk");
+
+            try
+            {
+                using (var db = DbFactory.Create())
+                {
+                    NguoiDung user = new NguoiDungRepository(db).GetById(maND);
+                    if (user == null) return Result.Fail("ko tim thay nguoi dung");
+
+                    user.Salt = PasswordHasher.GenerateSalt();
+                    user.MatKhauHash = PasswordHasher.Hash(TaiKhoan.MatKhauMacDinh, user.Salt);
+                    db.SubmitChanges();
+                    return Result.Ok("Đã đặt lại mật khẩu về " + TaiKhoan.MatKhauMacDinh );
+                }
+            }
+            catch (Exception ex)
+            {
+                return Result.Fail("Lỗi CSDL: " + ex.Message);
+            }
+        }
+
     }
 }
