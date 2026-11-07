@@ -23,7 +23,7 @@ namespace QLSV.Helpers
             return Convert.ToBase64String(bytes);
         }
 
-        //(mật khẩu + salt) bằng SHA-256, trả về Base64 ,,44 ki tự
+        //mật khẩu + salt bằng SHA-256, trả về Base64 ,,44 ki tự
         public static string Hash(string password, string salt)
         {
             using (SHA256 sha = SHA256.Create())
