@@ -7,12 +7,8 @@ using System.Security.Cryptography;
 
 namespace QLSV.Helpers
 {
-    //Mã hóa mật khẩu bằng SHA-256 + Salt. KHÔNG lưu mật khẩu dạng chữ thường
-    //   salt = Base64 của 16 byte ngẫu nhiên
-    //   hash = Base64( SHA256( UTF8(matKhau + salt) ) ) Thiet
     public static class PasswordHasher
     {
-        //Sinh salt ngẫu nhiên 16 byte, tra ve base64 , 24 ki tự
         public static string GenerateSalt()
         {
             byte[] bytes = new byte[16];
