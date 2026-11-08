@@ -69,5 +69,18 @@ namespace QLSV.Forms.HeThong
         {
 
         }
+
+        private void lnkDangKy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            using (var f = new frmRegister())
+            {
+                if (f.ShowDialog(this) == DialogResult.OK)
+                {
+                    txtTenDangNhap.Text = f.TenDangNhapMoi;   
+                    txtMatKhau.Clear();
+                    txtMatKhau.Focus();
+                }
+            }
+        }
     }
 }
