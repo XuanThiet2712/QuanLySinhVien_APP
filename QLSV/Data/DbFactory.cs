@@ -14,7 +14,9 @@ namespace QLSV.Data
     {
         public static QLSVDataContext Create()
         {
+            
             string cs = AppConfig.ConnectionString;
+            Console.WriteLine(cs);
             if (string.IsNullOrWhiteSpace(cs))
             {
                 throw new InvalidOperationException(
