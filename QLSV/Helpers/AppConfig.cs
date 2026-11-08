@@ -13,6 +13,7 @@ namespace QLSV.Helpers
     public static class AppConfig
     {
         //Chuỗi kết nối tới CSDL QLSV ,khóa "QLSV" trong App.config
+        // mở file App.config, tìm thẻ <add name="QLSV" ... 
         public static string ConnectionString
         {
             get

@@ -12,6 +12,7 @@ namespace QLSV.Repositories
     {
         private readonly QLSVDataContext _db;
 
+        // constructor 
         public NguoiDungRepository(QLSVDataContext db)
         {
             _db = db;
@@ -20,32 +21,58 @@ namespace QLSV.Repositories
         //Tìm người dùng theo tên đăng nhập , null là ko có
         public NguoiDung GetByUsername(string tenDangNhap)
         {
-            return _db.NguoiDungs.FirstOrDefault(u => u.TenDangNhap == tenDangNhap);
+            foreach (NguoiDung u in _db.NguoiDungs)
+            {
+                if (u.TenDangNhap == tenDangNhap)
+                {
+                    return u;
+                }
+            }
+
+            return null;
         }
 
         //Tìm người dùng theo mã , null ko có
         public NguoiDung GetById(int maND)
         {
-            return _db.NguoiDungs.FirstOrDefault(u => u.MaND == maND);
+            foreach (NguoiDung u in _db.NguoiDungs)
+            {
+                if (u.MaND == maND)
+                {
+                    return u;
+                }
+            }
+
+            return null;
         }
 
         //Toàn bộ người dùng sắp theo tên đăng nhập
         public List<NguoiDung> GetAll()
         {
-            return _db.NguoiDungs.OrderBy(u => u.TenDangNhap).ToList();
+            List<NguoiDung> danhSach = new List<NguoiDung>();
+
+            foreach (NguoiDung u in _db.NguoiDungs)
+            {
+                danhSach.Add(u);
+            }
+
+
+
+            return danhSach;
         }
 
-        //Xếp hàng thêm người dùng, Service gọi SubmitChanges để ghi thật
+        //them nguoi dung moi vao NguoiDUng trong CSDL 
         public void Add(NguoiDung u)
         {
             _db.NguoiDungs.InsertOnSubmit(u);
         }
 
-        //Xếp hàng xóa người dùng, Service gọi SubmitChanges để ghi thật
+        // xoa nguoi dung khoi CSDL
         public void Delete(int maND)
         {
             NguoiDung u = GetById(maND);
-            if (u != null) _db.NguoiDungs.DeleteOnSubmit(u);
+            if (u != null) 
+                _db.NguoiDungs.DeleteOnSubmit(u);
         }
 
         //Tên đăng nhập đã có người dùng chưa?
@@ -63,7 +90,15 @@ namespace QLSV.Repositories
         //Lấy sinh viên theo mã , null nếu ko có . Dùng khi tự đăng ký tài khoản
         public SinhVien GetSinhVien(string maSV)
         {
-            return _db.SinhViens.FirstOrDefault(s => s.MaSV == maSV);
+            foreach (SinhVien s in _db.SinhViens)
+            {
+                if (s.MaSV == maSV)
+                {
+                    return s;
+                }
+            }
+
+            return null;
         }
     }
 }
