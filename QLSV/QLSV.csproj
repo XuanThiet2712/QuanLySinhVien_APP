@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\DbFactory.cs" />
+    <Compile Include="DTOs\NguoiDungDTO.cs" />
     <Compile Include="Data\QLSV.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,6 +99,7 @@
     <Compile Include="Repositories\PhieuThuRepository.cs" />
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\FeeService.cs" />
+    <Compile Include="Services\UserService.cs" />
     <EmbeddedResource Include="Forms\Finance\frmConnectionConfig.resx">
       <DependentUpon>frmConnectionConfig.cs</DependentUpon>
     </EmbeddedResource>
