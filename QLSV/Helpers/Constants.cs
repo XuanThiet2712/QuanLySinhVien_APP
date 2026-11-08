@@ -12,29 +12,32 @@ namespace QLSV.Helpers
 
     public static class MaChucNang
     {
-        public const string QL_USER = "QL_USER";
-        public const string QL_ROLE = "QL_ROLE";
-        public const string CAU_HINH = "CAU_HINH";
+        public const string QL_USER = "QL_USER"; // Quản lý tài khoản
+        public const string QL_ROLE = "QL_ROLE"; // Quản lý nhóm quyền
+        public const string CAU_HINH = "CAU_HINH"; 
+        //Cấu hình kết nối CSDL, cấu hình hệ thống
         public const string QL_KHOA = "QL_KHOA";
+
         public const string QL_NGANH = "QL_NGANH";
         public const string QL_LOP = "QL_LOP";
         public const string QL_SINHVIEN = "QL_SINHVIEN";
         public const string QL_GIANGVIEN = "QL_GIANGVIEN";
         public const string QL_MONHOC = "QL_MONHOC";
         public const string QL_LOPHOCPHAN = "QL_LOPHOCPHAN";
-        public const string DANG_KY = "DANG_KY";
+        public const string DANG_KY = "DANG_KY"; // Đăng ký học phần
         public const string NHAP_DIEM = "NHAP_DIEM";
         public const string XEM_DIEM = "XEM_DIEM";
         public const string THU_HOC_PHI = "THU_HOC_PHI";
-        public const string THONG_KE = "THONG_KE";
+        public const string THONG_KE = "THONG_KE"; // thống kê và biểu đồ
     }
+
     //Mã nhóm quyền, trùng với cột MaNhom trong bảng NhomQuyen
-    public static class MaNhom
+    public static class MaNhom // nhom nguoi dùng
     {
         public const string ADMIN = "ADMIN";
-        public const string PDT = "PDT";
+        public const string PDT = "PDT"; // Phòng đào tạo
         public const string GV = "GV";
-        public const string KT = "KT";
+        public const string KT = "KT"; // kế toán
         public const string SV = "SV";
     }
     //Giới hạn tổng tín chỉ một học kỳ khi đăng ký học phần
@@ -61,7 +64,8 @@ namespace QLSV.Helpers
         public const int NguongTinChiNo = 8;
     }
     //Các hằng số liên quan đến tài khoản người dùng
-    public static class TaiKhoan
+
+    public static class TaiKhoan // mat khau mac dinh khi reset
     {
         public const string MatKhauMacDinh = "123456";
         public const int DoDaiMatKhauToiThieu = 6;
