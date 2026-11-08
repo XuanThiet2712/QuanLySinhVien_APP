@@ -25,13 +25,13 @@ namespace QLSV
             {
                 using (var login = new frmConnectionConfig())
                 {
-                    if (login.ShowDialog() != DialogResult.OK) return; 
+                    if (login.ShowDialog() != DialogResult.OK) return;
                 }
 
                 var main = new frmMain();
                 Application.Run(main);
 
-                if (!main.DangXuat) return;   
+                if (!main.DangXuat) return;
             }
         }
     }
