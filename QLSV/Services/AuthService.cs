@@ -123,7 +123,7 @@ namespace QLSV.Services
                     var repo = new NguoiDungRepository(db);
 
                     SinhVien sv = repo.GetSinhVien(maSV);
-                    // Cùng một câu cho "không có mã" và "sai ngày sinh" để người ngoài không dò được mã sinh viên.
+                   
                     if (sv == null || sv.NgaySinh.Date != ngaySinh.Date)
                         return Result.Fail("Mã sinh viên hoặc ngày sinh không đúng");
                     if (repo.ExistsMaSV(maSV))
