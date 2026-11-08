@@ -43,14 +43,23 @@ namespace QLSV.Forms.HeThong
         {
             dgvKhoa.AutoGenerateColumns = false;   // Tắt chế độ tự sinh cột
             dgvKhoa.Columns.Clear();               // Xóa cột cũ (tránh bị nhân đôi nếu gọi lại)
+            // Cột 1: Mã Khoa (Chiếm 30% độ rộng)
+            dgvKhoa.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "MaKhoa",
+                HeaderText = "Mã Khoa",
+                FillWeight = 30
+            });
 
-            // DataPropertyName = TÊN THUỘC TÍNH trong class Khoa (phân biệt hoa thường)
-            // HeaderText       = chữ hiện trên tiêu đề cột
-            // FillWeight       = tỉ lệ chiều rộng (30 : 70)
+            // Cột 2: Tên Khoa (Chiếm 70% độ rộng)
             dgvKhoa.Columns.Add(new DataGridViewTextBoxColumn
-            { DataPropertyName = "MaKhoa", HeaderText = "Mã Khoa", FillWeight = 30 });
-            dgvKhoa.Columns.Add(new DataGridViewTextBoxColumn
-            { DataPropertyName = "TenKhoa", HeaderText = "Tên Khoa", FillWeight = 70});
+            {
+                DataPropertyName = "TenKhoa",
+                HeaderText = "Tên Khoa",
+                FillWeight = 70
+            });
+
+
         }
 
         //Lấy danh sách khoa từ Service và hiện lên lưới

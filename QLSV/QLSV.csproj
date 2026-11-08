@@ -55,14 +55,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLSV.dbml</DependentUpon>
     </Compile>
-
     <Compile Include="DTOs\HocPhiDTO.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\HeThong\frmKhoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,7 +74,6 @@
     <Compile Include="Forms\Finance\FrmThuHocPhi.Designer.cs">
       <DependentUpon>FrmThuHocPhi.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Forms\HeThong\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,8 +105,11 @@
     <Compile Include="Repositories\PhieuThuRepository.cs" />
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\KhoaService.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="Forms\HeThong\frmKhoa.resx">
       <DependentUpon>frmKhoa.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Services\FeeService.cs" />
     <EmbeddedResource Include="Forms\Finance\frmConnectionConfig.resx">
       <DependentUpon>frmConnectionConfig.cs</DependentUpon>

@@ -48,8 +48,8 @@ namespace QLSV
                 if (!main.DangXuat) return;   
             }*/
 
-                if (!main.DangXuat) return;
-            }
-        }
+
+
+
     }
 }
