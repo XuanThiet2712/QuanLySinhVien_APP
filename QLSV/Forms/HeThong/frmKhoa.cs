@@ -41,9 +41,9 @@ namespace QLSV.Forms.HeThong
 
         private void SetupGrid()
         {
-            dgvKhoa.AutoGenerateColumns = false;   // Tắt chế độ tự sinh cột
-            dgvKhoa.Columns.Clear();               // Xóa cột cũ (tránh bị nhân đôi nếu gọi lại)
-            // Cột 1: Mã Khoa (Chiếm 30% độ rộng)
+            dgvKhoa.AutoGenerateColumns = false;   // Tắt chế độ tự sinh cột.
+            dgvKhoa.Columns.Clear();               // Xóa cột cũ (tránh bị nhân đôi nếu gọi lại).
+            // Cột 1: Mã Khoa (Chiếm 30% độ rộng).
             dgvKhoa.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "MaKhoa",
