@@ -6,16 +6,25 @@ using System.Threading.Tasks;
 
 namespace QLSV.Helpers
 {
-    //hàm Service trả về Result
-    //thay vì ném exception hay bôl thì
-    //Form chỉ cần kiểm tra Success,
-    //nếu false thì hiện Message : Thiet
-
-
+    //Lớp mô tả thao tác của Service, có thể thành công hoặc thất bại, kèm theo thông báo
     public class Result
     {
         public bool Success { get; set; }
-        public string Message { get; set; }
+        public string Message { get; set; } // lời nhắn
+
+
+        // constructor 
+        public Result()
+        {
+            Success = true;
+            Message = "";
+        }
+
+        public Result(bool success, string message)
+        {
+            Success = success;
+            Message = message;
+        }
 
         public static Result Ok(string message = "")
         {
