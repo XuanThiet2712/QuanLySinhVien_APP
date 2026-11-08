@@ -1,4 +1,5 @@
 ﻿using QLSV.Data;
+using QLSV.Forms.Finance;
 using QLSV.Forms.HeThong;
 using QLSV.Helpers;
 using System;
@@ -22,7 +23,7 @@ namespace QLSV
 
             while (true)
             {
-                using (var login = new frmLogin())
+                using (var login = new frmConnectionConfig())
                 {
                     if (login.ShowDialog() != DialogResult.OK) return; 
                 }
