@@ -30,17 +30,21 @@ namespace QLSV.Services
                     using (var db = DbFactory.Create())
                     {
                         var repo = new KhoaRepository(db);
-                        if (repo.ExistsId(k.MaKhoa.Trim()))
-                            return Result.Fail("Mã khoa đã tồn tại.");
-                        repo.Add(new Khoa { MaKhoa = k.MaKhoa.Trim(), TenKhoa = k.TenKhoa.Trim() });
+                        string maKhoaUpper = k.MaKhoa.Trim().ToUpper();
+
+                        Khoa cu = repo.GetById(maKhoaUpper);
+                        if (cu == null)
+                            return Result.Fail("Không tìm thấy khoa cần sửa.");
+
+                        cu.TenKhoa = k.TenKhoa.Trim();
                         db.SubmitChanges();
-                        return Result.Ok("Đã thêm khoa.");
+                        return Result.Ok("Đã cập nhật thông tin khoa thành công.");
                     }
                 }
                 catch (Exception ex) { return Result.Fail("Lỗi CSDL: " + ex.Message); }
             }
 
-            //Lưu khoa: chưa có thì thêm, có rồi thì sửa tên
+            //Lưu khoa: sửa tên khoa
             public Result Luu(Khoa k)
             {
                 if (k == null || string.IsNullOrWhiteSpace(k.MaKhoa) || string.IsNullOrWhiteSpace(k.TenKhoa))
