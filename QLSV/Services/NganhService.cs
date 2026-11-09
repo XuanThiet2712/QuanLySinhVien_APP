@@ -42,6 +42,7 @@ namespace QLSV.Services
                 using (var db = DbFactory.Create())
                 {
                     var repo = new NganhRepository(db);
+                    //kiểm tra trùng mã ngành
                     if (repo.ExistsId(n.MaNganh.Trim())) return Result.Fail("Mã ngành đã tồn tại.");
                     repo.Add(new Nganh { MaNganh = n.MaNganh.Trim(), TenNganh = n.TenNganh.Trim(), MaKhoa = n.MaKhoa });
                     db.SubmitChanges();
@@ -61,11 +62,14 @@ namespace QLSV.Services
                 using (var db = DbFactory.Create())
                 {
                     var repo = new NganhRepository(db);
+                    //tìm bản ghi cần sửa theo mã ngành
                     Nganh cu = repo.GetById(n.MaNganh);
-                    if (cu == null) repo.Add(n);
+
+                    if (cu == null)
+                        return Result.Fail("Không tìm thấy ngành cần cập nhật");
                     else { cu.TenNganh = n.TenNganh.Trim(); cu.MaKhoa = n.MaKhoa; }
                     db.SubmitChanges();
-                    return Result.Ok("Đã lưu ngành.");
+                    return Result.Ok("Đã cập nhật ngành.");
                 }
             }
             catch (Exception ex) { return Result.Fail("Lỗi CSDL: " + ex.Message); }
