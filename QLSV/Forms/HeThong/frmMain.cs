@@ -13,7 +13,8 @@ using System.Windows.Forms;
 //using QLSV.Forms.Catalog;     // frmKhoa, frmNganh... (B)
 //using QLSV.Forms.Grade;       // frmLopHocPhan, frmNhapDiem (C)
 //using QLSV.Forms.Enroll;      // frmDangKyHocPhan (A)
-using QLSV.Forms.Finance;     // frmThuHocPhi, frmChartDashboard, frmConnectionConfig (D)
+using QLSV.Forms.Finance;
+using QLSV.Forms.Report;     // frmThuHocPhi, frmChartDashboard, frmConnectionConfig (D)
 //using QLSV.Forms.Report;      // frmReportBangDiem, frmReportThongKe
 
 namespace QLSV.Forms.HeThong
@@ -66,17 +67,17 @@ namespace QLSV.Forms.HeThong
 
             //Ẩn cả nhóm nếu không còn mục con nào hiện
 
-           mnuDanhMuc.Visible = mnuKhoa.Visible || mnuNganh.Visible
-               || mnuLopSinhHoat.Visible || mnuSinhVien.Visible
-               || mnuGiangVien.Visible || mnuMonHoc.Visible;
+           //mnuDanhMuc.Visible = mnuKhoa.Visible || mnuNganh.Visible
+           //    || mnuLopSinhHoat.Visible || mnuSinhVien.Visible
+           //    || mnuGiangVien.Visible || mnuMonHoc.Visible;
 
-            mnuHocVu.Visible = mnuLopHocPhan.Visible || mnuDangKyHocPhan.Visible
-                || mnuNhapDiem.Visible;
+           // mnuHocVu.Visible = mnuLopHocPhan.Visible || mnuDangKyHocPhan.Visible
+           //     || mnuNhapDiem.Visible;
 
-            mnuTaiChinh.Visible = mnuThuHocPhi.Visible;
+           // mnuTaiChinh.Visible = mnuThuHocPhi.Visible;
 
-            mnuBaoCao.Visible = mnuBangDiem.Visible || mnuBieuDo.Visible
-                || mnuBaoCaoDoanhThu.Visible;
+           // mnuBaoCao.Visible = mnuBangDiem.Visible || mnuBieuDo.Visible
+           //     || mnuBaoCaoDoanhThu.Visible;
         }
         private void mnuDangXuat_Click(object sender, EventArgs e)
         {
@@ -148,7 +149,16 @@ namespace QLSV.Forms.HeThong
 
         private void mnuKhoa_Click(object sender, EventArgs e)
         {
-
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmKhoa) { f.Activate(); return; }
+            }
+            frmKhoa frm = new frmKhoa();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
+            this.Width = frm.Width + 100;
+            frm.Show();
         }
 
         private void mnuNganh_Click(object sender, EventArgs e)
@@ -178,7 +188,16 @@ namespace QLSV.Forms.HeThong
 
         private void mnuLopHocPhan_Click(object sender, EventArgs e)
         {
-
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmLopHocPhan) { f.Activate(); return; }
+            }
+            frmLopHocPhan frm = new frmLopHocPhan();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
+            this.Width = frm.Width + 100;
+            frm.Show();
         }
 
         private void mnuDangKyHocPhan_Click(object sender, EventArgs e)
@@ -188,7 +207,16 @@ namespace QLSV.Forms.HeThong
 
         private void mnuNhapDiem_Click(object sender, EventArgs e)
         {
-
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmNhapDiem) { f.Activate(); return; }
+            }
+            frmNhapDiem frm = new frmNhapDiem();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
+            this.Width = frm.Width + 100;
+            frm.Show();
         }
 
         private void mnuThuHocPhi_Click(object sender, EventArgs e)
@@ -201,6 +229,20 @@ namespace QLSV.Forms.HeThong
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
             this.Height = frm.Height + 100; 
+            this.Width = frm.Width + 100;
+            frm.Show();
+        }
+
+        private void mnuBangDiem_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmReportBangDiem) { f.Activate(); return; }
+            }
+            frmReportBangDiem frm = new frmReportBangDiem();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
             this.Width = frm.Width + 100;
             frm.Show();
         }
