@@ -50,12 +50,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\DbFactory.cs" />
+    <Compile Include="DTOs\LopDangKyDTO.cs" />
     <Compile Include="DTOs\NguoiDungDTO.cs" />
     <Compile Include="DTOs\HocPhiDTO.cs" />
     <Compile Include="Data\QLSV.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLSV.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Enroll\frmDangKyHocPhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Enroll\frmDangKyHocPhan.Designer.cs">
+      <DependentUpon>frmDangKyHocPhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HeThong\frmKhoa.cs">
       <SubType>Form</SubType>
@@ -93,6 +106,18 @@
     <Compile Include="Forms\HeThong\frmRegister.Designer.cs">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HeThong\frmRoleManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmRoleManagement.Designer.cs">
+      <DependentUpon>frmRoleManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmUserManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmUserManagement.Designer.cs">
+      <DependentUpon>frmUserManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Report\frmLopHocPhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +141,7 @@
     <Compile Include="Helpers\PasswordHasher.cs" />
     <Compile Include="Helpers\Result.cs" />
     <Compile Include="Helpers\SessionManager.cs" />
+    <Compile Include="Repositories\DangKyRepository.cs" />
     <Compile Include="Repositories\KhoaRepository.cs" />
     <Compile Include="Repositories\NguoiDungRepository.cs" />
     <Compile Include="Repositories\NhatKyDiemRepository.cs" />
@@ -131,6 +157,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\HeThong\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmKhoa.resx">
       <DependentUpon>frmKhoa.cs</DependentUpon>
     </EmbeddedResource>

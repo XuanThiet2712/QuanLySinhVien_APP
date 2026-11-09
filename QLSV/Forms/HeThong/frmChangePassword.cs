@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QLSV.Helpers;
+using QLSV.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,26 @@ namespace QLSV.Forms.HeThong
         public frmChangePassword()
         {
             InitializeComponent();
+        }
+
+        private void btnDoi_Click(object sender, EventArgs e)
+        {
+            if (txtMoi.Text != txtNhapLai.Text)
+            {
+                MessageBox.Show("Hai mật khẩu mới không giống nhau", "Thông báo");
+                return;
+            }
+
+            Result kq = new AuthService().DoiMatKhau(
+                SessionManager.CurrentUser.TenDangNhap, txtCu.Text, txtMoi.Text);
+
+            MessageBox.Show(kq.Message, kq.Success ? "Thành công" : "Lỗi");
+            if (kq.Success) Close();
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

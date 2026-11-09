@@ -120,7 +120,8 @@ namespace QLSV.Forms.HeThong
 
         private void mnuDoiMatKhau_Click(object sender, EventArgs e)
         {
-
+            frmChangePassword f = new frmChangePassword();
+            f.ShowDialog();
         }
 
         private void mnuQuanLyNguoiDung_Click(object sender, EventArgs e)
