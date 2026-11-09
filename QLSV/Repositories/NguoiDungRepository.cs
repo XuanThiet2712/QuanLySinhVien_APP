@@ -1,9 +1,10 @@
-﻿using System;
+﻿using QLSV.Data;
+using QLSV.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using QLSV.Data;
 
 namespace QLSV.Repositories
 {
@@ -99,6 +100,70 @@ namespace QLSV.Repositories
             }
 
             return null;
+        }
+        // tim nguoi dung theo ten dang nhap 
+        public List<NguoiDungDTO> Search(string keyword)
+        {
+            List<NguoiDungDTO> danhSach = new List<NguoiDungDTO>();
+
+            // Nếu keyword null thì đổi thành chuỗi rỗng
+            if (keyword == null)
+            {
+                keyword = "";
+            }
+
+            keyword = keyword.Trim();
+
+            // Duyệt từng người dùng
+            foreach (NguoiDung u in _db.NguoiDungs)
+            {
+                // Kiểm tra tên đăng nhập
+                if (keyword == "" || u.TenDangNhap.Contains(keyword))
+                {
+                    NguoiDungDTO dto = new NguoiDungDTO();
+
+                    dto.MaND = u.MaND;
+                    dto.TenDangNhap = u.TenDangNhap;
+
+                    // Tìm tên nhóm quyền
+                    foreach (NhomQuyen n in _db.NhomQuyens)
+                    {
+                        if (n.MaNhom == u.MaNhom)
+                        {
+                            dto.TenNhom = n.TenNhom;
+                            break;
+                        }
+                    }
+
+                    // Lấy mã sinh viên hoặc mã giảng viên
+                    if (u.MaSV != null)
+                    {
+                        dto.DoiTuong = u.MaSV;
+                    }
+                    else if (u.MaGV != null)
+                    {
+                        dto.DoiTuong = u.MaGV;
+                    }
+                    else
+                    {
+                        dto.DoiTuong = "";
+                    }
+
+                    // Kiểm tra trạng thái
+                    if (u.TrangThai == true)
+                    {
+                        dto.TrangThai = "Hoạt động";
+                    }
+                    else
+                    {
+                        dto.TrangThai = "Đã khóa";
+                    }
+
+                    danhSach.Add(dto);
+                }
+            }
+
+            return danhSach;
         }
     }
 }
