@@ -52,7 +52,7 @@ namespace QLSV.Services
             catch (Exception ex) { return Result.Fail("Lỗi CSDL: " + ex.Message); }
         }
 
-        //Lưu ngành: chưa có thì thêm, có rồi thì sửa
+        //Lưu ngành: sửa
         public Result Luu(Nganh n)
         {
             Result kt = KiemTra(n);

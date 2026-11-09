@@ -47,7 +47,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 44);
+            this.label1.Location = new System.Drawing.Point(37, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 16);
             this.label1.TabIndex = 0;
@@ -56,41 +56,41 @@
             // dgvNganh
             // 
             this.dgvNganh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNganh.Location = new System.Drawing.Point(276, 184);
+            this.dgvNganh.Location = new System.Drawing.Point(40, 138);
             this.dgvNganh.Name = "dgvNganh";
             this.dgvNganh.RowHeadersWidth = 51;
             this.dgvNganh.RowTemplate.Height = 24;
-            this.dgvNganh.Size = new System.Drawing.Size(240, 150);
+            this.dgvNganh.Size = new System.Drawing.Size(705, 203);
             this.dgvNganh.TabIndex = 1;
             // 
             // cboLocKhoa
             // 
             this.cboLocKhoa.FormattingEnabled = true;
-            this.cboLocKhoa.Location = new System.Drawing.Point(542, 116);
+            this.cboLocKhoa.Location = new System.Drawing.Point(479, 71);
             this.cboLocKhoa.Name = "cboLocKhoa";
-            this.cboLocKhoa.Size = new System.Drawing.Size(121, 24);
+            this.cboLocKhoa.Size = new System.Drawing.Size(266, 24);
             this.cboLocKhoa.TabIndex = 2;
             // 
             // btnThem
             // 
             this.btnThem.Location = new System.Drawing.Point(71, 371);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 23);
+            this.btnThem.Size = new System.Drawing.Size(88, 45);
             this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             // 
             // txtMaNganh
             // 
-            this.txtMaNganh.Location = new System.Drawing.Point(120, 44);
+            this.txtMaNganh.Location = new System.Drawing.Point(154, 15);
             this.txtMaNganh.Name = "txtMaNganh";
-            this.txtMaNganh.Size = new System.Drawing.Size(100, 22);
+            this.txtMaNganh.Size = new System.Drawing.Size(151, 22);
             this.txtMaNganh.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(401, 44);
+            this.label2.Location = new System.Drawing.Point(381, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 16);
             this.label2.TabIndex = 5;
@@ -99,7 +99,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(413, 121);
+            this.label3.Location = new System.Drawing.Point(381, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 16);
             this.label3.TabIndex = 6;
@@ -108,7 +108,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 116);
+            this.label4.Location = new System.Drawing.Point(37, 79);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 16);
             this.label4.TabIndex = 7;
@@ -116,27 +116,27 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(325, 371);
+            this.btnLuu.Location = new System.Drawing.Point(248, 371);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnLuu.Size = new System.Drawing.Size(88, 45);
             this.btnLuu.TabIndex = 8;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(469, 371);
+            this.btnXoa.Location = new System.Drawing.Point(425, 371);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.Size = new System.Drawing.Size(88, 45);
             this.btnXoa.TabIndex = 9;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             // 
             // btnLamMoi
             // 
-            this.btnLamMoi.Location = new System.Drawing.Point(645, 391);
+            this.btnLamMoi.Location = new System.Drawing.Point(602, 371);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(75, 23);
+            this.btnLamMoi.Size = new System.Drawing.Size(88, 45);
             this.btnLamMoi.TabIndex = 10;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = true;
@@ -144,16 +144,16 @@
             // cboKhoa
             // 
             this.cboKhoa.FormattingEnabled = true;
-            this.cboKhoa.Location = new System.Drawing.Point(154, 113);
+            this.cboKhoa.Location = new System.Drawing.Point(154, 71);
             this.cboKhoa.Name = "cboKhoa";
-            this.cboKhoa.Size = new System.Drawing.Size(121, 24);
+            this.cboKhoa.Size = new System.Drawing.Size(151, 24);
             this.cboKhoa.TabIndex = 11;
             // 
             // txtTenNganh
             // 
-            this.txtTenNganh.Location = new System.Drawing.Point(505, 44);
+            this.txtTenNganh.Location = new System.Drawing.Point(479, 15);
             this.txtTenNganh.Name = "txtTenNganh";
-            this.txtTenNganh.Size = new System.Drawing.Size(100, 22);
+            this.txtTenNganh.Size = new System.Drawing.Size(266, 22);
             this.txtTenNganh.TabIndex = 12;
             // 
             // frmNganh

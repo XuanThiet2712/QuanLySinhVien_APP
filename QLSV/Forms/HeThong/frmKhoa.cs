@@ -101,7 +101,7 @@ namespace QLSV.Forms.HeThong
             //Gom dữ liệu từ ô nhập thành 1 đối tượng. Trim() cắt khoảng trắng đầu/cuối.
             var k = new Khoa { MaKhoa = txtMaKhoa.Text.Trim(), TenKhoa = txtTenKhoa.Text.Trim() };
 
-            Result r = _dangThem ? _svc.Luu(k) : _svc.ThemMoi(k);
+            Result r =  _svc.ThemMoi(k); //_dangThem ? _svc.Luu(k) :
 
             HienThongBao(r);
 
@@ -127,7 +127,7 @@ namespace QLSV.Forms.HeThong
             };
 
             // Tự động điều hướng: Đang thêm thì gọi ThemMoi, đang chọn dòng dưới bảng thì gọi Luu
-            Result r = _dangThem ? _svc.Luu(k) : _svc.ThemMoi(k);
+            Result r =  _svc.Luu(k); //: _svc.ThemMoi(k);
 
             HienThongBao(r);
 
