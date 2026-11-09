@@ -50,6 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\DbFactory.cs" />
+    <Compile Include="Data\QLSV.cs">
+      <DependentUpon>QLSV.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DTOs\NguoiDungDTO.cs" />
     <Compile Include="DTOs\HocPhiDTO.cs" />
     <Compile Include="Data\QLSV.designer.cs">
@@ -99,6 +102,12 @@
     <Compile Include="Forms\HeThong\frmRegister.Designer.cs">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HeThong\frmLopSinhHoat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmLopSinhHoat.Designer.cs">
+      <DependentUpon>frmLopSinhHoat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Report\frmLopHocPhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +134,7 @@
     <Compile Include="Repositories\DiemRepository.cs" />
     <Compile Include="Repositories\KhoaRepository.cs" />
     <Compile Include="Repositories\LopHocPhanRepository.cs" />
+    <Compile Include="Repositories\LopSinhHoatRepository.cs" />
     <Compile Include="Repositories\NganhRepository.cs" />
     <Compile Include="Repositories\NguoiDungRepository.cs" />
     <Compile Include="Repositories\NhatKyDiemRepository.cs" />
@@ -135,6 +145,7 @@
     <Compile Include="Services\LopHocPhanService.cs" />
     <Compile Include="Services\KhoaService.cs" />
     <Compile Include="Services\FeeService.cs" />
+    <Compile Include="Services\LopSinhHoatService.cs" />
     <Compile Include="Services\NganhService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Program.cs" />
@@ -163,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HeThong\frmLopSinhHoat.resx">
+      <DependentUpon>frmLopSinhHoat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -24,11 +24,11 @@ namespace QLSV
             // 1. Giả lập đăng nhập để bật full quyền (không bị ẩn nút Lưu/Xóa)
             SessionManager.Login(
                 new NguoiDung { MaND = 1, TenDangNhap = "pdt01", MaNhom = "PDT" },
-                new List<string> { MaChucNang.QL_KHOA }
+                new List<string> { MaChucNang.QL_LOP }
             );
 
             // 2. Chạy trực tiếp frmKhoa làm màn hình chính
-            Application.Run(new frmKhoa());
+            Application.Run(new frmLopSinhHoat());
         }
         //static void Main()
         //{

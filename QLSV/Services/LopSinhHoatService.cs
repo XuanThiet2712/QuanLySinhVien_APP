@@ -47,8 +47,8 @@ namespace QLSV.Services
                     {
                         MaLop = l.MaLop.Trim(),
                         TenLop = l.TenLop.Trim(),
-                        MaNganh = l.MaNganh,
-                        NienKhoa = l.NienKhoa
+                        NienKhoa = string.IsNullOrWhiteSpace(l.NienKhoa) ? null : l.NienKhoa.Trim(),
+                        MaNganh = l.MaNganh
                     });
                     db.SubmitChanges();
                     return Result.Ok("Đã thêm lớp thành công.");
@@ -67,10 +67,11 @@ namespace QLSV.Services
                 using (var db = DbFactory.Create())
                 {
                     var repo = new LopSinhHoatRepository(db);
-                    LopSinhHoat cu = repo.GetById(l.MaLop);
+                    //tìm bản ghi theo mã lớp
+                    LopSinhHoat cu = repo.GetById(l.MaLop.Trim());
                     if (cu == null)
                         return Result.Fail("Không tìm thấy lớp cần cập nhật");
-                    else { cu.TenLop = l.TenLop.Trim(); cu.MaNganh = l.MaNganh; cu.NienKhoa = l,NienKhoa; }
+                    else { cu.TenLop = l.TenLop.Trim(); cu.MaNganh = l.MaNganh; cu.NienKhoa = string.IsNullOrWhiteSpace(l.NienKhoa) ? null : l.NienKhoa.Trim(); }
                     db.SubmitChanges();
                     return Result.Ok("Đã lưu lớp thành công.");
                 }
