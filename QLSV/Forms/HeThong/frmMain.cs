@@ -126,12 +126,22 @@ namespace QLSV.Forms.HeThong
 
         private void mnuQuanLyNguoiDung_Click(object sender, EventArgs e)
         {
-
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmUserManagement) { f.Activate(); return; }
+            }
+            frmUserManagement frm = new frmUserManagement();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
+            this.Width = frm.Width + 100;
+            frm.Show();
         }
 
         private void mnuPhanQuyen_Click(object sender, EventArgs e)
         {
-
+            frmRoleManagement frm = new frmRoleManagement();
+            frm.ShowDialog();
         }
 
         private void mnuCauHinh_Click(object sender, EventArgs e)
