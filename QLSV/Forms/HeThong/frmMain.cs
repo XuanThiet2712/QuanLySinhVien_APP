@@ -10,17 +10,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using QLSV.Forms.Catalog;     // frmKhoa, frmNganh... (B)
-using QLSV.Forms.Grade;       // frmLopHocPhan, frmNhapDiem (C)
-using QLSV.Forms.Enroll;      // frmDangKyHocPhan (A)
+//using QLSV.Forms.Catalog;     // frmKhoa, frmNganh... (B)
+//using QLSV.Forms.Grade;       // frmLopHocPhan, frmNhapDiem (C)
+//using QLSV.Forms.Enroll;      // frmDangKyHocPhan (A)
 using QLSV.Forms.Finance;     // frmThuHocPhi, frmChartDashboard, frmConnectionConfig (D)
-using QLSV.Forms.Report;      // frmReportBangDiem, frmReportThongKe
+//using QLSV.Forms.Report;      // frmReportBangDiem, frmReportThongKe
 
 namespace QLSV.Forms.HeThong
 {
     public partial class frmMain : Form
     {
-        
+        AuthService _auth = new AuthService();
+        public bool DangXuat { get; private set; } = false;
         public frmMain()
         {
             InitializeComponent();
@@ -63,17 +64,18 @@ namespace QLSV.Forms.HeThong
             mnuBieuDo.Visible = SessionManager.HasPermission(MaChucNang.THONG_KE);
             mnuBaoCaoDoanhThu.Visible = SessionManager.HasPermission(MaChucNang.THONG_KE);
 
-            // Ẩn cả nhóm nếu không còn mục con nào hiện
-            mnuDanhMuc.Visible = mnuKhoa.Visible || mnuNganh.Visible 
-                || mnuLopSinhHoat.Visible || mnuSinhVien.Visible 
-                || mnuGiangVien.Visible || mnuMonHoc.Visible;
+            //Ẩn cả nhóm nếu không còn mục con nào hiện
 
-            mnuHocVu.Visible = mnuLopHocPhan.Visible || mnuDangKyHocPhan.Visible 
+           mnuDanhMuc.Visible = mnuKhoa.Visible || mnuNganh.Visible
+               || mnuLopSinhHoat.Visible || mnuSinhVien.Visible
+               || mnuGiangVien.Visible || mnuMonHoc.Visible;
+
+            mnuHocVu.Visible = mnuLopHocPhan.Visible || mnuDangKyHocPhan.Visible
                 || mnuNhapDiem.Visible;
 
             mnuTaiChinh.Visible = mnuThuHocPhi.Visible;
 
-            mnuBaoCao.Visible = mnuBangDiem.Visible || mnuBieuDo.Visible 
+            mnuBaoCao.Visible = mnuBangDiem.Visible || mnuBieuDo.Visible
                 || mnuBaoCaoDoanhThu.Visible;
         }
         private void mnuDangXuat_Click(object sender, EventArgs e)
@@ -114,25 +116,6 @@ namespace QLSV.Forms.HeThong
         }
 
    
-        private void MoForm<T>() where T : Form, new()
-        {
-            foreach (Form f in MdiChildren)
-            {
-                if (f is T) { f.Activate(); return; }
-            }
-
-            try
-            {
-                var form = new T();
-                form.MdiParent = this;
-                form.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Không mở được form: " + ex.Message, "Lỗi",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         private void mnuDoiMatKhau_Click(object sender, EventArgs e)
         {
@@ -151,7 +134,16 @@ namespace QLSV.Forms.HeThong
 
         private void mnuCauHinh_Click(object sender, EventArgs e)
         {
-
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmConnectionConfig) { f.Activate(); return; }
+            }
+            frmConnectionConfig frm = new frmConnectionConfig();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
+            this.Width = frm.Width + 100;
+            frm.Show();
         }
 
         private void mnuKhoa_Click(object sender, EventArgs e)
@@ -197,6 +189,20 @@ namespace QLSV.Forms.HeThong
         private void mnuNhapDiem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void mnuThuHocPhi_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in MdiChildren)
+            {
+                if (f is FrmThuHocPhi) { f.Activate(); return; }
+            }
+            FrmThuHocPhi frm = new FrmThuHocPhi();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100; 
+            this.Width = frm.Width + 100;
+            frm.Show();
         }
     }
 }
