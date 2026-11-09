@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using System;
-using System.Collections.Generic;
 using QLSV.Data;
 using QLSV.Helpers;
 using QLSV.Repositories;
@@ -126,7 +123,7 @@ namespace QLSV.Services
                     var repo = new NguoiDungRepository(db);
 
                     SinhVien sv = repo.GetSinhVien(maSV);
-                    // Cùng một câu cho "không có mã" và "sai ngày sinh" để người ngoài không dò được mã sinh viên.
+                   
                     if (sv == null || sv.NgaySinh.Date != ngaySinh.Date)
                         return Result.Fail("Mã sinh viên hoặc ngày sinh không đúng");
                     if (repo.ExistsMaSV(maSV))

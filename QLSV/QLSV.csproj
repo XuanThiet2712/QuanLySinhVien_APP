@@ -50,17 +50,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\DbFactory.cs" />
+    <Compile Include="DTOs\NguoiDungDTO.cs" />
     <Compile Include="Data\QLSV.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLSV.dbml</DependentUpon>
     </Compile>
-    <Compile Include="DTOs\LopHocPhanDTO.cs" />
-    <Compile Include="Form1.cs">
+
+    <Compile Include="DTOs\HocPhiDTO.cs" />
+
+    <Compile Include="Forms\HeThong\frmKhoa.cs">
+
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\HeThong\frmKhoa.Designer.cs">
+      <DependentUpon>frmKhoa.cs</DependentUpon>
+    </Compile>
+
+    <Compile Include="Forms\Finance\frmConnectionConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\frmConnectionConfig.Designer.cs">
+      <DependentUpon>frmConnectionConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\FrmThuHocPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\FrmThuHocPhi.Designer.cs">
+      <DependentUpon>FrmThuHocPhi.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HeThong\frmLogin.cs">
       <SubType>Form</SubType>
@@ -74,6 +91,7 @@
     <Compile Include="Forms\HeThong\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+
     <Compile Include="Forms\Report\frmLopHocPhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,27 +109,58 @@
     </Compile>
     <Compile Include="Forms\Report\frmReportBangDiem.Designer.cs">
       <DependentUpon>frmReportBangDiem.cs</DependentUpon>
+
+    <Compile Include="Forms\HeThong\frmRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmRegister.Designer.cs">
+      <DependentUpon>frmRegister.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Helpers\AppConfig.cs" />
     <Compile Include="Helpers\Constants.cs" />
     <Compile Include="Helpers\PasswordHasher.cs" />
     <Compile Include="Helpers\Result.cs" />
     <Compile Include="Helpers\SessionManager.cs" />
-    <Compile Include="Repositories\DiemRepository.cs" />
-    <Compile Include="Repositories\LopHocPhanRepository.cs" />
+
+
+
+    <Compile Include="Repositories\KhoaRepository.cs" />
+
     <Compile Include="Repositories\NguoiDungRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\NhatKyDiemRepository.cs" />
     <Compile Include="Repositories\PhanQuyenRepositories.cs" />
+    <Compile Include="Repositories\PhieuThuRepository.cs" />
     <Compile Include="Services\AuthService.cs" />
+
     <Compile Include="Services\DiemService.cs" />
     <Compile Include="Services\LopHocPhanService.cs" />
+
+    <Compile Include="Services\KhoaService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\HeThong\frmKhoa.resx">
+      <DependentUpon>frmKhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Services\FeeService.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <EmbeddedResource Include="Forms\Finance\frmConnectionConfig.resx">
+      <DependentUpon>frmConnectionConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\FrmThuHocPhi.resx">
+      <DependentUpon>FrmThuHocPhi.cs</DependentUpon>
+    </EmbeddedResource>
+
     <EmbeddedResource Include="Forms\HeThong\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HeThong\frmRegister.resx">
+      <DependentUpon>frmRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

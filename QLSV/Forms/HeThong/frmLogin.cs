@@ -16,7 +16,9 @@ namespace QLSV.Forms.HeThong
     {
         private readonly AuthService _auth = new AuthService();
         //filenho nho ten dang nhap , neu nguoi dung tick vao checkbox "ghi nho"
-        private static readonly string FileNho = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "QLSV_tendangnhap.txt");
+        private static readonly string FileNho = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), 
+            "QLSV_tendangnhap.txt");
         public frmLogin()
         {
             InitializeComponent();
@@ -24,6 +26,7 @@ namespace QLSV.Forms.HeThong
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            
             try
             {
                 if (File.Exists(FileNho))
@@ -68,6 +71,19 @@ namespace QLSV.Forms.HeThong
         private void btnThoat_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lnkDangKy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            using (var f = new frmRegister())
+            {
+                if (f.ShowDialog(this) == DialogResult.OK)
+                {
+                    txtTenDangNhap.Text = f.TenDangNhapMoi;   
+                    txtMatKhau.Clear();
+                    txtMatKhau.Focus();
+                }
+            }
         }
     }
 }
