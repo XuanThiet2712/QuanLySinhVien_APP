@@ -50,18 +50,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\DbFactory.cs" />
+    <Compile Include="DTOs\NguoiDungDTO.cs" />
     <Compile Include="Data\QLSV.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLSV.dbml</DependentUpon>
     </Compile>
     <Compile Include="DTOs\HocPhiDTO.cs" />
+
     <Compile Include="Forms\HeThong\frmKhoa.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\HeThong\frmKhoa.Designer.cs">
       <DependentUpon>frmKhoa.cs</DependentUpon>
     </Compile>
+
     <Compile Include="Forms\Finance\frmConnectionConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +114,7 @@
       <DependentUpon>frmKhoa.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Services\FeeService.cs" />
+    <Compile Include="Services\UserService.cs" />
     <EmbeddedResource Include="Forms\Finance\frmConnectionConfig.resx">
       <DependentUpon>frmConnectionConfig.cs</DependentUpon>
     </EmbeddedResource>

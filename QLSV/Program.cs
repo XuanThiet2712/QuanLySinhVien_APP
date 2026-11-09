@@ -37,7 +37,8 @@ namespace QLSV
 
             while (true)
             {
-                using (var login = new frmKhoa())
+
+                using (var login = new frmLogin())
                 {
                     if (login.ShowDialog() != DialogResult.OK) return;
                 }
