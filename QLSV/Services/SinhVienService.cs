@@ -43,21 +43,9 @@ namespace QLSV.Services
             if (string.IsNullOrWhiteSpace(s.HoTen)) return Result.Fail("Họ tên không được để trống.");
             if (s.GioiTinh != "Nam" && s.GioiTinh != "Nữ") return Result.Fail("Giới tính chỉ nhận Nam hoặc Nữ.");
             if (string.IsNullOrWhiteSpace(s.MaLop)) return Result.Fail("Hãy chọn lớp.");
-            if (!string.IsNullOrWhiteSpace(s.Email) && !s.Email.Contains("@"))
-                return Result.Fail("Email không đúng định dạng.");
-
-            if (!string.IsNullOrWhiteSpace(s.SDT) && s.SDT.Trim().Length < 10)
-                return Result.Fail("Số điện thoại không hợp lệ.");
-            // Kiểm tra nếu chưa chọn ngày sinh (giá trị mặc định)
-            if (s.NgaySinh == DateTime.MinValue)
-                return Result.Fail("Ngày sinh không hợp lệ.");
-
-            // Tính tuổi trực tiếp
-            int tuoi = DateTime.Today.Year - s.NgaySinh.Year;
-            if (s.NgaySinh.Date > DateTime.Today.AddYears(-tuoi)) tuoi--;
-
-            if (tuoi < 16)
-                return Result.Fail("Sinh viên phải từ 16 tuổi trở lên.");
+            if (!ValidationHelpers.EmailHopLe(s.Email)) return Result.Fail("Email không hợp lệ.");
+            if (!ValidationHelpers.SdtHopLe(s.SDT)) return Result.Fail("Số điện thoại không hợp lệ.");
+            if (ValidationHelpers.TinhTuoi(s.NgaySinh) < 16) return Result.Fail("Sinh viên phải từ 16 tuổi trở lên.");
             return Result.Ok();
         }
 
