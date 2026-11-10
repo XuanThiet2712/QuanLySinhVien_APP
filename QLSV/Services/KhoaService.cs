@@ -33,12 +33,11 @@ namespace QLSV.Services
                         string maKhoaUpper = k.MaKhoa.Trim().ToUpper();
 
                         Khoa cu = repo.GetById(maKhoaUpper);
-                        if (cu == null)
-                            return Result.Fail("Không tìm thấy khoa cần sửa.");
-
-                        cu.TenKhoa = k.TenKhoa.Trim();
+                        if (repo.ExistsId(k.MaKhoa.Trim())) return Result.Fail("Mã Khoa đã tồn tại.");
+                        repo.Add(new Khoa { MaKhoa = k.MaKhoa.Trim(), TenKhoa = k.TenKhoa.Trim() });
+                      
                         db.SubmitChanges();
-                        return Result.Ok("Đã cập nhật thông tin khoa thành công.");
+                        return Result.Ok("Đã thêm Khoa thành công.");
                     }
                 }
                 catch (Exception ex) { return Result.Fail("Lỗi CSDL: " + ex.Message); }
@@ -55,10 +54,11 @@ namespace QLSV.Services
                     {
                         var repo = new KhoaRepository(db);
                         Khoa cu = repo.GetById(k.MaKhoa);
-                        if (cu == null) repo.Add(k);
-                        else cu.TenKhoa = k.TenKhoa.Trim();
-                        db.SubmitChanges();
-                        return Result.Ok("Đã lưu khoa thành công.");
+                        if (cu == null)
+                            return Result.Fail("Không tìm thấy Khoa cần cập nhật");
+                        else { cu.MaKhoa = k.MaKhoa.Trim(); cu.TenKhoa = k.TenKhoa; }
+                    db.SubmitChanges();
+                        return Result.Ok("Đã cập nhật khoa thành công.");
                     }
                 }
                 catch (Exception ex) { return Result.Fail("Lỗi CSDL: " + ex.Message); }

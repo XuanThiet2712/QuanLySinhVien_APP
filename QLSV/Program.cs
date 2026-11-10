@@ -16,7 +16,7 @@ namespace QLSV
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        /*static void Main()
+        static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -29,7 +29,7 @@ namespace QLSV
 
             // 2. Chạy trực tiếp frmKhoa làm màn hình chính
             Application.Run(new frmKhoa());
-        }*/
+        }
         //static void Main()
         //{
         //    Application.EnableVisualStyles();
@@ -44,7 +44,7 @@ namespace QLSV
         //    // 2. Chạy trực tiếp frmKhoa làm màn hình chính
         //    Application.Run(new frmKhoa());
         //}
-        static void Main()
+        /*static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -52,7 +52,7 @@ namespace QLSV
             while (true)
             {
 
-                using (var login = new frmLogin())
+                using (var login = new frmNganh())
                 {
                     if (login.ShowDialog() != DialogResult.OK) return;
                 }
@@ -65,6 +65,6 @@ namespace QLSV
 
 
 
-        }
+        }*/
     }
 }
