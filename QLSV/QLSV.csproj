@@ -116,6 +116,8 @@
       <DependentUpon>frmChangePassword.cs</DependentUpon>
 
     </Compile>
+
+
     <Compile Include="DTOs\SinhVienDTO.cs" />
     <Compile Include="Forms\HeThong\frmGiangVien.cs">
       <SubType>Form</SubType>
@@ -123,6 +125,7 @@
     <Compile Include="Forms\HeThong\frmGiangVien.Designer.cs">
       <DependentUpon>frmGiangVien.cs</DependentUpon>
     </Compile>
+
     <Compile Include="Forms\HeThong\frmHocKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,7 +242,10 @@
     <Compile Include="Repositories\SinhVienRepository.cs" />
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\DiemService.cs" />
+
+
     <Compile Include="Services\GiangVienService.cs" />
+
     <Compile Include="Services\HocKyService.cs" />
     <Compile Include="Services\LopHocPhanService.cs" />
     <Compile Include="Services\KhoaService.cs" />
