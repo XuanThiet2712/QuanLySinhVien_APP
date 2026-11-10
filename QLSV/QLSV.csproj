@@ -60,6 +60,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLSV.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HeThong\frmGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmGiangVien.Designer.cs">
+      <DependentUpon>frmGiangVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HeThong\frmHocKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,7 @@
     <Compile Include="Helpers\Result.cs" />
     <Compile Include="Helpers\SessionManager.cs" />
     <Compile Include="Repositories\DiemRepository.cs" />
+    <Compile Include="Repositories\GiangVienRepository.cs" />
     <Compile Include="Repositories\HocKyRepository.cs" />
     <Compile Include="Repositories\KhoaRepository.cs" />
     <Compile Include="Repositories\LopHocPhanRepository.cs" />
@@ -149,6 +156,7 @@
     <Compile Include="Repositories\PhieuThuRepository.cs" />
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\DiemService.cs" />
+    <Compile Include="Services\GiangVienService.cs" />
     <Compile Include="Services\HocKyService.cs" />
     <Compile Include="Services\LopHocPhanService.cs" />
     <Compile Include="Services\KhoaService.cs" />
@@ -160,6 +168,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\HeThong\frmGiangVien.resx">
+      <DependentUpon>frmGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmHocKy.resx">
       <DependentUpon>frmHocKy.cs</DependentUpon>
     </EmbeddedResource>
