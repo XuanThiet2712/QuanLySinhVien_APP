@@ -134,7 +134,7 @@
     </Compile>
     <Compile Include="Forms\HeThong\frmUserManagement.Designer.cs">
       <DependentUpon>frmUserManagement.cs</DependentUpon>
-
+</Compile>
     <Compile Include="Forms\HeThong\frmLopSinhHoat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,20 +190,28 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+  <EmbeddedResource Include="Forms\HeThong\frmRoleManagement.resx">
+    <DependentUpon>frmRoleManagement.cs</DependentUpon>
+  </EmbeddedResource>
+
+  <EmbeddedResource Include="Forms\HeThong\frmUserManagement.resx">
+    <DependentUpon>frmUserManagement.cs</DependentUpon>
+  </EmbeddedResource>
+
     <EmbeddedResource Include="Forms\HeThong\frmChangePassword.resx">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmKhoa.resx">
       <DependentUpon>frmKhoa.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Services\FeeService.cs" />
-    <Compile Include="Services\UserService.cs" />
+
     <EmbeddedResource Include="Forms\Finance\frmConnectionConfig.resx">
       <DependentUpon>frmConnectionConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Finance\FrmThuHocPhi.resx">
       <DependentUpon>FrmThuHocPhi.cs</DependentUpon>
     </EmbeddedResource>
+    
     <EmbeddedResource Include="Forms\HeThong\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,7 +230,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Report\frmNhapDiem .resx">
       <DependentUpon>frmNhapDiem .cs</DependentUpon>
-
+ </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmLopSinhHoat.resx">
       <DependentUpon>frmLopSinhHoat.cs</DependentUpon>
 
