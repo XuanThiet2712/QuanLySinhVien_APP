@@ -174,12 +174,30 @@ namespace QLSV.Forms.HeThong
 
         private void mnuNganh_Click(object sender, EventArgs e)
         {
-
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmNganh) { f.Activate(); return; }
+            }
+            frmNganh frm = new frmNganh();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
+            this.Width = frm.Width + 100;
+            frm.Show();
         }
 
         private void mnuLopSinhHoat_Click(object sender, EventArgs e)
         {
-
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmLopSinhHoat) { f.Activate(); return; }
+            }
+            frmLopSinhHoat frm = new frmLopSinhHoat();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
+            this.Width = frm.Width + 100;
+            frm.Show();
         }
 
         private void mnuSinhVien_Click(object sender, EventArgs e)
