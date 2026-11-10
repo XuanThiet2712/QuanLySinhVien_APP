@@ -91,6 +91,7 @@
     <Compile Include="Data\QLSV.cs">
       <DependentUpon>QLSV.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DTOs\ImportReport.cs" />
     <Compile Include="DTOs\NguoiDungDTO.cs" />
     <Compile Include="DTOs\HocPhiDTO.cs" />
     <Compile Include="Data\QLSV.designer.cs">
@@ -159,6 +160,12 @@
     <Compile Include="Forms\HeThong\frmLopSinhHoat.Designer.cs">
       <DependentUpon>frmLopSinhHoat.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HeThong\frmSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmSinhVien.Designer.cs">
+      <DependentUpon>frmSinhVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Report\frmLopHocPhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +213,7 @@
     <Compile Include="Services\LopSinhHoatService.cs" />
     <Compile Include="Services\NganhService.cs" />
     <Compile Include="Services\SinhVienService.cs" />
+    <Compile Include="Services\SinhVienService.Excel.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -242,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmLopSinhHoat.resx">
       <DependentUpon>frmLopSinhHoat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HeThong\frmSinhVien.resx">
+      <DependentUpon>frmSinhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
