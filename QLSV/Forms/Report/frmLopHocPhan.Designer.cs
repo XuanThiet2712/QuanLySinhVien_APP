@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             this.txtMaLHP = new System.Windows.Forms.TextBox();
             this.txtPhong = new System.Windows.Forms.TextBox();
             this.cboHocKy = new System.Windows.Forms.ComboBox();
@@ -290,6 +291,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLopHocPhan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
+            this.SuspendLayout();
+            // 
+            // frmLopHocPhan
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "frmLopHocPhan";
+            this.Text = "frmLopHocPhan";
+            this.Load += new System.EventHandler(this.frmLopHocPhan_Load);
+            this.ResumeLayout(false);
+
 
         }
 

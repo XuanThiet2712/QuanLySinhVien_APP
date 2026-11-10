@@ -1,16 +1,22 @@
-﻿using System;
+﻿using QLSV.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace QLSV.Repositories
 {
     public class DiemRepository
     {
         private readonly QLSVDataContext _db;
-        public DiemRepository(QlSVDataContext db)
+        public DiemRepository(QLSVDataContext db)
+        {
             _db = db;
+        }
+         
+        
             public List<string> GetMonDaDat(string maSV)
         {
             var ds = from dk in _db.DangKyHocPhans

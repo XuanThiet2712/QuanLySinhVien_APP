@@ -22,6 +22,7 @@ namespace QLSV.Forms.Report
 
         }
 
+
         private void btnThem_Click(object sender, EventArgs e)
         {
 
@@ -41,5 +42,6 @@ namespace QLSV.Forms.Report
         {
 
         }
+
     }
 }
