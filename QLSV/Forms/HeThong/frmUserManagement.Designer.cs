@@ -198,6 +198,7 @@
             this.Controls.Add(this.txtTim);
             this.Name = "frmUserManagement";
             this.Text = "Quản lý người dùng";
+            this.Load += new System.EventHandler(this.frmUserManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
