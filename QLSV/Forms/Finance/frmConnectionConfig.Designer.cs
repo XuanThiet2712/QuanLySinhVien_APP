@@ -168,8 +168,10 @@
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.txtDatabase);
             this.Controls.Add(this.txtServer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmConnectionConfig";
             this.Text = "frmConnectionConfig";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmConnectionConfig_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
