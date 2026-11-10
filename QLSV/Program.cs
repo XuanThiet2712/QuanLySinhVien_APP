@@ -33,6 +33,7 @@ namespace QLSV
                  var main = new frmMain();
                  Application.Run(main);
 
+
                  if (!main.DangXuat) return;
              }
         }

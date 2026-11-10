@@ -88,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\DbFactory.cs" />
+    <Compile Include="DTOs\LopDangKyDTO.cs" />
     <Compile Include="Data\QLSV.cs">
       <DependentUpon>QLSV.dbml</DependentUpon>
     </Compile>
@@ -98,6 +99,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLSV.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Enroll\frmDangKyHocPhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Enroll\frmDangKyHocPhan.Designer.cs">
+      <DependentUpon>frmDangKyHocPhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="DTOs\SinhVienDTO.cs" />
     <Compile Include="Forms\HeThong\frmGiangVien.cs">
@@ -154,6 +167,18 @@
     <Compile Include="Forms\HeThong\frmRegister.Designer.cs">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HeThong\frmRoleManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmRoleManagement.Designer.cs">
+      <DependentUpon>frmRoleManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmUserManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmUserManagement.Designer.cs">
+      <DependentUpon>frmUserManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HeThong\frmLopSinhHoat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +216,7 @@
     <Compile Include="Helpers\Result.cs" />
     <Compile Include="Helpers\SessionManager.cs" />
     <Compile Include="Helpers\ValidationHelpers.cs" />
+    <Compile Include="Repositories\DangKyRepository.cs" />
     <Compile Include="Repositories\DiemRepository.cs" />
     <Compile Include="Repositories\GiangVienRepository.cs" />
     <Compile Include="Repositories\HocKyRepository.cs" />
@@ -225,11 +251,18 @@
     <EmbeddedResource Include="Forms\HeThong\frmHocKy.resx">
       <DependentUpon>frmHocKy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HeThong\frmRoleManagement.resx">
+      <DependentUpon>frmRoleManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HeThong\frmUserManagement.resx">
+      <DependentUpon>frmUserManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HeThong\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmKhoa.resx">
       <DependentUpon>frmKhoa.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Services\FeeService.cs" />
-    <Compile Include="Services\UserService.cs" />
     <EmbeddedResource Include="Forms\Finance\frmConnectionConfig.resx">
       <DependentUpon>frmConnectionConfig.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +280,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Report\frmLopHocPhan.resx">
+      <DependentUpon>frmLopHocPhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Report\frmNhapDiem .resx">
+      <DependentUpon>frmNhapDiem .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmLopSinhHoat.resx">
       <DependentUpon>frmLopSinhHoat.cs</DependentUpon>
