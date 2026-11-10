@@ -1,4 +1,7 @@
 ﻿using QLSV.Data;
+using QLSV.DTOs;
+using QLSV.Helpers;
+using QLSV.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +10,9 @@ using System.Threading.Tasks;
 
 namespace QLSV.Services
 {
-    internal class LopHocPhanService
+    public class LopHocPhanService
     {
+        //ktra trungtiet
         private bool TrungTiet(LopHocPhan a, LopHocPhan b)
         {
             if (a.Thu != b.Thu)
@@ -21,5 +25,6 @@ namespace QLSV.Services
 
             return aBatDau <= bKetThuc && bBatDau <= aKetThuc;
         }
+        public List<LopHocPhanDTO>
     }
 }

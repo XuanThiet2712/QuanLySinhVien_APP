@@ -16,9 +16,9 @@ namespace QLSV.DTOs
         public string MaHK { get; set; }
         public int SiSo { get; set; }
         public int SiSoToiDa { get; set; }
-        public int Thu { get; set; } 
+        public int Thu { get; set; }
         public int TietBatDau { get; set; }
-        public int SoTiet { get ; set; }
-        public string Phong {  get; set; }
-    }
+        public int SoTiet { get; set; }
+        public string Phong { get; set; }
+    } 
 }
