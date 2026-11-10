@@ -19,7 +19,7 @@ namespace QLSV
 
         static void Main()
         {
-            /* Application.EnableVisualStyles();
+             Application.EnableVisualStyles();
              Application.SetCompatibleTextRenderingDefault(false);
 
              while (true)
@@ -34,15 +34,7 @@ namespace QLSV
                  Application.Run(main);
 
                  if (!main.DangXuat) return;
-             }*/
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
-            
-
-            // 2. Chạy trực tiếp Form Sinh Viên
-            Application.Run(new frmSinhVien());
-
+             }
         }
     }
 }
