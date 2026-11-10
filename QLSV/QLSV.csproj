@@ -155,6 +155,12 @@
     <Compile Include="Forms\HeThong\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HeThong\frmMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmMonHoc.Designer.cs">
+      <DependentUpon>frmMonHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HeThong\frmNganh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,7 @@
     <Compile Include="Repositories\KhoaRepository.cs" />
     <Compile Include="Repositories\LopHocPhanRepository.cs" />
     <Compile Include="Repositories\LopSinhHoatRepository.cs" />
+    <Compile Include="Repositories\MonHocRepository.cs" />
     <Compile Include="Repositories\NganhRepository.cs" />
     <Compile Include="Repositories\NguoiDungRepository.cs" />
     <Compile Include="Repositories\NhatKyDiemRepository.cs" />
@@ -237,6 +244,7 @@
     <Compile Include="Services\KhoaService.cs" />
     <Compile Include="Services\FeeService.cs" />
     <Compile Include="Services\LopSinhHoatService.cs" />
+    <Compile Include="Services\MonHocService.cs" />
     <Compile Include="Services\NganhService.cs" />
     <Compile Include="Services\SinhVienService.cs" />
     <Compile Include="Services\SinhVienService.Excel.cs" />
@@ -250,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmHocKy.resx">
       <DependentUpon>frmHocKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HeThong\frmMonHoc.resx">
+      <DependentUpon>frmMonHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmRoleManagement.resx">
       <DependentUpon>frmRoleManagement.cs</DependentUpon>
