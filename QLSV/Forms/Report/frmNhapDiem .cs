@@ -16,5 +16,10 @@ namespace QLSV.Forms.Report
         {
             InitializeComponent();
         }
+
+        private void frmNhapDiem_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
