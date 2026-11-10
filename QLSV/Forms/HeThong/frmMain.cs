@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 //using QLSV.Forms.Catalog;     // frmKhoa, frmNganh... (B)
 //using QLSV.Forms.Grade;       // frmLopHocPhan, frmNhapDiem (C)
-//using QLSV.Forms.Enroll;      // frmDangKyHocPhan (A)
+using QLSV.Forms.Enroll;      // frmDangKyHocPhan (A)
 using QLSV.Forms.Finance;
 using QLSV.Forms.Report;     // frmThuHocPhi, frmChartDashboard, frmConnectionConfig (D)
-//using QLSV.Forms.Report;      // frmReportBangDiem, frmReportThongKe
+using QLSV.Forms.Report;      // frmReportBangDiem, frmReportThongKe
 
 namespace QLSV.Forms.HeThong
 {
