@@ -1,19 +1,17 @@
-﻿using QLSV.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Transactions;
+using QLSV.Data;
 using QLSV.DTOs;
 using QLSV.Helpers;
 using QLSV.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Transactions;
 
 namespace QLSV.Services
 {
-    internal class FeeService
+    public class FeeService
     {
-        //Tính toán học phí và công nợ của sinh viên trong một học kỳ
+        // toán học phí và công nợ của sinh viên trong một học kỳ
         public Result<HocPhiDTO> TinhHocPhi(string maSV, string maHK)
         {
             if (string.IsNullOrWhiteSpace(maSV) || string.IsNullOrWhiteSpace(maHK))
@@ -27,22 +25,23 @@ namespace QLSV.Services
 
         internal Result<HocPhiDTO> TinhHocPhiInternal(QLSVDataContext db, string maSV, string maHK)
         {
-            var sv = db.SinhViens.FirstOrDefault(s => s.MaSV == maSV);
+            maSV = maSV.Trim();
+            maHK = maHK.Trim();
+            var sv = db.SinhViens.FirstOrDefault(s => s.MaSV.Trim() == maSV);
             if (sv == null) return Result<HocPhiDTO>.Fail("Không tìm thấy sinh viên.");
 
-            var hk = db.HocKies.FirstOrDefault(h => h.MaHK == maHK);
+            var hk = db.HocKies.FirstOrDefault(h => h.MaHK.Trim() == maHK);
             if (hk == null) return Result<HocPhiDTO>.Fail("Không tìm thấy học kỳ.");
 
             var dsMon = (from dk in db.DangKyHocPhans
                          join lhp in db.LopHocPhans on dk.MaLHP equals lhp.MaLHP
                          join mh in db.MonHocs on lhp.MaMon equals mh.MaMon
-                         where dk.MaSV == maSV && lhp.MaHK == maHK
+                         where dk.MaSV.Trim() == maSV && lhp.MaHK.Trim() == maHK
                          select mh).ToList();
 
             short tongTC = (short)dsMon.Sum(m => m.SoTinChi);
             decimal tongTien = tongTC * hk.DonGiaTinChi;
 
-            // Tạm thời để giảm giá = 0,
             decimal giamGia = 0m;
             decimal phaiThu = tongTien - giamGia;
 
@@ -86,8 +85,8 @@ namespace QLSV.Services
 
                     var pt = new PhieuThu
                     {
-                        MaSV = maSV,
-                        MaHK = maHK,
+                        MaSV = maSV.Trim(),
+                        MaHK = maHK.Trim(),
                         TongTinChi = hocPhi.TongTinChi,
                         TongTien = hocPhi.TongTien,
                         GiamGia = hocPhi.GiamGia,
@@ -103,7 +102,7 @@ namespace QLSV.Services
                     repoPT.Add(pt);
                     db.SubmitChanges();
 
-                    scope.Complete(); // Thành công thì lưu giao dịch
+                    scope.Complete();
                     return Result<int>.Ok(pt.MaPhieu, "Lập phiếu thu thành công.");
                 }
             }

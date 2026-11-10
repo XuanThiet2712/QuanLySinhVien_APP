@@ -32,7 +32,7 @@ namespace QLSV.Repositories
         public decimal GetTongDaThu(string maSV, string maHK)
         {
             return _db.PhieuThus
-                       .Where(p => p.MaSV == maSV && p.MaHK == maHK && !p.DaHuy)
+                       .Where(p => p.MaSV.Trim() == maSV.Trim() && p.MaHK.Trim() == maHK.Trim() && !p.DaHuy)
                        .Sum(p => (decimal?)p.DaThu) ?? 0m;
         }
 
