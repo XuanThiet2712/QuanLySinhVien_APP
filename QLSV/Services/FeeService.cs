@@ -13,7 +13,7 @@ namespace QLSV.Services
 {
     internal class FeeService
     {
-        // <summary>Tính toán học phí và công nợ của sinh viên trong một học kỳ</summary>
+        //Tính toán học phí và công nợ của sinh viên trong một học kỳ
         public Result<HocPhiDTO> TinhHocPhi(string maSV, string maHK)
         {
             if (string.IsNullOrWhiteSpace(maSV) || string.IsNullOrWhiteSpace(maHK))
@@ -65,7 +65,7 @@ namespace QLSV.Services
             return Result<HocPhiDTO>.Ok(dto);
         }
 
-        /// <summary>Lập phiếu thu tiền học phí</summary>
+        //Lập phiếu thu tiền học phí
         public Result<int> LapPhieuThu(string maSV, string maHK, decimal soTien, string ghiChu, int maNguoiLap)
         {
             if (soTien <= 0)
@@ -113,7 +113,7 @@ namespace QLSV.Services
             }
         }
 
-        /// <summary>Hủy phiếu thu trong cùng ngày</summary>
+        //Hủy phiếu thu trong cùng ngày
         public Result HuyPhieu(int maPhieu)
         {
             try

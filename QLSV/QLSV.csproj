@@ -88,15 +88,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\DbFactory.cs" />
+
+    <Compile Include="DTOs\LopDangKyDTO.cs" />
+
     <Compile Include="Data\QLSV.cs">
       <DependentUpon>QLSV.dbml</DependentUpon>
     </Compile>
+
     <Compile Include="DTOs\NguoiDungDTO.cs" />
     <Compile Include="DTOs\HocPhiDTO.cs" />
     <Compile Include="Data\QLSV.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLSV.dbml</DependentUpon>
+
+    </Compile>
+    <Compile Include="Forms\Enroll\frmDangKyHocPhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Enroll\frmDangKyHocPhan.Designer.cs">
+      <DependentUpon>frmDangKyHocPhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+
     </Compile>
     <Compile Include="DTOs\SinhVienDTO.cs" />
     <Compile Include="Forms\HeThong\frmGiangVien.cs">
@@ -140,12 +158,14 @@
     </Compile>
     <Compile Include="Forms\HeThong\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Forms\HeThong\frmNganh.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\HeThong\frmNganh.Designer.cs">
       <DependentUpon>frmNganh.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Forms\HeThong\frmRegister.cs">
       <SubType>Form</SubType>
@@ -153,11 +173,25 @@
     <Compile Include="Forms\HeThong\frmRegister.Designer.cs">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="Forms\HeThong\frmRoleManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmRoleManagement.Designer.cs">
+      <DependentUpon>frmRoleManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmUserManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmUserManagement.Designer.cs">
+      <DependentUpon>frmUserManagement.cs</DependentUpon>
+</Compile>
     <Compile Include="Forms\HeThong\frmLopSinhHoat.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\HeThong\frmLopSinhHoat.Designer.cs">
       <DependentUpon>frmLopSinhHoat.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Forms\Report\frmLopHocPhan.cs">
       <SubType>Form</SubType>
@@ -183,10 +217,17 @@
     <Compile Include="Helpers\PasswordHasher.cs" />
     <Compile Include="Helpers\Result.cs" />
     <Compile Include="Helpers\SessionManager.cs" />
+
     <Compile Include="Helpers\ValidationHelpers.cs" />
     <Compile Include="Repositories\DiemRepository.cs" />
     <Compile Include="Repositories\GiangVienRepository.cs" />
     <Compile Include="Repositories\HocKyRepository.cs" />
+
+
+    <Compile Include="Repositories\DangKyRepository.cs" />
+
+    <Compile Include="Repositories\DiemRepository.cs" />
+
     <Compile Include="Repositories\KhoaRepository.cs" />
     <Compile Include="Repositories\LopHocPhanRepository.cs" />
     <Compile Include="Repositories\LopSinhHoatRepository.cs" />
@@ -211,23 +252,36 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+
     <EmbeddedResource Include="Forms\HeThong\frmGiangVien.resx">
       <DependentUpon>frmGiangVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmHocKy.resx">
       <DependentUpon>frmHocKy.cs</DependentUpon>
+
+  <EmbeddedResource Include="Forms\HeThong\frmRoleManagement.resx">
+    <DependentUpon>frmRoleManagement.cs</DependentUpon>
+  </EmbeddedResource>
+
+  <EmbeddedResource Include="Forms\HeThong\frmUserManagement.resx">
+    <DependentUpon>frmUserManagement.cs</DependentUpon>
+  </EmbeddedResource>
+
+    <EmbeddedResource Include="Forms\HeThong\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmKhoa.resx">
       <DependentUpon>frmKhoa.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Services\FeeService.cs" />
-    <Compile Include="Services\UserService.cs" />
+
     <EmbeddedResource Include="Forms\Finance\frmConnectionConfig.resx">
       <DependentUpon>frmConnectionConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Finance\FrmThuHocPhi.resx">
       <DependentUpon>FrmThuHocPhi.cs</DependentUpon>
     </EmbeddedResource>
+    
     <EmbeddedResource Include="Forms\HeThong\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,8 +294,16 @@
     <EmbeddedResource Include="Forms\HeThong\frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </EmbeddedResource>
+
+    <EmbeddedResource Include="Forms\Report\frmLopHocPhan.resx">
+      <DependentUpon>frmLopHocPhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Report\frmNhapDiem .resx">
+      <DependentUpon>frmNhapDiem .cs</DependentUpon>
+ </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmLopSinhHoat.resx">
       <DependentUpon>frmLopSinhHoat.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
