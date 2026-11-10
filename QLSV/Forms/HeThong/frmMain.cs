@@ -66,17 +66,17 @@ namespace QLSV.Forms.HeThong
 
             //Ẩn cả nhóm nếu không còn mục con nào hiện
 
-           mnuDanhMuc.Visible = mnuKhoa.Visible || mnuNganh.Visible
-               || mnuLopSinhHoat.Visible || mnuSinhVien.Visible
-               || mnuGiangVien.Visible || mnuMonHoc.Visible;
+           //mnuDanhMuc.Visible = mnuKhoa.Visible || mnuNganh.Visible
+           //    || mnuLopSinhHoat.Visible || mnuSinhVien.Visible
+           //    || mnuGiangVien.Visible || mnuMonHoc.Visible;
 
-            mnuHocVu.Visible = mnuLopHocPhan.Visible || mnuDangKyHocPhan.Visible
-                || mnuNhapDiem.Visible;
+           // mnuHocVu.Visible = mnuLopHocPhan.Visible || mnuDangKyHocPhan.Visible
+           //     || mnuNhapDiem.Visible;
 
-            mnuTaiChinh.Visible = mnuThuHocPhi.Visible;
+           // mnuTaiChinh.Visible = mnuThuHocPhi.Visible;
 
-            mnuBaoCao.Visible = mnuBangDiem.Visible || mnuBieuDo.Visible
-                || mnuBaoCaoDoanhThu.Visible;
+           // mnuBaoCao.Visible = mnuBangDiem.Visible || mnuBieuDo.Visible
+           //     || mnuBaoCaoDoanhThu.Visible;
         }
         private void mnuDangXuat_Click(object sender, EventArgs e)
         {
@@ -148,17 +148,44 @@ namespace QLSV.Forms.HeThong
 
         private void mnuKhoa_Click(object sender, EventArgs e)
         {
-
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmKhoa) { f.Activate(); return; }
+            }
+            frmKhoa frm = new frmKhoa();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
+            this.Width = frm.Width + 100;
+            frm.Show();
         }
 
         private void mnuNganh_Click(object sender, EventArgs e)
         {
-
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmNganh) { f.Activate(); return; }
+            }
+            frmNganh frm = new frmNganh();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
+            this.Width = frm.Width + 100;
+            frm.Show();
         }
 
         private void mnuLopSinhHoat_Click(object sender, EventArgs e)
         {
-
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmLopSinhHoat) { f.Activate(); return; }
+            }
+            frmLopSinhHoat frm = new frmLopSinhHoat();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
+            this.Width = frm.Width + 100;
+            frm.Show();
         }
 
         private void mnuSinhVien_Click(object sender, EventArgs e)
