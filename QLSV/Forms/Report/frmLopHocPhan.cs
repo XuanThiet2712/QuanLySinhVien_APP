@@ -16,5 +16,10 @@ namespace QLSV.Forms.Report
         {
             InitializeComponent();
         }
+
+        private void frmLopHocPhan_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
