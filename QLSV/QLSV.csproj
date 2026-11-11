@@ -189,9 +189,7 @@
     </Compile>
     <Compile Include="Forms\HeThong\frmUserManagement.Designer.cs">
       <DependentUpon>frmUserManagement.cs</DependentUpon>
- </Compile>
-
-
+    </Compile>
     <Compile Include="Forms\HeThong\frmLopSinhHoat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,15 +292,9 @@
     <EmbeddedResource Include="Forms\Report\frmLopHocPhan.resx">
       <DependentUpon>frmLopHocPhan.cs</DependentUpon>
     </EmbeddedResource>
-
-    <EmbeddedResource Include="Forms\Report\frmNhapDiem .resx">
-      <DependentUpon>frmNhapDiem .cs</DependentUpon>
-  </EmbeddedResource>
-
     <EmbeddedResource Include="Forms\Report\frmNhapDiem.resx">
       <DependentUpon>frmNhapDiem.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Forms\HeThong\frmLopSinhHoat.resx">
       <DependentUpon>frmLopSinhHoat.cs</DependentUpon>
     </EmbeddedResource>
