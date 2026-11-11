@@ -116,6 +116,5 @@ namespace QLSV.Repositories
         {
             _db.DangKyHocPhans.DeleteOnSubmit(dk);
         }
-
     }
-}
+    }

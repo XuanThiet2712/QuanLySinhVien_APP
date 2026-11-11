@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace QLSV.Services
 {
@@ -30,7 +31,7 @@ namespace QLSV.Services
 
         public List<LopDangKyDTO> GetDaDangKy(string maSV, string maHK)
         {
-            if (string.IsNullOrWhiteSpace(maSV)) 
+            if (string.IsNullOrWhiteSpace(maSV))
                 return new List<LopDangKyDTO>();
             using (var db = DbFactory.Create())
             {
@@ -171,6 +172,6 @@ namespace QLSV.Services
                 return Result.Fail("Lỗi CSDL: " + ex.Message);
             }
         }
-    
+
     }
 }
