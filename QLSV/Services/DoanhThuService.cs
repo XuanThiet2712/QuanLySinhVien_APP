@@ -47,7 +47,7 @@ namespace QLSV.Services
                 return Result<List<DoanhThuDTO>>.Fail("Lỗi thống kê doanh thu: " + ex.Message);
             }
         }
-        // 2. Dùng cho Biểu đồ Đường
+        // Biểu đồ Đường
         public List<DoanhThuDTO> DoanhThu12Thang(int nam)
         {
             using (var db = DbFactory.Create())
@@ -73,7 +73,7 @@ namespace QLSV.Services
             }
         }
 
-        // 3. Biểu đồ cột số sinh viên
+        // Biểu đồ cột số sinh viên
         public List<ThongKeDTO> SoSinhVienTheoKhoa()
         {
             using (var db = DbFactory.Create())
@@ -95,6 +95,40 @@ namespace QLSV.Services
                     Nhan = x.MaKhoa != null ? x.MaKhoa.Trim() : "Chưa xếp khoa",
                     GiaTri = x.SoLuong
                 }).ToList();
+            }
+        }
+        // biểu đồ tròn
+        public List<ThongKeDTO> TyLeXepLoaiHocLuc(string maHK)
+        {
+            return new List<ThongKeDTO>
+            {
+                new ThongKeDTO { Nhan = "Giỏi", GiaTri = 120 },
+                new ThongKeDTO { Nhan = "Khá", GiaTri = 350 },
+                new ThongKeDTO { Nhan = "Trung bình", GiaTri = 150 },
+                new ThongKeDTO { Nhan = "Yếu", GiaTri = 20 }
+            };
+        }
+
+        // top5
+        public List<ThongKeDTO> Top5MonDongNhat(string maHK)
+        {
+            using (var db = DbFactory.Create())
+            {
+                var query = (from dk in db.DangKyHocPhans
+                             join lhp in db.LopHocPhans on dk.MaLHP equals lhp.MaLHP
+                             join mh in db.MonHocs on lhp.MaMon equals mh.MaMon
+                             where lhp.MaHK.Trim() == maHK.Trim()
+                             group dk by mh.TenMon into g
+                             select new ThongKeDTO
+                             {
+                                 Nhan = g.Key,
+                                 GiaTri = g.Count()
+                             })
+                             .OrderByDescending(x => x.GiaTri)
+                             .Take(5)
+                             .ToList();
+
+                return query;
             }
         }
     }

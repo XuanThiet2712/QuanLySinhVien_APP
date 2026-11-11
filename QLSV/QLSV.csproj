@@ -110,6 +110,12 @@
     <Compile Include="Forms\Enroll\frmDangKyHocPhan.Designer.cs">
       <DependentUpon>frmDangKyHocPhan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Finance\frmBieuDo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\frmBieuDo.Designer.cs">
+      <DependentUpon>frmBieuDo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Finance\frmThongKeDoanhThu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +287,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\Finance\frmBieuDo.resx">
+      <DependentUpon>frmBieuDo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Finance\frmThongKeDoanhThu.resx">
       <DependentUpon>frmThongKeDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
