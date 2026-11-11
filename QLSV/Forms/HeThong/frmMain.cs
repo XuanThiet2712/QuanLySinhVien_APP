@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//using QLSV.Forms.Catalog;     // frmKhoa, frmNganh... (B)
+using QLSV.Forms.Catalog;     // frmKhoa, frmNganh... (B)
 //using QLSV.Forms.Grade;       // frmLopHocPhan, frmNhapDiem (C)
 using QLSV.Forms.Enroll;      // frmDangKyHocPhan (A)
 using QLSV.Forms.Finance;
@@ -319,6 +319,25 @@ namespace QLSV.Forms.HeThong
                 if (f is frmThongKeDoanhThu) { f.Activate(); return; }
             }
             frmThongKeDoanhThu frm = new frmThongKeDoanhThu();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
+            this.Width = frm.Width + 100;
+            frm.Show();
+        }
+
+        private void mnuBaoCaoDoanhThu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuHocKy_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmHocKy) { f.Activate(); return; }
+            }
+            frmHocKy frm = new frmHocKy();
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
             this.Height = frm.Height + 100;

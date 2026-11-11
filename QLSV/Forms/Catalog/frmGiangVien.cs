@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLSV.Forms.HeThong
+namespace QLSV.Forms.Catalog
 {
     public partial class frmGiangVien : Form
     {
@@ -155,6 +155,11 @@ namespace QLSV.Forms.HeThong
         {
             MessageBox.Show(r.Message, "Thông báo", MessageBoxButtons.OK,
                 r.Success ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
+        }
+
+        private void frmGiangVien_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

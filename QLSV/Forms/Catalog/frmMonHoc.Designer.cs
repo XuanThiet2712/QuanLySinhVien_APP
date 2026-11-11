@@ -1,4 +1,4 @@
-﻿namespace QLSV.Forms.HeThong
+﻿namespace QLSV.Forms.Catalog
 {
     partial class frmMonHoc
     {
@@ -218,6 +218,7 @@
             this.Controls.Add(this.dgvMonHoc);
             this.Name = "frmMonHoc";
             this.Text = "frmMonHoc";
+            this.Load += new System.EventHandler(this.frmMonHoc_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonHoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTinChi)).EndInit();
             this.ResumeLayout(false);
