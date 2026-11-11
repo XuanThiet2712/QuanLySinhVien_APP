@@ -207,21 +207,21 @@
             // mnuLopHocPhan
             // 
             this.mnuLopHocPhan.Name = "mnuLopHocPhan";
-            this.mnuLopHocPhan.Size = new System.Drawing.Size(224, 26);
+            this.mnuLopHocPhan.Size = new System.Drawing.Size(211, 26);
             this.mnuLopHocPhan.Text = "Lớp học phần";
             this.mnuLopHocPhan.Click += new System.EventHandler(this.mnuLopHocPhan_Click);
             // 
             // mnuDangKyHocPhan
             // 
             this.mnuDangKyHocPhan.Name = "mnuDangKyHocPhan";
-            this.mnuDangKyHocPhan.Size = new System.Drawing.Size(224, 26);
+            this.mnuDangKyHocPhan.Size = new System.Drawing.Size(211, 26);
             this.mnuDangKyHocPhan.Text = "Đăng ký học phần";
             this.mnuDangKyHocPhan.Click += new System.EventHandler(this.mnuDangKyHocPhan_Click);
             // 
             // mnuNhapDiem
             // 
             this.mnuNhapDiem.Name = "mnuNhapDiem";
-            this.mnuNhapDiem.Size = new System.Drawing.Size(224, 26);
+            this.mnuNhapDiem.Size = new System.Drawing.Size(211, 26);
             this.mnuNhapDiem.Text = "Nhập điểm";
             this.mnuNhapDiem.Click += new System.EventHandler(this.mnuNhapDiem_Click);
             // 
@@ -262,6 +262,7 @@
             this.mnuBieuDo.Name = "mnuBieuDo";
             this.mnuBieuDo.Size = new System.Drawing.Size(224, 26);
             this.mnuBieuDo.Text = "Biểu đồ thống kê";
+            this.mnuBieuDo.Click += new System.EventHandler(this.mnuBieuDo_Click);
             // 
             // mnuBaoCaoDoanhThu
             // 

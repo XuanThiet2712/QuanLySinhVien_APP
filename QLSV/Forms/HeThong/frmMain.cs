@@ -311,5 +311,19 @@ namespace QLSV.Forms.HeThong
             this.Width = frm.Width + 100;
             frm.Show();
         }
+
+        private void mnuBieuDo_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmThongKeDoanhThu) { f.Activate(); return; }
+            }
+            frmThongKeDoanhThu frm = new frmThongKeDoanhThu();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
+            this.Width = frm.Width + 100;
+            frm.Show();
+        }
     }
 }
