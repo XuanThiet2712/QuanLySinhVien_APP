@@ -75,6 +75,7 @@
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -93,7 +94,9 @@
       <DependentUpon>QLSV.dbml</DependentUpon>
     </Compile>
     <Compile Include="DTOs\ImportReport.cs" />
+
     <Compile Include="DTOs\LopHocPhanDTO.cs" />
+
     <Compile Include="DTOs\NguoiDungDTO.cs" />
     <Compile Include="DTOs\HocPhiDTO.cs" />
     <Compile Include="Data\QLSV.designer.cs">
@@ -101,11 +104,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLSV.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DTOs\ThongKeDoanhThuDTO.cs" />
     <Compile Include="Forms\Enroll\frmDangKyHocPhan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Enroll\frmDangKyHocPhan.Designer.cs">
       <DependentUpon>frmDangKyHocPhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\frmThongKeDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\frmThongKeDoanhThu.Designer.cs">
+      <DependentUpon>frmThongKeDoanhThu.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HeThong\frmChangePassword.cs">
       <SubType>Form</SubType>
@@ -239,6 +249,9 @@
     <Compile Include="Repositories\DiemRepository.cs" />
     <Compile Include="Repositories\GiangVienRepository.cs" />
     <Compile Include="Repositories\HocKyRepository.cs" />
+
+    <Compile Include="Repositories\DangKyRepository.cs" />
+
     <Compile Include="Repositories\DiemRepository.cs" />
     <Compile Include="Repositories\KhoaRepository.cs" />
     <Compile Include="Repositories\LopHocPhanRepository.cs" />
@@ -265,11 +278,15 @@
     <Compile Include="Services\RoleService.cs" />
     <Compile Include="Services\SinhVienService.cs" />
     <Compile Include="Services\SinhVienService.Excel.cs" />
+    <Compile Include="Services\ThongKeService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\Finance\frmThongKeDoanhThu.resx">
+      <DependentUpon>frmThongKeDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmGiangVien.resx">
       <DependentUpon>frmGiangVien.cs</DependentUpon>
     </EmbeddedResource>
