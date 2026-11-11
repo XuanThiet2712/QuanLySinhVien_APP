@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QLSV.DTOs
 {
-    internal class ThongKeDoanhThuDTO
+    internal class DoanhThuDTO
     {
         public string TieuDe { get; set; }
         public int SoGiaoDich { get; set; } 

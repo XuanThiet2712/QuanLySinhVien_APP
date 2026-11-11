@@ -11,7 +11,7 @@ namespace QLSV.Services
 {
     public class FeeService
     {
-        // toán học phí và công nợ của sinh viên trong một học kỳ
+        // tính học phí và công nợ của sinh viên trong một học kỳ
         public Result<HocPhiDTO> TinhHocPhi(string maSV, string maHK)
         {
             if (string.IsNullOrWhiteSpace(maSV) || string.IsNullOrWhiteSpace(maHK))

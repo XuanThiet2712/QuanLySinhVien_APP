@@ -94,9 +94,7 @@
       <DependentUpon>QLSV.dbml</DependentUpon>
     </Compile>
     <Compile Include="DTOs\ImportReport.cs" />
-
     <Compile Include="DTOs\LopHocPhanDTO.cs" />
-
     <Compile Include="DTOs\NguoiDungDTO.cs" />
     <Compile Include="DTOs\HocPhiDTO.cs" />
     <Compile Include="Data\QLSV.designer.cs">
@@ -104,7 +102,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLSV.dbml</DependentUpon>
     </Compile>
-    <Compile Include="DTOs\ThongKeDoanhThuDTO.cs" />
+    <Compile Include="DTOs\DoanhThuDTO.cs" />
+    <Compile Include="DTOs\ThongKeDTO.cs" />
     <Compile Include="Forms\Enroll\frmDangKyHocPhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,9 +248,7 @@
     <Compile Include="Repositories\DiemRepository.cs" />
     <Compile Include="Repositories\GiangVienRepository.cs" />
     <Compile Include="Repositories\HocKyRepository.cs" />
-
     <Compile Include="Repositories\DangKyRepository.cs" />
-
     <Compile Include="Repositories\DiemRepository.cs" />
     <Compile Include="Repositories\KhoaRepository.cs" />
     <Compile Include="Repositories\LopHocPhanRepository.cs" />
@@ -278,7 +275,7 @@
     <Compile Include="Services\RoleService.cs" />
     <Compile Include="Services\SinhVienService.cs" />
     <Compile Include="Services\SinhVienService.Excel.cs" />
-    <Compile Include="Services\ThongKeService.cs" />
+    <Compile Include="Services\DoanhThuService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
