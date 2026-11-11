@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using QLSV.Data;
+using QLSV.DTOs;
+using QLSV.Helpers;
+using QLSV.Repositories;
 
 namespace QLSV.Services
 {
-    internal class DiemService
+    public class DiemService
     {
         public double TinhDiemTongKet(double cc, double gk, double ck)
         {
@@ -34,5 +38,47 @@ namespace QLSV.Services
             if (tk >= 4.0) return 1.0;
             return 0;
         }
+        //ds lop co quyen nhap diem, gv chi thay lop minh
+        public List<LopHocPhanDTO> GetLopDuocNhapDiem()
+        {
+            if (!SessionManager.HasPermission(MaChucNang.NHAP_DIEM))
+                return new List<LopHocPhanDTO>();
+            using (var db = DbFactory.Create())
+            {
+                var repo = new LopHocPhanRepository(db);
+                if (SessionManager.IsInRole(MaNhom.GV))
+                {
+                    string MaGV = SessionManager.CurrentUser.MaGV;
+                    if (string.IsNullOrWhiteSpace(MaGV))
+                        return new List<LopHocPhanDTO>();
+                    return repo.Search(null, null, MaGV);
+                }
+                return repo.Search(null, null, null);
+            }
+        } 
+
+        public List<DiemDTO> GetDanhSachNhapDiem(string MaLHP)
+        {
+            if (!SessionManager.HasPermission(MaChucNang.NHAP_DIEM))
+                return new List<DiemDTO>();
+
+            using (var db = DbFactory.Create())
+            {
+                var lop = db.LopHocPhans
+                    .FirstOrDefault(x => x.MaLHP == MaLHP);
+
+                if (lop == null)
+                    return new List<DiemDTO>();
+
+                if (SessionManager.IsInRole(MaNhom.GV) &&
+                    lop.MaGV != SessionManager.CurrentUser.MaGV)
+                    return new List<DiemDTO>();
+
+                var repo = new DiemRepository(db);
+
+                return repo.GetByLHP(MaLHP);
+            }
+        }
+
     }
 }
