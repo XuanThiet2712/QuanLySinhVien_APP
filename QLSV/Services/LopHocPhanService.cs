@@ -62,7 +62,7 @@ namespace QLSV.Services
                 return repo.GetGiangViens();
             }
         }
-        private Result Kiemtra (LopHocPhan lhp)
+        private Result KiemTra (LopHocPhan lhp)
         {
             if (lhp == null)
                 return Result.Fail("Dữ liệu không hợp lệ.");
