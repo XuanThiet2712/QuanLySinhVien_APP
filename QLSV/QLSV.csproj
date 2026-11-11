@@ -412,4 +412,7 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+	<ItemGroup>
+		<EmbeddedResource Include="Forms\Report\rptDoanhThu.rdlc" />
+	</ItemGroup>
 </Project>

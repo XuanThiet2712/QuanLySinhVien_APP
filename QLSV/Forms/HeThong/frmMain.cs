@@ -311,5 +311,18 @@ namespace QLSV.Forms.HeThong
             this.Width = frm.Width + 100;
             frm.Show();
         }
+
+        private void inDoanhThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChild<frmInDoanhThu>();
+        }
+        private void OpenChild<T>() where T : Form, new()
+        {
+            foreach (Form f in MdiChildren)
+                if (f is T) { f.Activate(); return; }
+
+            var frm = new T { MdiParent = this, Dock = DockStyle.Fill };
+            frm.Show();
+        }
     }
 }

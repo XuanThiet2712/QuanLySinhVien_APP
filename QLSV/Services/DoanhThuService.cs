@@ -4,8 +4,6 @@ using QLSV.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QLSV.Services
 {
@@ -18,25 +16,25 @@ namespace QLSV.Services
             {
                 using (var db = DbFactory.Create())
                 {
-                    DateTime denNgayEnd = denNgay.Date.AddDays(1).AddTicks(-1);
-                    var query = db.PhieuThus
-                        .Where(p => !p.DaHuy && p.NgayLap >= tuNgay.Date && p.NgayLap <= denNgayEnd)
-                        .GroupBy(p => p.NgayLap.Date)
-                        .Select(g => new
-                        {
-                            NgayGoc = g.Key,
-                            SoGiaoDich = g.Count(),
-                            TongDoanhThu = (decimal)g.Sum(x => x.DaThu)
-                        })
-                        .OrderBy(x => x.NgayGoc)
+                    DateTime tu = tuNgay.Date;
+                    DateTime den = denNgay.Date.AddDays(1).AddTicks(-1);
+
+                    // 1) Chỉ lấy 2 cột cần thiết từ DB (SQL đơn giản, không lỗi dịch)
+                    var rows = db.PhieuThus
+                        .Where(p => !p.DaHuy && p.NgayLap >= tu && p.NgayLap <= den)
+                        .Select(p => new { p.NgayLap, p.DaThu })
                         .ToList();
 
-                    var resultList = query.Select(x => new DoanhThuDTO
-                    {
-                        TieuDe = x.NgayGoc.ToString("dd/MM/yyyy"),
-                        SoGiaoDich = x.SoGiaoDich,
-                        TongDoanhThu = x.TongDoanhThu
-                    })
+                    // 2) Gom nhóm theo ngày trong bộ nhớ
+                    var resultList = rows
+                        .GroupBy(x => x.NgayLap.Date)
+                        .OrderBy(g => g.Key)
+                        .Select(g => new DoanhThuDTO
+                        {
+                            TieuDe = g.Key.ToString("dd/MM/yyyy"),
+                            SoGiaoDich = g.Count(),
+                            TongDoanhThu = g.Sum(x => Convert.ToDecimal(x.DaThu))
+                        })
                         .ToList();
 
                     return Result<List<DoanhThuDTO>>.Ok(resultList);
@@ -44,18 +42,28 @@ namespace QLSV.Services
             }
             catch (Exception ex)
             {
-                return Result<List<DoanhThuDTO>>.Fail("Lỗi thống kê doanh thu: " + ex.Message);
+                Exception root = ex;
+                while (root.InnerException != null) root = root.InnerException;
+                return Result<List<DoanhThuDTO>>.Fail("Lỗi thống kê doanh thu: " + root.Message);
             }
         }
+
         // Biểu đồ Đường
         public List<DoanhThuDTO> DoanhThu12Thang(int nam)
         {
             using (var db = DbFactory.Create())
             {
-                var queryDb = db.PhieuThus
-                    .Where(p => !p.DaHuy && p.NgayLap.Year == nam)
-                    .GroupBy(p => p.NgayLap.Month)
-                    .Select(g => new { Thang = g.Key, TongThu = g.Sum(x => (decimal?)x.DaThu) ?? 0 })
+                DateTime dau = new DateTime(nam, 1, 1);
+                DateTime cuoi = dau.AddYears(1);
+
+                var rows = db.PhieuThus
+                    .Where(p => !p.DaHuy && p.NgayLap >= dau && p.NgayLap < cuoi)
+                    .Select(p => new { p.NgayLap, p.DaThu })
+                    .ToList();
+
+                var queryDb = rows
+                    .GroupBy(x => x.NgayLap.Month)
+                    .Select(g => new { Thang = g.Key, TongThu = g.Sum(x => Convert.ToDecimal(x.DaThu)) })
                     .ToList();
 
                 var result = new List<DoanhThuDTO>();
@@ -97,7 +105,8 @@ namespace QLSV.Services
                 }).ToList();
             }
         }
-        // biểu đồ tròn
+
+        // Biểu đồ tròn (hiện vẫn là dữ liệu mẫu)
         public List<ThongKeDTO> TyLeXepLoaiHocLuc(string maHK)
         {
             return new List<ThongKeDTO>
@@ -109,15 +118,17 @@ namespace QLSV.Services
             };
         }
 
-        // top5
+        // Top 5 môn đông nhất
         public List<ThongKeDTO> Top5MonDongNhat(string maHK)
         {
+            string hk = (maHK ?? "").Trim();
+
             using (var db = DbFactory.Create())
             {
                 var query = (from dk in db.DangKyHocPhans
                              join lhp in db.LopHocPhans on dk.MaLHP equals lhp.MaLHP
                              join mh in db.MonHocs on lhp.MaMon equals mh.MaMon
-                             where lhp.MaHK.Trim() == maHK.Trim()
+                             where lhp.MaHK.Trim() == hk
                              group dk by mh.TenMon into g
                              select new ThongKeDTO
                              {
