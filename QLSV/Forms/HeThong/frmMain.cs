@@ -314,14 +314,44 @@ namespace QLSV.Forms.HeThong
 
         private void inDoanhThuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChild<frmInDoanhThu>();
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmInDoanhThu) { f.Activate(); return; }
+            }
+            frmInDoanhThu frm = new frmInDoanhThu();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
+            this.Width = frm.Width + 100;
+            frm.Show();
         }
-        private void OpenChild<T>() where T : Form, new()
+        
+
+        private void mnuBaoCaoDoanhThu_Click(object sender, EventArgs e)
         {
             foreach (Form f in MdiChildren)
-                if (f is T) { f.Activate(); return; }
+            {
+                if (f is frmThongKeDoanhThu) { f.Activate(); return; }
+            }
+            frmThongKeDoanhThu frm = new frmThongKeDoanhThu();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
+            this.Width = frm.Width + 100;
+            frm.Show();
+        }
 
-            var frm = new T { MdiParent = this, Dock = DockStyle.Fill };
+        private void mnuBieuDo_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmBieuDo) { f.Activate(); return; }
+            }
+            frmBieuDo frm = new frmBieuDo();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
+            this.Width = frm.Width + 100;
             frm.Show();
         }
     }

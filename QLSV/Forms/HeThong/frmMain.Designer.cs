@@ -54,11 +54,11 @@
             this.mnuBangDiem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBieuDo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBaoCaoDoanhThu = new System.Windows.Forms.ToolStripMenuItem();
+            this.inDoanhThuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTroGiup = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQuyenCuaToi = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblNguoiDung = new System.Windows.Forms.ToolStripStatusLabel();
-            this.inDoanhThuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -264,12 +264,21 @@
             this.mnuBieuDo.Name = "mnuBieuDo";
             this.mnuBieuDo.Size = new System.Drawing.Size(224, 26);
             this.mnuBieuDo.Text = "Biểu đồ thống kê";
+            this.mnuBieuDo.Click += new System.EventHandler(this.mnuBieuDo_Click);
             // 
             // mnuBaoCaoDoanhThu
             // 
             this.mnuBaoCaoDoanhThu.Name = "mnuBaoCaoDoanhThu";
             this.mnuBaoCaoDoanhThu.Size = new System.Drawing.Size(224, 26);
             this.mnuBaoCaoDoanhThu.Text = "Báo cáo doanh thu";
+            this.mnuBaoCaoDoanhThu.Click += new System.EventHandler(this.mnuBaoCaoDoanhThu_Click);
+            // 
+            // inDoanhThuToolStripMenuItem
+            // 
+            this.inDoanhThuToolStripMenuItem.Name = "inDoanhThuToolStripMenuItem";
+            this.inDoanhThuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.inDoanhThuToolStripMenuItem.Text = "In Doanh Thu";
+            this.inDoanhThuToolStripMenuItem.Click += new System.EventHandler(this.inDoanhThuToolStripMenuItem_Click);
             // 
             // mnuTroGiup
             // 
@@ -302,13 +311,6 @@
             this.lblNguoiDung.Name = "lblNguoiDung";
             this.lblNguoiDung.Size = new System.Drawing.Size(151, 20);
             this.lblNguoiDung.Text = "toolStripStatusLabel1";
-            // 
-            // inDoanhThuToolStripMenuItem
-            // 
-            this.inDoanhThuToolStripMenuItem.Name = "inDoanhThuToolStripMenuItem";
-            this.inDoanhThuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.inDoanhThuToolStripMenuItem.Text = "In Doanh Thu";
-            this.inDoanhThuToolStripMenuItem.Click += new System.EventHandler(this.inDoanhThuToolStripMenuItem_Click);
             // 
             // frmMain
             // 
