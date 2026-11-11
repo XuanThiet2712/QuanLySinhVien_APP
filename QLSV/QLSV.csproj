@@ -92,7 +92,9 @@
     <Compile Include="Data\QLSV.cs">
       <DependentUpon>QLSV.dbml</DependentUpon>
     </Compile>
+
     <Compile Include="DTOs\ImportReport.cs" />
+
     <Compile Include="DTOs\NguoiDungDTO.cs" />
     <Compile Include="DTOs\HocPhiDTO.cs" />
     <Compile Include="Data\QLSV.designer.cs">
@@ -113,6 +115,18 @@
       <DependentUpon>frmChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="DTOs\SinhVienDTO.cs" />
+    <Compile Include="Forms\HeThong\frmGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmGiangVien.Designer.cs">
+      <DependentUpon>frmGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmHocKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmHocKy.Designer.cs">
+      <DependentUpon>frmHocKy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HeThong\frmGiangVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,12 +168,14 @@
     </Compile>
     <Compile Include="Forms\HeThong\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Forms\HeThong\frmMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\HeThong\frmMonHoc.Designer.cs">
       <DependentUpon>frmMonHoc.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Forms\HeThong\frmNganh.cs">
       <SubType>Form</SubType>
@@ -190,12 +206,14 @@
     </Compile>
     <Compile Include="Forms\HeThong\frmLopSinhHoat.Designer.cs">
       <DependentUpon>frmLopSinhHoat.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Forms\HeThong\frmSinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\HeThong\frmSinhVien.Designer.cs">
       <DependentUpon>frmSinhVien.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Forms\Report\frmLopHocPhan.cs">
       <SubType>Form</SubType>
@@ -226,6 +244,10 @@
     <Compile Include="Repositories\DiemRepository.cs" />
     <Compile Include="Repositories\GiangVienRepository.cs" />
     <Compile Include="Repositories\HocKyRepository.cs" />
+
+    <Compile Include="Repositories\DangKyRepository.cs" />
+    <Compile Include="Repositories\DiemRepository.cs" />
+
     <Compile Include="Repositories\KhoaRepository.cs" />
     <Compile Include="Repositories\LopHocPhanRepository.cs" />
     <Compile Include="Repositories\LopSinhHoatRepository.cs" />
@@ -259,12 +281,19 @@
     <EmbeddedResource Include="Forms\HeThong\frmHocKy.resx">
       <DependentUpon>frmHocKy.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="Forms\HeThong\frmMonHoc.resx">
       <DependentUpon>frmMonHoc.cs</DependentUpon>
     </EmbeddedResource>
+   
+
     <EmbeddedResource Include="Forms\HeThong\frmRoleManagement.resx">
       <DependentUpon>frmRoleManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Enroll\frmDangKyHocPhan.resx">
+      <DependentUpon>frmDangKyHocPhan.cs</DependentUpon>
+    </EmbeddedResource>
+
     <EmbeddedResource Include="Forms\HeThong\frmUserManagement.resx">
       <DependentUpon>frmUserManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,9 +329,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmLopSinhHoat.resx">
       <DependentUpon>frmLopSinhHoat.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmSinhVien.resx">
       <DependentUpon>frmSinhVien.cs</DependentUpon>
+
+
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

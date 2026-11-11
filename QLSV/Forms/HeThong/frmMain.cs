@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 //using QLSV.Forms.Catalog;     // frmKhoa, frmNganh... (B)
 //using QLSV.Forms.Grade;       // frmLopHocPhan, frmNhapDiem (C)
-//using QLSV.Forms.Enroll;      // frmDangKyHocPhan (A)
+using QLSV.Forms.Enroll;      // frmDangKyHocPhan (A)
 using QLSV.Forms.Finance;
 using QLSV.Forms.Report;     // frmThuHocPhi, frmChartDashboard, frmConnectionConfig (D)
-//using QLSV.Forms.Report;      // frmReportBangDiem, frmReportThongKe
+using QLSV.Forms.Report;      // frmReportBangDiem, frmReportThongKe
 
 namespace QLSV.Forms.HeThong
 {
@@ -202,17 +202,44 @@ namespace QLSV.Forms.HeThong
 
         private void mnuSinhVien_Click(object sender, EventArgs e)
         {
-
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmSinhVien) { f.Activate(); return; }
+            }
+            frmSinhVien frm = new frmSinhVien();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
+            this.Width = frm.Width + 100;
+            frm.Show();
         }
 
         private void mnuGiangVien_Click(object sender, EventArgs e)
         {
-
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmGiangVien) { f.Activate(); return; }
+            }
+            frmGiangVien frm = new frmGiangVien();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
+            this.Width = frm.Width + 100;
+            frm.Show();
         }
 
         private void mnuMonHoc_Click(object sender, EventArgs e)
         {
-
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmMonHoc) { f.Activate(); return; }
+            }
+            frmMonHoc frm = new frmMonHoc();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
+            this.Width = frm.Width + 100;
+            frm.Show();
         }
 
         private void mnuLopHocPhan_Click(object sender, EventArgs e)
