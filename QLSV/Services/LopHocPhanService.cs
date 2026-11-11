@@ -119,5 +119,112 @@ namespace QLSV.Services
             }
             return Result.Ok();
         }
+
+        public Result ThemMoi(LopHocPhan lhp)
+        {
+            Result kt = KiemTra(lhp);
+            if (!kt.Success) return kt;
+
+            if (!SessionManager.HasPermission(
+                MaChucNang.QL_LOPHOCPHAN))
+                return Result.Fail("Không có quyền thêm lớp.");
+
+            try
+            {
+                using (var db = DbFactory.Create())
+                {
+                    var repo = new LopHocPhanRepository(db);
+
+                    // 0 dc trung malop
+                    if (repo.GetById(lhp.MaLHP) != null)
+                        return Result.Fail("Mã lớp đã tồn tại.");
+
+                    // 0 dc trung lich
+                    kt = KiemTraTrungLich(lhp, repo);
+                    if (!kt.Success) return kt;
+
+                    repo.Add(lhp);
+                    db.SubmitChanges();
+
+                    return Result.Ok("Thêm lớp thành công.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Result.Fail("Lỗi: " + ex.Message);
+            }
+        }
+
+        public Result Luu(LopHocPhan lhp)
+        {
+            Result kt = KiemTra(lhp);
+            if (!kt.Success) return kt;
+
+            if (!SessionManager.HasPermission(
+                MaChucNang.QL_LOPHOCPHAN))
+                return Result.Fail("Không có quyền sửa lớp.");
+
+            try
+            {
+                using (var db = DbFactory.Create())
+                {
+                    var repo = new LopHocPhanRepository(db);
+
+                    LopHocPhan cu = repo.GetById(lhp.MaLHP);
+                    if (cu == null)
+                        return Result.Fail("Không tìm thấy lớp.");
+
+                    if (lhp.SiSoToiDa <
+                        repo.GetSiSoHienTai(lhp.MaLHP))
+                        return Result.Fail(
+                            "Sĩ số tối đa nhỏ hơn số SV đã đăng ký.");
+
+                    kt = KiemTraTrungLich(lhp, repo);
+                    if (!kt.Success) return kt;
+
+                    repo.Update(cu, lhp);
+                    db.SubmitChanges();
+
+                    return Result.Ok("Cập nhật thành công.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Result.Fail("Lỗi: " + ex.Message);
+            }
+        }
+
+        public Result Xoa(string maLHP)
+        {
+            if (!SessionManager.HasPermission(
+                MaChucNang.QL_LOPHOCPHAN))
+                return Result.Fail("Không có quyền xóa lớp.");
+
+            try
+            {
+                using (var db = DbFactory.Create())
+                {
+                    var repo = new LopHocPhanRepository(db);
+
+                    LopHocPhan lhp = repo.GetById(maLHP);
+
+                    if (lhp == null)
+                        return Result.Fail("Không tìm thấy lớp.");
+
+                    if (repo.GetSiSoHienTai(maLHP) > 0)
+                        return Result.Fail(
+                            "Lớp đã có sinh viên đăng ký.");
+
+                    repo.Delete(lhp);
+                    db.SubmitChanges();
+
+                    return Result.Ok("Xóa thành công.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Result.Fail("Lỗi: " + ex.Message);
+            }
+        }
     }
 }
