@@ -202,16 +202,16 @@ namespace QLSV.Forms.HeThong
 
         private void mnuSinhVien_Click(object sender, EventArgs e)
         {
-            //foreach (Form f in MdiChildren)
-            //{
-            //    if (f is frmSinhVien) { f.Activate(); return; }
-            //}
-            //frmSinhVien frm = new frmLopSinhHoat();
-            //frm.MdiParent = this;
-            //frm.Dock = DockStyle.Fill;
-            //this.Height = frm.Height + 100;
-            //this.Width = frm.Width + 100;
-            //frm.Show();
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmSinhVien) { f.Activate(); return; }
+            }
+            frmSinhVien frm = new frmSinhVien();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
+            this.Width = frm.Width + 100;
+            frm.Show();
         }
 
         private void mnuGiangVien_Click(object sender, EventArgs e)
@@ -230,7 +230,16 @@ namespace QLSV.Forms.HeThong
 
         private void mnuMonHoc_Click(object sender, EventArgs e)
         {
-
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmMonHoc) { f.Activate(); return; }
+            }
+            frmMonHoc frm = new frmMonHoc();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
+            this.Width = frm.Width + 100;
+            frm.Show();
         }
 
         private void mnuLopHocPhan_Click(object sender, EventArgs e)
