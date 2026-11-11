@@ -23,9 +23,15 @@ namespace QLSV.Services
             if (string.IsNullOrWhiteSpace(g.MaGV)) return Result.Fail("Mã giảng viên không được để trống.");
             if (string.IsNullOrWhiteSpace(g.HoTen)) return Result.Fail("Họ tên không được để trống.");
             if (string.IsNullOrWhiteSpace(g.MaKhoa)) return Result.Fail("Hãy chọn khoa.");
-            
-            if (!ValidationHelpers.EmailHopLe(g.Email)) return Result.Fail("Email không hợp lệ.");
-            if (!ValidationHelpers.SdtHopLe(g.SDT)) return Result.Fail("Số điện thoại không hợp lệ.");
+
+            if (!string.IsNullOrWhiteSpace(g.Email) && !g.Email.Contains("@"))
+                return Result.Fail("Email không đúng định dạng.");
+
+            if (!string.IsNullOrWhiteSpace(g.SDT) && g.SDT.Trim().Length < 10)
+                return Result.Fail("Số điện thoại không hợp lệ.");
+            //if (!ValidationHelper.EmailHopLe(g.Email)) return Result.Fail("Email không hợp lệ.");
+            //if (!ValidationHelper.SdtHopLe(g.SDT)) return Result.Fail("Số điện thoại không hợp lệ.");
+
             return Result.Ok();
         }
 

@@ -124,6 +124,18 @@
     <Compile Include="Forms\HeThong\frmHocKy.Designer.cs">
       <DependentUpon>frmHocKy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HeThong\frmGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmGiangVien.Designer.cs">
+      <DependentUpon>frmGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmHocKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmHocKy.Designer.cs">
+      <DependentUpon>frmHocKy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HeThong\frmKhoa.cs">
       <SubType>Form</SubType>
     </Compile>
