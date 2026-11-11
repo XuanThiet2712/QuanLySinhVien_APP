@@ -36,5 +36,7 @@ namespace QLSV.Repositories
         {
             return _db.ChucNangs.Where(c => dsMaCN.Contains(c.MaCN)).Select(c => c.MaCN).ToList();
         }
+
+
     }
 }
