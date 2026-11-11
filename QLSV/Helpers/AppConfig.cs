@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -51,6 +52,7 @@ namespace QLSV.Helpers
         }
 
         /// <summary>Ghi chuỗi kết nối mới vào App.config (khóa "QLSV").</summary>
+        /// <summary>Ghi chuỗi kết nối mới vào App.config (khóa "QLSV").</summary>
         public static Result Save(string server, string db, bool winAuth, string user, string pass)
         {
             try
@@ -67,9 +69,15 @@ namespace QLSV.Helpers
                 }
 
                 var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                config.ConnectionStrings.ConnectionStrings["QLSV"].ConnectionString = builder.ConnectionString;
-                config.Save(ConfigurationSaveMode.Modified);
+                var cs = config.ConnectionStrings.ConnectionStrings["QLSV"];
 
+                if (cs == null)
+                    config.ConnectionStrings.ConnectionStrings.Add(
+                        new ConnectionStringSettings("QLSV", builder.ConnectionString, "System.Data.SqlClient"));
+                else
+                    cs.ConnectionString = builder.ConnectionString;
+
+                config.Save(ConfigurationSaveMode.Modified);
                 ConfigurationManager.RefreshSection("connectionStrings");
 
                 return Result.Ok("Đã lưu cấu hình kết nối CSDL!");

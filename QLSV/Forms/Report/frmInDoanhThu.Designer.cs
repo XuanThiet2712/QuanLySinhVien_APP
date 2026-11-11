@@ -41,10 +41,10 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.Location = new System.Drawing.Point(0, 67);
+            this.reportViewer1.Location = new System.Drawing.Point(0, 47);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 383);
+            this.reportViewer1.Size = new System.Drawing.Size(800, 403);
             this.reportViewer1.TabIndex = 0;
             // 
             // panel1
@@ -57,14 +57,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 67);
+            this.panel1.Size = new System.Drawing.Size(800, 47);
             this.panel1.TabIndex = 1;
             // 
             // btnXem
             // 
-            this.btnXem.Location = new System.Drawing.Point(632, 14);
+            this.btnXem.Location = new System.Drawing.Point(631, 6);
             this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(99, 43);
+            this.btnXem.Size = new System.Drawing.Size(99, 38);
             this.btnXem.TabIndex = 4;
             this.btnXem.Text = "Xem";
             this.btnXem.UseVisualStyleBackColor = true;
@@ -73,7 +73,7 @@
             // 
             this.dtpDenNgay.CustomFormat = "dd/MM/yyyy";
             this.dtpDenNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDenNgay.Location = new System.Drawing.Point(403, 14);
+            this.dtpDenNgay.Location = new System.Drawing.Point(403, 11);
             this.dtpDenNgay.Name = "dtpDenNgay";
             this.dtpDenNgay.Size = new System.Drawing.Size(110, 22);
             this.dtpDenNgay.TabIndex = 3;
@@ -81,7 +81,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(330, 19);
+            this.label2.Location = new System.Drawing.Point(330, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 16);
             this.label2.TabIndex = 2;

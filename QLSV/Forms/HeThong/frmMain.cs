@@ -30,10 +30,17 @@ namespace QLSV.Forms.HeThong
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            //test
             var nd = SessionManager.CurrentUser;
-            lblNguoiDung.Text = "Người dùng: " + nd.TenDangNhap + "   |   Nhóm quyền: " + nd.MaNhom;
+            if (nd == null)
+            {
+                MessageBox.Show("Chưa đăng nhập. Vui lòng đăng nhập lại.", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DangXuat = true;   // để Program.cs quay về form đăng nhập
+                Close();
+                return;
+            }
 
+            lblNguoiDung.Text = "Người dùng: " + nd.TenDangNhap + "   |   Nhóm quyền: " + nd.MaNhom;
             PhanQuyenMenu();
         }
 
