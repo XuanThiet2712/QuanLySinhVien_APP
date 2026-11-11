@@ -46,14 +46,16 @@ namespace QLSV.Services
                     var repo = new HocKyRepository(db);
                     HocKy cu = repo.GetById(h.MaHK);
                     if (cu == null) return Result.Fail("Không tìm thấy học kỳ cần cập nhật");
-                    else
-                    {
-                        cu.MaHK = h.MaHK.Trim(), cu.TenHK = h.TenHK.Trim(), cu.NamHoc = h.NamHoc.Trim(), cu.TuNgay = h.TuNgay, cu.DenNgay = h.DenNgay, cu.DonGiaTinChi = h.DonGiaTinChi; }
-                    }
+
+                    cu.TenHK = h.TenHK.Trim(); cu.NamHoc = h.NamHoc.Trim(); cu.TuNgay = h.TuNgay; cu.DenNgay = h.DenNgay; cu.DonGiaTinChi = h.DonGiaTinChi;
+
                     db.SubmitChanges();
+
+
                     return Result.Ok("Đã lưu học kỳ.");
                 }
             }
+
             catch (Exception ex) { return Result.Fail("Lỗi CSDL: " + ex.Message); }
         }
 
@@ -68,13 +70,13 @@ namespace QLSV.Services
                 {
                     var repo = new HocKyRepository(db);
                     if (repo.ExistsId(h.MaHK.Trim())) return Result.Fail("Mã học kỳ đã tồn tại.");
-                    repo.Add(new HocKy { MaHK = h.MaHK.Trim(), TenHK = h.TenHK.Trim(), NamHoc = h.NamHoc.Trim(), TuNgay = h.TuNgay, DenNgay = h.DenNgay, DonGiaTinChi = h.DonGiaTinChi});
+                    repo.Add(new HocKy { MaHK = h.MaHK.Trim(), TenHK = h.TenHK.Trim(), NamHoc = h.NamHoc.Trim(), TuNgay = h.TuNgay, DenNgay = h.DenNgay, DonGiaTinChi = h.DonGiaTinChi });
                     db.SubmitChanges();
                     return Result.Ok("Đã lưu học kỳ");
                 }
             }
             catch (Exception ex) { return Result.Fail("Lỗi CSDL: " + ex.Message); }
-            return Luu(h);   // DataContext ở trên đã đóng trước khi mở cái mới trong Luu
+            
         }
 
         //Xóa học kỳ; chặn nếu đã có lớp học phần
