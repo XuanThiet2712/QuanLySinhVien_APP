@@ -174,9 +174,14 @@
             this.Controls.Add(this.cboLocKhoa);
             this.Controls.Add(this.dgvNganh);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmNganh";
             this.Text = "frmNganh";
+
             this.Load += new System.EventHandler(this.frmNganh_Load_1);
+
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+
             ((System.ComponentModel.ISupportInitialize)(this.dgvNganh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

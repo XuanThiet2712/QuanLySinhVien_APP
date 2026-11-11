@@ -1,4 +1,5 @@
-﻿using QLSV.Data;
+﻿using DocumentFormat.OpenXml.Spreadsheet;
+using QLSV.Data;
 using QLSV.Forms.Finance;
 using QLSV.Forms.HeThong;
 using QLSV.Helpers;
@@ -19,27 +20,23 @@ namespace QLSV
 
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+             Application.EnableVisualStyles();
+             Application.SetCompatibleTextRenderingDefault(false);
 
             while (true)
-            {
+             {
 
-                using (var login = new frmLogin())
-                {
-                    if (login.ShowDialog() != DialogResult.OK) return;
-                }
+                 using (var login = new frmLogin())
+                 {
+                     if (login.ShowDialog() != DialogResult.OK) return;
+                 }
 
-                var main = new frmMain();
-                Application.Run(main);
+                 var main = new frmMain();
+                 Application.Run(main);
 
-                if (!main.DangXuat) return;
+
+             if (!main.DangXuat) return;
             }
-
-
-
-
-
         }
     }
 }

@@ -26,5 +26,17 @@ namespace QLSV.Repositories
                       .Select(p => p.MaCN)
                       .ToList();
         }
+
+        public void SetQuyen(string maNhom, List<string> dsMoi)
+        {
+            List<PhanQuyen> hienTai = _db.PhanQuyens.Where(p => p.MaNhom == maNhom).ToList();
+            List<string> maCu = hienTai.Select(p => p.MaCN).ToList();
+
+            _db.PhanQuyens.DeleteAllOnSubmit(hienTai.Where(p => !dsMoi.Contains(p.MaCN)).ToList());
+            foreach (string maCN in dsMoi.Where(c => !maCu.Contains(c)))
+            {
+                _db.PhanQuyens.InsertOnSubmit(new PhanQuyen { MaNhom = maNhom, MaCN = maCN });
+            }
+        }
     }
 }
