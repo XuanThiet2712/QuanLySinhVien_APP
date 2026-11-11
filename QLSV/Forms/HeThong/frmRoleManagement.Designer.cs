@@ -40,6 +40,7 @@
             this.cboNhom.Name = "cboNhom";
             this.cboNhom.Size = new System.Drawing.Size(168, 24);
             this.cboNhom.TabIndex = 0;
+            this.cboNhom.SelectedIndexChanged += new System.EventHandler(this.cboNhom_SelectedIndexChanged);
             // 
             // clbQuyen
             // 
@@ -57,6 +58,7 @@
             this.btnLuu.TabIndex = 2;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // frmRoleManagement
             // 
@@ -68,6 +70,7 @@
             this.Controls.Add(this.cboNhom);
             this.Name = "frmRoleManagement";
             this.Text = "Phân quyền";
+            this.Load += new System.EventHandler(this.frmRoleManagement_Load);
             this.ResumeLayout(false);
 
         }
