@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QLSV.DTOs
 {
-    internal class HocPhiDTO
+    public class HocPhiDTO
     {
         public string MaSV { get; set; }
         public string HoTen { get; set; }

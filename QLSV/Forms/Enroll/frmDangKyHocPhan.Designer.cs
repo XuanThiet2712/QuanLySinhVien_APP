@@ -37,13 +37,13 @@
             this.gbLopMo = new System.Windows.Forms.GroupBox();
             this.dgvLopMo = new System.Windows.Forms.DataGridView();
             this.gbDaDK = new System.Windows.Forms.GroupBox();
-            this.dgvDaDK = new System.Windows.Forms.DataGridView();
+            this.dgvDaDangKy = new System.Windows.Forms.DataGridView();
             this.btnDangKy = new System.Windows.Forms.Button();
             this.btnHuyDK = new System.Windows.Forms.Button();
             this.gbLopMo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLopMo)).BeginInit();
             this.gbDaDK.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDaDK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDaDangKy)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -80,6 +80,7 @@
             this.cboHocKy.Name = "cboHocKy";
             this.cboHocKy.Size = new System.Drawing.Size(137, 24);
             this.cboHocKy.TabIndex = 3;
+            this.cboHocKy.SelectedIndexChanged += new System.EventHandler(this.cboHocKy_SelectedIndexChanged);
             // 
             // txtMaSV
             // 
@@ -96,6 +97,7 @@
             this.btnTai.TabIndex = 5;
             this.btnTai.Text = "XEM";
             this.btnTai.UseVisualStyleBackColor = true;
+            this.btnTai.Click += new System.EventHandler(this.btnTai_Click);
             // 
             // gbLopMo
             // 
@@ -120,7 +122,7 @@
             // 
             // gbDaDK
             // 
-            this.gbDaDK.Controls.Add(this.dgvDaDK);
+            this.gbDaDK.Controls.Add(this.dgvDaDangKy);
             this.gbDaDK.Location = new System.Drawing.Point(15, 321);
             this.gbDaDK.Name = "gbDaDK";
             this.gbDaDK.Size = new System.Drawing.Size(776, 176);
@@ -128,16 +130,16 @@
             this.gbDaDK.TabStop = false;
             this.gbDaDK.Text = "Lớp học phần đang mở";
             // 
-            // dgvDaDK
+            // dgvDaDangKy
             // 
-            this.dgvDaDK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDaDK.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDaDK.Location = new System.Drawing.Point(3, 18);
-            this.dgvDaDK.Name = "dgvDaDK";
-            this.dgvDaDK.RowHeadersWidth = 51;
-            this.dgvDaDK.RowTemplate.Height = 24;
-            this.dgvDaDK.Size = new System.Drawing.Size(770, 155);
-            this.dgvDaDK.TabIndex = 7;
+            this.dgvDaDangKy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDaDangKy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDaDangKy.Location = new System.Drawing.Point(3, 18);
+            this.dgvDaDangKy.Name = "dgvDaDangKy";
+            this.dgvDaDangKy.RowHeadersWidth = 51;
+            this.dgvDaDangKy.RowTemplate.Height = 24;
+            this.dgvDaDangKy.Size = new System.Drawing.Size(770, 155);
+            this.dgvDaDangKy.TabIndex = 7;
             // 
             // btnDangKy
             // 
@@ -147,6 +149,7 @@
             this.btnDangKy.TabIndex = 9;
             this.btnDangKy.Text = "DANG ky";
             this.btnDangKy.UseVisualStyleBackColor = true;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // btnHuyDK
             // 
@@ -156,6 +159,7 @@
             this.btnHuyDK.TabIndex = 10;
             this.btnHuyDK.Text = "Huy DK";
             this.btnHuyDK.UseVisualStyleBackColor = true;
+            this.btnHuyDK.Click += new System.EventHandler(this.btnHuyDK_Click);
             // 
             // frmDangKyHocPhan
             // 
@@ -174,10 +178,11 @@
             this.Controls.Add(this.label1);
             this.Name = "frmDangKyHocPhan";
             this.Text = "Đăng ký học phần";
+            this.Load += new System.EventHandler(this.frmDangKyHocPhan_Load);
             this.gbLopMo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLopMo)).EndInit();
             this.gbDaDK.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDaDK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDaDangKy)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,7 +199,7 @@
         private System.Windows.Forms.GroupBox gbLopMo;
         private System.Windows.Forms.DataGridView dgvLopMo;
         private System.Windows.Forms.GroupBox gbDaDK;
-        private System.Windows.Forms.DataGridView dgvDaDK;
+        private System.Windows.Forms.DataGridView dgvDaDangKy;
         private System.Windows.Forms.Button btnDangKy;
         private System.Windows.Forms.Button btnHuyDK;
     }

@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace QLSV.Forms.Finance
 {
-    public partial class FrmThuHocPhi : Form
+    public partial class frmThuHocPhi : Form
     {
         private readonly FeeService _feeService = new FeeService();
-        public FrmThuHocPhi()
+        public frmThuHocPhi()
         {
             InitializeComponent();
         }

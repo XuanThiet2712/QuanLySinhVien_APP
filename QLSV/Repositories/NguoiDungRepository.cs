@@ -47,6 +47,29 @@ namespace QLSV.Repositories
             return null;
         }
 
+        public NguoiDung GetByMaGV(string maGV)
+        {
+            return _db.NguoiDungs.FirstOrDefault(u => u.MaGV == maGV);
+        }
+
+
+
+        public NguoiDung GetByMaSV(string maSV)
+        {
+            return _db.NguoiDungs.FirstOrDefault(u => u.MaSV == maSV);
+        }
+
+        public bool GiangVienTonTai(string maGV)
+        {
+            return _db.GiangViens.Any(g => g.MaGV == maGV);
+        }
+
+
+        public bool CoPhatSinhDuLieu(int maND)
+        {
+            return _db.NhatKyDiems.Any(n => n.NguoiSua == maND)
+                || _db.PhieuThus.Any(p => p.NguoiLap == maND);
+        }
         //Toàn bộ người dùng sắp theo tên đăng nhập
         public List<NguoiDung> GetAll()
         {
