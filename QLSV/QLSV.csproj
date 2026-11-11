@@ -93,6 +93,7 @@
       <DependentUpon>QLSV.dbml</DependentUpon>
     </Compile>
     <Compile Include="DTOs\ImportReport.cs" />
+    <Compile Include="DTOs\LopHocPhanDTO.cs" />
     <Compile Include="DTOs\NguoiDungDTO.cs" />
     <Compile Include="DTOs\HocPhiDTO.cs" />
     <Compile Include="Data\QLSV.designer.cs">
@@ -314,11 +315,9 @@
     <EmbeddedResource Include="Forms\Report\frmLopHocPhan.resx">
       <DependentUpon>frmLopHocPhan.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Forms\Report\frmNhapDiem.resx">
       <DependentUpon>frmNhapDiem.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Forms\HeThong\frmLopSinhHoat.resx">
       <DependentUpon>frmLopSinhHoat.cs</DependentUpon>
     </EmbeddedResource>
