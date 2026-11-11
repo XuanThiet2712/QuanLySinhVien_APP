@@ -202,11 +202,11 @@
     <Compile Include="Forms\Report\frmLopHocPhan.Designer.cs">
       <DependentUpon>frmLopHocPhan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Report\frmNhapDiem .cs">
+    <Compile Include="Forms\Report\frmNhapDiem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Report\frmNhapDiem .Designer.cs">
-      <DependentUpon>frmNhapDiem .cs</DependentUpon>
+    <Compile Include="Forms\Report\frmNhapDiem.Designer.cs">
+      <DependentUpon>frmNhapDiem.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Report\frmReportBangDiem.cs">
       <SubType>Form</SubType>
@@ -292,8 +292,8 @@
     <EmbeddedResource Include="Forms\Report\frmLopHocPhan.resx">
       <DependentUpon>frmLopHocPhan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Report\frmNhapDiem .resx">
-      <DependentUpon>frmNhapDiem .cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Report\frmNhapDiem.resx">
+      <DependentUpon>frmNhapDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmLopSinhHoat.resx">
       <DependentUpon>frmLopSinhHoat.cs</DependentUpon>
