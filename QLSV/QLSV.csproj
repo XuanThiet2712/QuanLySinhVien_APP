@@ -314,9 +314,11 @@
     <EmbeddedResource Include="Forms\Report\frmLopHocPhan.resx">
       <DependentUpon>frmLopHocPhan.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="Forms\Report\frmNhapDiem.resx">
       <DependentUpon>frmNhapDiem.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="Forms\HeThong\frmLopSinhHoat.resx">
       <DependentUpon>frmLopSinhHoat.cs</DependentUpon>
     </EmbeddedResource>

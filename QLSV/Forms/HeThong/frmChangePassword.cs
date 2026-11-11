@@ -38,5 +38,10 @@ namespace QLSV.Forms.HeThong
         {
             Close();
         }
+
+        private void frmChangePassword_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

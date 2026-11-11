@@ -152,5 +152,10 @@ namespace QLSV.Forms.HeThong
             MessageBox.Show(r.Message, "Thông báo", MessageBoxButtons.OK,
                 r.Success ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
         }
+
+        private void frmNganh_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

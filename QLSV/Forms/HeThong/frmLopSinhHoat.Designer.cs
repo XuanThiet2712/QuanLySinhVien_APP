@@ -197,6 +197,7 @@
             this.Controls.Add(this.btnThem);
             this.Name = "frmLopSinhHoat";
             this.Text = "LopSinhHoat";
+            this.Load += new System.EventHandler(this.frmLopSinhHoat_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLop)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
