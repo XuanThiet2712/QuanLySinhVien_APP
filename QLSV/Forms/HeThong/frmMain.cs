@@ -270,9 +270,9 @@ namespace QLSV.Forms.HeThong
         {
             foreach (Form f in MdiChildren)
             {
-                if (f is FrmThuHocPhi) { f.Activate(); return; }
+                if (f is frmThuHocPhi) { f.Activate(); return; }
             }
-            FrmThuHocPhi frm = new FrmThuHocPhi();
+            frmThuHocPhi frm = new frmThuHocPhi();
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
             this.Height = frm.Height + 100; 

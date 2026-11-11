@@ -1,6 +1,6 @@
 ﻿namespace QLSV.Forms.Finance
 {
-    partial class FrmThuHocPhi
+    partial class frmThuHocPhi
     {
         /// <summary>
         /// Required designer variable.
