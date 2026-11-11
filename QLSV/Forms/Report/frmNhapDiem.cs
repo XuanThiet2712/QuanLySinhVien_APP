@@ -21,5 +21,10 @@ namespace QLSV.Forms.Report
         {
 
         }
+
+        private void dgvNhapDiem_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

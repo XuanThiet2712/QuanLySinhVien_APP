@@ -155,7 +155,7 @@ namespace QLSV.Forms.Report
             cboMonHoc.ValueMember = "MaMon";
             cboMonHoc.DataSource = _service.GetMonHocs();
             //gv
-            cboGiangVien.DisplayMember = "TenGV";
+            cboGiangVien.DisplayMember = "HoTen";
             cboGiangVien.ValueMember = "MaGV";
             cboGiangVien.DataSource = _service.GetGiangViens();
         }
@@ -176,7 +176,7 @@ namespace QLSV.Forms.Report
                 MaHK = cboHocKy.SelectedValue.ToString(),
                 MaMon = cboMonHoc.SelectedValue.ToString(),
                 MaGV = cboGiangVien.SelectedValue.ToString(),
-                Thu = (byte)(cboThu.SelectedIndex),
+                Thu = (byte)(cboThu.SelectedIndex + 2),
 
                 TietBatDau = (byte)nudTietBatDau.Value,
                 SoTiet = (byte)nudSoTiet.Value,
