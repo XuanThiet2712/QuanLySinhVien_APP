@@ -1,4 +1,4 @@
-﻿namespace QLSV.Forms.HeThong
+﻿namespace QLSV.Forms.Catalog
 {
     partial class frmKhoa
     {

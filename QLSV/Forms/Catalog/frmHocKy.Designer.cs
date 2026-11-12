@@ -1,4 +1,4 @@
-﻿namespace QLSV.Forms.HeThong
+﻿namespace QLSV.Forms.Catalog
 {
     partial class frmHocKy
     {
@@ -222,6 +222,7 @@
             this.Controls.Add(this.btnThem);
             this.Name = "frmHocKy";
             this.Text = "frmHocKy";
+            this.Load += new System.EventHandler(this.frmHocKy_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHocKy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDonGia)).EndInit();
             this.ResumeLayout(false);

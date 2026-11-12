@@ -14,7 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLSV.Forms.HeThong
+namespace QLSV.Forms.Catalog
 {
     public partial class frmSinhVien : Form
     {
@@ -288,6 +288,11 @@ namespace QLSV.Forms.HeThong
         {
             MessageBox.Show(r.Message, "Thông báo", MessageBoxButtons.OK,
                 r.Success ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
+        }
+
+        private void frmSinhVien_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

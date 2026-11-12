@@ -92,7 +92,7 @@
             this.btnDoi.Name = "btnDoi";
             this.btnDoi.Size = new System.Drawing.Size(165, 96);
             this.btnDoi.TabIndex = 6;
-            this.btnDoi.Text = "button1";
+            this.btnDoi.Text = "Đổi";
             this.btnDoi.UseVisualStyleBackColor = true;
             this.btnDoi.Click += new System.EventHandler(this.btnDoi_Click);
             // 
@@ -102,7 +102,7 @@
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(165, 96);
             this.btnHuy.TabIndex = 7;
-            this.btnHuy.Text = "button2";
+            this.btnHuy.Text = "Huy";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 

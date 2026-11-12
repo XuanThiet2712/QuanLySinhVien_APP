@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLSV.Forms.HeThong
+namespace QLSV.Forms.Catalog
 {
     /// Form quản lý lớp sinh hoạt (Khoa -> Ngành -> Lớp).
     /// Lớp chỉ lưu MaNganh; cboKhoa chỉ dùng để lọc danh sách ngành.
