@@ -33,9 +33,6 @@
             this.cboLopHocPhan = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvNhapDiem = new System.Windows.Forms.DataGridView();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.btnLichSu = new System.Windows.Forms.Button();
-            this.btnLamMoi = new System.Windows.Forms.Button();
             this.colSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,16 +41,19 @@
             this.colTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHe4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnLichSu = new System.Windows.Forms.Button();
+            this.btnLamMoi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhapDiem)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(26, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 20);
+            this.label1.Size = new System.Drawing.Size(155, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản lý nhập điểm";
             // 
@@ -76,6 +76,7 @@
             this.cboLopHocPhan.Name = "cboLopHocPhan";
             this.cboLopHocPhan.Size = new System.Drawing.Size(369, 21);
             this.cboLopHocPhan.TabIndex = 2;
+            this.cboLopHocPhan.SelectedIndexChanged += new System.EventHandler(this.cboLopHocPhan_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -111,33 +112,6 @@
             this.dgvNhapDiem.Size = new System.Drawing.Size(651, 150);
             this.dgvNhapDiem.TabIndex = 4;
             this.dgvNhapDiem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhapDiem_CellContentClick);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Location = new System.Drawing.Point(30, 358);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 23);
-            this.btnLuu.TabIndex = 5;
-            this.btnLuu.Text = "Lưu điểm";
-            this.btnLuu.UseVisualStyleBackColor = true;
-            // 
-            // btnLichSu
-            // 
-            this.btnLichSu.Location = new System.Drawing.Point(143, 358);
-            this.btnLichSu.Name = "btnLichSu";
-            this.btnLichSu.Size = new System.Drawing.Size(102, 23);
-            this.btnLichSu.TabIndex = 6;
-            this.btnLichSu.Text = "Lịch sử sửa điểm";
-            this.btnLichSu.UseVisualStyleBackColor = true;
-            // 
-            // btnLamMoi
-            // 
-            this.btnLamMoi.Location = new System.Drawing.Point(279, 358);
-            this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(75, 23);
-            this.btnLamMoi.TabIndex = 7;
-            this.btnLamMoi.Text = "Làm mới";
-            this.btnLamMoi.UseVisualStyleBackColor = true;
             // 
             // colSV
             // 
@@ -192,6 +166,33 @@
             this.colHe4.Name = "colHe4";
             this.colHe4.ReadOnly = true;
             // 
+            // btnLuu
+            // 
+            this.btnLuu.Location = new System.Drawing.Point(30, 358);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnLuu.TabIndex = 5;
+            this.btnLuu.Text = "Lưu điểm";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            // 
+            // btnLichSu
+            // 
+            this.btnLichSu.Location = new System.Drawing.Point(143, 358);
+            this.btnLichSu.Name = "btnLichSu";
+            this.btnLichSu.Size = new System.Drawing.Size(102, 23);
+            this.btnLichSu.TabIndex = 6;
+            this.btnLichSu.Text = "Lịch sử sửa điểm";
+            this.btnLichSu.UseVisualStyleBackColor = true;
+            // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.Location = new System.Drawing.Point(279, 358);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(75, 23);
+            this.btnLamMoi.TabIndex = 7;
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.UseVisualStyleBackColor = true;
+            // 
             // frmNhapDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,7 +206,7 @@
             this.Controls.Add(this.cboLopHocPhan);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(900, 550);
             this.Name = "frmNhapDiem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
