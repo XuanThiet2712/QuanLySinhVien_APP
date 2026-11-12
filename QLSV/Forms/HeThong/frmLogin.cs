@@ -70,7 +70,7 @@ namespace QLSV.Forms.HeThong
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-
+            DialogResult = DialogResult.Cancel;
         }
 
         private void lnkDangKy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

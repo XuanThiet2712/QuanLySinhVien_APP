@@ -30,10 +30,17 @@ namespace QLSV.Forms.HeThong
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            //test
             var nd = SessionManager.CurrentUser;
-            lblNguoiDung.Text = "Người dùng: " + nd.TenDangNhap + "   |   Nhóm quyền: " + nd.MaNhom;
+            if (nd == null)
+            {
+                MessageBox.Show("Chưa đăng nhập. Vui lòng đăng nhập lại.", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DangXuat = true;   // để Program.cs quay về form đăng nhập
+                Close();
+                return;
+            }
 
+            lblNguoiDung.Text = "Người dùng: " + nd.TenDangNhap + "   |   Nhóm quyền: " + nd.MaNhom;
             PhanQuyenMenu();
         }
 
@@ -312,7 +319,33 @@ namespace QLSV.Forms.HeThong
             frm.Show();
         }
 
+
+        private void inDoanhThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmInDoanhThu) { f.Activate(); return; }
+            }
+            frmInDoanhThu frm = new frmInDoanhThu();
+
         private void mnuBieuDo_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmThongKeDoanhThu) { f.Activate(); return; }
+            }
+            frmThongKeDoanhThu frm = new frmThongKeDoanhThu();
+
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            this.Height = frm.Height + 100;
+            this.Width = frm.Width + 100;
+            frm.Show();
+        }
+
+        
+
+        private void mnuBaoCaoDoanhThu_Click(object sender, EventArgs e)
         {
             foreach (Form f in MdiChildren)
             {
@@ -326,6 +359,15 @@ namespace QLSV.Forms.HeThong
             frm.Show();
         }
 
+        private void mnuBieuDo_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in MdiChildren)
+            {
+                if (f is frmBieuDo) { f.Activate(); return; }
+            }
+            frmBieuDo frm = new frmBieuDo();
+
+
         private void mnuBaoCaoDoanhThu_Click(object sender, EventArgs e)
         {
 
@@ -338,6 +380,7 @@ namespace QLSV.Forms.HeThong
                 if (f is frmHocKy) { f.Activate(); return; }
             }
             frmHocKy frm = new frmHocKy();
+
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
             this.Height = frm.Height + 100;

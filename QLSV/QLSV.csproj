@@ -51,6 +51,29 @@
     <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.8.1.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.8.1\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="RBush, Version=4.0.0.0, Culture=neutral, PublicKeyToken=c77e27b81f4d0187, processorArchitecture=MSIL">
       <HintPath>..\packages\RBush.Signed.4.0.0\lib\net47\RBush.dll</HintPath>
     </Reference>
@@ -104,12 +127,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLSV.dbml</DependentUpon>
     </Compile>
-    <Compile Include="DTOs\ThongKeDoanhThuDTO.cs" />
+    <Compile Include="DTOs\DoanhThuDTO.cs" />
+    <Compile Include="DTOs\ThongKeDTO.cs" />
     <Compile Include="Forms\Enroll\frmDangKyHocPhan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Enroll\frmDangKyHocPhan.Designer.cs">
       <DependentUpon>frmDangKyHocPhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\frmBieuDo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\frmBieuDo.Designer.cs">
+      <DependentUpon>frmBieuDo.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Finance\frmThongKeDoanhThu.cs">
       <SubType>Form</SubType>
@@ -208,6 +238,12 @@
     <Compile Include="Forms\Catalog\frmSinhVien.Designer.cs">
       <DependentUpon>frmSinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Report\frmInDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Report\frmInDoanhThu.Designer.cs">
+      <DependentUpon>frmInDoanhThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Report\frmLopHocPhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +269,7 @@
     <Compile Include="Helpers\Result.cs" />
     <Compile Include="Helpers\SessionManager.cs" />
     <Compile Include="Helpers\ValidationHelpers.cs" />
+    <Compile Include="Helpers\VietQrHelper.cs" />
     <Compile Include="Repositories\DangKyRepository.cs" />
     <Compile Include="Repositories\DiemRepository.cs" />
     <Compile Include="Repositories\GiangVienRepository.cs" />
@@ -264,12 +301,15 @@
     <Compile Include="Services\RoleService.cs" />
     <Compile Include="Services\SinhVienService.cs" />
     <Compile Include="Services\SinhVienService.Excel.cs" />
-    <Compile Include="Services\ThongKeService.cs" />
+    <Compile Include="Services\DoanhThuService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\Finance\frmBieuDo.resx">
+      <DependentUpon>frmBieuDo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Finance\frmThongKeDoanhThu.resx">
       <DependentUpon>frmThongKeDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
@@ -314,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Report\frmInDoanhThu.resx">
+      <DependentUpon>frmInDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Report\frmLopHocPhan.resx">
       <DependentUpon>frmLopHocPhan.cs</DependentUpon>
@@ -368,4 +411,7 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\Report\rptDoanhThu.rdlc" />
+  </ItemGroup>
 </Project>

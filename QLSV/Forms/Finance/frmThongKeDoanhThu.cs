@@ -14,7 +14,7 @@ namespace QLSV.Forms.Finance
 {
     public partial class frmThongKeDoanhThu : Form
     {
-        private readonly ThongKeService _thongKeService = new ThongKeService();
+        private readonly DoanhThuService _thongKeService = new DoanhThuService();
         public frmThongKeDoanhThu()
         {
             InitializeComponent();
@@ -58,7 +58,7 @@ namespace QLSV.Forms.Finance
 
             Series series = new Series("Doanh Thu");
             series.ChartType = SeriesChartType.Column;
-            // series.IsValueShownAsLabel = true; // Bỏ comment dòng này nếu muốn hiện hẳn số tiền trên đầu mỗi cột
+            series.IsValueShownAsLabel = true;
 
             foreach (var item in data)
             {

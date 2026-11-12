@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dtpTuNgay = new System.Windows.Forms.DateTimePicker();
             this.dtpDenNgay = new System.Windows.Forms.DateTimePicker();
             this.btnThongKe = new System.Windows.Forms.Button();
@@ -63,7 +63,7 @@
             // 
             // btnThongKe
             // 
-            this.btnThongKe.Location = new System.Drawing.Point(695, 148);
+            this.btnThongKe.Location = new System.Drawing.Point(669, 114);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.Size = new System.Drawing.Size(174, 100);
             this.btnThongKe.TabIndex = 2;
@@ -78,22 +78,22 @@
             this.dgvDoanhThu.Name = "dgvDoanhThu";
             this.dgvDoanhThu.RowHeadersWidth = 51;
             this.dgvDoanhThu.RowTemplate.Height = 24;
-            this.dgvDoanhThu.Size = new System.Drawing.Size(622, 282);
+            this.dgvDoanhThu.Size = new System.Drawing.Size(603, 282);
             this.dgvDoanhThu.TabIndex = 3;
             // 
             // chartDoanhThu
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chartDoanhThu.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chartDoanhThu.Legends.Add(legend8);
+            chartArea1.Name = "ChartArea1";
+            this.chartDoanhThu.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartDoanhThu.Legends.Add(legend1);
             this.chartDoanhThu.Location = new System.Drawing.Point(37, 344);
             this.chartDoanhThu.Name = "chartDoanhThu";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chartDoanhThu.Series.Add(series8);
-            this.chartDoanhThu.Size = new System.Drawing.Size(511, 225);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartDoanhThu.Series.Add(series1);
+            this.chartDoanhThu.Size = new System.Drawing.Size(835, 372);
             this.chartDoanhThu.TabIndex = 4;
             this.chartDoanhThu.Text = "chart1";
             this.chartDoanhThu.Click += new System.EventHandler(this.chartDoanhThu_Click);
@@ -103,7 +103,7 @@
             this.lblTongCong.AutoSize = true;
             this.lblTongCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.lblTongCong.ForeColor = System.Drawing.Color.Red;
-            this.lblTongCong.Location = new System.Drawing.Point(609, 524);
+            this.lblTongCong.Location = new System.Drawing.Point(666, 305);
             this.lblTongCong.Name = "lblTongCong";
             this.lblTongCong.Size = new System.Drawing.Size(118, 17);
             this.lblTongCong.TabIndex = 5;
@@ -133,7 +133,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(899, 581);
+            this.ClientSize = new System.Drawing.Size(899, 665);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTongCong);
