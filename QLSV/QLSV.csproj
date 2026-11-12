@@ -244,6 +244,12 @@
     <Compile Include="Forms\Report\frmInDoanhThu.Designer.cs">
       <DependentUpon>frmInDoanhThu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Report\frmInPhieuThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Report\frmInPhieuThu.Designer.cs">
+      <DependentUpon>frmInPhieuThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Report\frmLopHocPhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -358,6 +364,9 @@
     <EmbeddedResource Include="Forms\Report\frmInDoanhThu.resx">
       <DependentUpon>frmInDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Report\frmInPhieuThu.resx">
+      <DependentUpon>frmInPhieuThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Report\frmLopHocPhan.resx">
       <DependentUpon>frmLopHocPhan.cs</DependentUpon>
     </EmbeddedResource>
@@ -413,5 +422,6 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <EmbeddedResource Include="Forms\Report\rptDoanhThu.rdlc" />
+    <EmbeddedResource Include="Forms\Report\rptPhieuThu.rdlc" />
   </ItemGroup>
 </Project>
