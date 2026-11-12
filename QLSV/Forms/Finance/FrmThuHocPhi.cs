@@ -179,8 +179,23 @@ namespace QLSV.Forms.Finance
                 if (r.Success)
                 {
                     MessageBox.Show(r.Message, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Lấy thông tin để in TRƯỚC khi tải lại công nợ
+                    int maPhieu = r.Data;
+                    string tenSV = lblHoTen.Text;
+                    DateTime ngayLap = DateTime.Now;
                     txtGhiChu.Text = "";
-                    LoadCongNo(true); // tải lại công nợ
+                    LoadCongNo(true);
+
+                    if (MessageBox.Show("Bạn có muốn in phiếu thu không?", "In phiếu",
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        using (var f = new QLSV.Forms.Report.frmInPhieuThu(
+                                   maPhieu.ToString(), ngayLap, tenSV, soTien))
+                        {
+                            f.ShowDialog(this);
+                        }
+                    }
                 }
                 else
                 {
@@ -198,7 +213,7 @@ namespace QLSV.Forms.Finance
             }
         }
 
-        /// <summary>Đưa giao diện về trạng thái chưa tra cứu.</summary>
+        //>Đưa giao diện về trạng thái chưa tra cứu.
         private void ResetGiaoDien()
         {
             _daTraCuuThanhCong = false;
@@ -250,7 +265,7 @@ namespace QLSV.Forms.Finance
             try
             {
                 Image img = await VietQrHelper.TaiQrAsync(soTien, noiDung);
-                if (id != _qrRequestId) { img.Dispose(); return; } // đã reset / tạo lại trong lúc chờ
+                if (id != _qrRequestId) { img.Dispose(); return; }
                 XoaQR();
                 picQR.Image = img;
             }

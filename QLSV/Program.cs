@@ -26,7 +26,7 @@ namespace QLSV
             while (true)
              {
 
-                 using (var login = new frmThuHocPhi())
+                 using (var login = new frmLogin())
                  {
                      if (login.ShowDialog() != DialogResult.OK) return;
                  }
