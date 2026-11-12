@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLSV.Forms.HeThong
+namespace QLSV.Forms.Catalog
 {
     public partial class frmMonHoc : Form
     {
@@ -180,6 +180,11 @@ namespace QLSV.Forms.HeThong
         }
 
         private void btnThem_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmMonHoc_Load_1(object sender, EventArgs e)
         {
 
         }

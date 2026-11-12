@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLSV.Forms.HeThong
+namespace QLSV.Forms.Catalog
 {
     public partial class frmKhoa : Form
     {

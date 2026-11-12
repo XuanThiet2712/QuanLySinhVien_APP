@@ -112,10 +112,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\DbFactory.cs" />
+    <Compile Include="DTOs\DiemDTO.cs" />
     <Compile Include="DTOs\LopDangKyDTO.cs" />
     <Compile Include="Data\QLSV.cs">
       <DependentUpon>QLSV.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DTOs\LopHocPhanDTO.cs" />
     <Compile Include="DTOs\ImportReport.cs" />
     <Compile Include="DTOs\LopHocPhanDTO.cs" />
     <Compile Include="DTOs\NguoiDungDTO.cs" />
@@ -152,34 +154,22 @@
       <DependentUpon>frmChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="DTOs\SinhVienDTO.cs" />
-    <Compile Include="Forms\HeThong\frmGiangVien.cs">
+    <Compile Include="Forms\Catalog\frmGiangVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HeThong\frmGiangVien.Designer.cs">
+    <Compile Include="Forms\Catalog\frmGiangVien.Designer.cs">
       <DependentUpon>frmGiangVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HeThong\frmHocKy.cs">
+    <Compile Include="Forms\Catalog\frmHocKy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HeThong\frmHocKy.Designer.cs">
+    <Compile Include="Forms\Catalog\frmHocKy.Designer.cs">
       <DependentUpon>frmHocKy.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HeThong\frmGiangVien.cs">
+    <Compile Include="Forms\Catalog\frmKhoa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HeThong\frmGiangVien.Designer.cs">
-      <DependentUpon>frmGiangVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\HeThong\frmHocKy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\HeThong\frmHocKy.Designer.cs">
-      <DependentUpon>frmHocKy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\HeThong\frmKhoa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\HeThong\frmKhoa.Designer.cs">
+    <Compile Include="Forms\Catalog\frmKhoa.Designer.cs">
       <DependentUpon>frmKhoa.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Finance\frmConnectionConfig.cs">
@@ -206,16 +196,16 @@
     <Compile Include="Forms\HeThong\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HeThong\frmMonHoc.cs">
+    <Compile Include="Forms\Catalog\frmMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HeThong\frmMonHoc.Designer.cs">
+    <Compile Include="Forms\Catalog\frmMonHoc.Designer.cs">
       <DependentUpon>frmMonHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HeThong\frmNganh.cs">
+    <Compile Include="Forms\Catalog\frmNganh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HeThong\frmNganh.Designer.cs">
+    <Compile Include="Forms\Catalog\frmNganh.Designer.cs">
       <DependentUpon>frmNganh.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HeThong\frmRegister.cs">
@@ -236,16 +226,16 @@
     <Compile Include="Forms\HeThong\frmUserManagement.Designer.cs">
       <DependentUpon>frmUserManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HeThong\frmLopSinhHoat.cs">
+    <Compile Include="Forms\Catalog\frmLopSinhHoat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HeThong\frmLopSinhHoat.Designer.cs">
+    <Compile Include="Forms\Catalog\frmLopSinhHoat.Designer.cs">
       <DependentUpon>frmLopSinhHoat.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HeThong\frmSinhVien.cs">
+    <Compile Include="Forms\Catalog\frmSinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HeThong\frmSinhVien.Designer.cs">
+    <Compile Include="Forms\Catalog\frmSinhVien.Designer.cs">
       <DependentUpon>frmSinhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Report\frmInDoanhThu.cs">
@@ -323,13 +313,13 @@
     <EmbeddedResource Include="Forms\Finance\frmThongKeDoanhThu.resx">
       <DependentUpon>frmThongKeDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HeThong\frmGiangVien.resx">
+    <EmbeddedResource Include="Forms\Catalog\frmGiangVien.resx">
       <DependentUpon>frmGiangVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HeThong\frmHocKy.resx">
+    <EmbeddedResource Include="Forms\Catalog\frmHocKy.resx">
       <DependentUpon>frmHocKy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HeThong\frmMonHoc.resx">
+    <EmbeddedResource Include="Forms\Catalog\frmMonHoc.resx">
       <DependentUpon>frmMonHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmRoleManagement.resx">
@@ -344,7 +334,7 @@
     <EmbeddedResource Include="Forms\HeThong\frmChangePassword.resx">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HeThong\frmKhoa.resx">
+    <EmbeddedResource Include="Forms\Catalog\frmKhoa.resx">
       <DependentUpon>frmKhoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Finance\frmConnectionConfig.resx">
@@ -359,7 +349,7 @@
     <EmbeddedResource Include="Forms\HeThong\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HeThong\frmNganh.resx">
+    <EmbeddedResource Include="Forms\Catalog\frmNganh.resx">
       <DependentUpon>frmNganh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmRegister.resx">
@@ -374,10 +364,12 @@
     <EmbeddedResource Include="Forms\Report\frmNhapDiem.resx">
       <DependentUpon>frmNhapDiem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HeThong\frmLopSinhHoat.resx">
-      <DependentUpon>frmLopSinhHoat.cs</DependentUpon>
+
+    <EmbeddedResource Include="Forms\Catalog\frmLopSinhHoat.resx">
+   <DependentUpon>frmLopSinhHoat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HeThong\frmSinhVien.resx">
+   
+    <EmbeddedResource Include="Forms\Catalog\frmSinhVien.resx">
       <DependentUpon>frmSinhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -412,6 +404,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Forms\Grade\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
