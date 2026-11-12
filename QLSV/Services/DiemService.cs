@@ -79,6 +79,19 @@ namespace QLSV.Services
                 return repo.GetByLHP(MaLHP);
             }
         }
+        private bool DiemHopLe(decimal? diem)
+        {
+            return !diem.HasValue || (diem.Value >= 0 && diem.Value <= 10);
+        }
+
+        // chuyen sang chuoi
+        private string ChuoiDiem(decimal? cc, decimal? gk, decimal? ck)
+        {
+            return "CC=" + (cc.HasValue ? cc.Value.ToString() : "-")
+                + ";GK=" + (gk.HasValue ? gk.Value.ToString() : "-")
+                + ";CK=" + (ck.HasValue ? ck.Value.ToString() : "-");
+        }
+
 
     }
 }
