@@ -50,7 +50,7 @@ namespace QLSV.Helpers
             }
         }
 
-        /// <summary>Ghi chuỗi kết nối mới vào App.config (khóa "QLSV").</summary>
+       //Ghi chuỗi kết nối mới vào App.config (khóa "QLSV")
         public static Result Save(string server, string db, bool winAuth, string user, string pass)
         {
             try

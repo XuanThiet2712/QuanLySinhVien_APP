@@ -89,10 +89,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\DbFactory.cs" />
+    <Compile Include="DTOs\DiemDTO.cs" />
     <Compile Include="DTOs\LopDangKyDTO.cs" />
     <Compile Include="Data\QLSV.cs">
       <DependentUpon>QLSV.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DTOs\LopHocPhanDTO.cs" />
     <Compile Include="DTOs\ImportReport.cs" />
     <Compile Include="DTOs\LopHocPhanDTO.cs" />
     <Compile Include="DTOs\NguoiDungDTO.cs" />
@@ -319,9 +321,11 @@
     <EmbeddedResource Include="Forms\Report\frmNhapDiem.resx">
       <DependentUpon>frmNhapDiem.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="Forms\Catalog\frmLopSinhHoat.resx">
-      <DependentUpon>frmLopSinhHoat.cs</DependentUpon>
+   <DependentUpon>frmLopSinhHoat.cs</DependentUpon>
     </EmbeddedResource>
+   
     <EmbeddedResource Include="Forms\Catalog\frmSinhVien.resx">
       <DependentUpon>frmSinhVien.cs</DependentUpon>
     </EmbeddedResource>
