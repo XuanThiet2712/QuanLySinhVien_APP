@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLSV.Forms.Finance;
 
 namespace QLSV.Forms.HeThong
 {
@@ -84,6 +85,12 @@ namespace QLSV.Forms.HeThong
                     txtMatKhau.Focus();
                 }
             }
+        }
+
+        private void btnSQL_Click(object sender, EventArgs e)
+        {
+            frmConnectionConfig f = new frmConnectionConfig();
+            f.ShowDialog();
         }
     }
 }

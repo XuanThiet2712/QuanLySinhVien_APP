@@ -327,7 +327,7 @@ namespace QLSV.Forms.HeThong
                 if (f is frmInDoanhThu) { f.Activate(); return; }
             }
             frmInDoanhThu frm = new frmInDoanhThu();
-
+        }
         private void mnuBieuDo_Click(object sender, EventArgs e)
         {
             foreach (Form f in MdiChildren)
@@ -359,19 +359,19 @@ namespace QLSV.Forms.HeThong
             frm.Show();
         }
 
-        private void mnuBieuDo_Click(object sender, EventArgs e)
-        {
-            foreach (Form f in MdiChildren)
-            {
-                if (f is frmBieuDo) { f.Activate(); return; }
-            }
-            frmBieuDo frm = new frmBieuDo();
+        //private void mnuBieuDo_Click(object sender, EventArgs e)
+        //{
+        //    foreach (Form f in MdiChildren)
+        //    {
+        //        if (f is frmBieuDo) { f.Activate(); return; }
+        //    }
+        //    frmBieuDo frm = new frmBieuDo();
+        //}
 
+        //private void mnuBaoCaoDoanhThu_Click(object sender, EventArgs e)
+        //{
 
-        private void mnuBaoCaoDoanhThu_Click(object sender, EventArgs e)
-        {
-
-        }
+        //}
 
         private void mnuHocKy_Click(object sender, EventArgs e)
         {
