@@ -49,5 +49,23 @@ namespace QLSV.Forms.Report
         {
 
         }
+
+        private void cboLopHocPhan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var lop = cboLopHocPhan.SelectedItem as LopHocPhanDTO;
+                if (lop == null)
+                {
+                    dgvNhapDiem.DataSource = null;
+                    return;
+                }
+                dgvNhapDiem.DataSource = _service.GetDanhSachNhapDiem(lop.MaLHP);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải danh sách điểm: " + ex.Message);
+            }
+        }
     }
 }
