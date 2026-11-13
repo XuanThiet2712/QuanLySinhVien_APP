@@ -67,6 +67,7 @@
             this.dgvNganh.RowTemplate.Height = 24;
             this.dgvNganh.Size = new System.Drawing.Size(909, 293);
             this.dgvNganh.TabIndex = 1;
+            this.dgvNganh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNganh_CellClick);
             // 
             // cboLocKhoa
             // 
@@ -75,6 +76,7 @@
             this.cboLocKhoa.Name = "cboLocKhoa";
             this.cboLocKhoa.Size = new System.Drawing.Size(358, 24);
             this.cboLocKhoa.TabIndex = 2;
+            this.cboLocKhoa.SelectedIndexChanged += new System.EventHandler(this.cboLocKhoa_SelectionChangeCommitted);
             // 
             // btnThem
             // 
@@ -86,6 +88,7 @@
             this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txtMaNganh
             // 
@@ -138,6 +141,7 @@
             this.btnLuu.TabIndex = 8;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
@@ -149,6 +153,7 @@
             this.btnXoa.TabIndex = 9;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLamMoi
             // 
@@ -160,6 +165,7 @@
             this.btnLamMoi.TabIndex = 10;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // cboKhoa
             // 
@@ -199,7 +205,7 @@
             this.Name = "frmNganh";
             this.Text = "frmNganh";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmNganh_Load_1);
+            this.Load += new System.EventHandler(this.frmNganh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNganh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
