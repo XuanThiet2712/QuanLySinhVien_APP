@@ -159,6 +159,7 @@
             this.Name = "frmForgotPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quên mật khẩu";
+            this.Load += new System.EventHandler(this.frmForgotPassword_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

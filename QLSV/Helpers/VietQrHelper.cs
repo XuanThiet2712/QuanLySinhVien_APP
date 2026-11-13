@@ -15,8 +15,8 @@ namespace QLSV.Helpers
     {
         private const string BANK_ID = "MB";
         private const string BANK_BIN = "970422"; 
-        private const string SO_TAI_KHOAN = "0123456789";
-        private const string TEN_TAI_KHOAN = "TRUONG DAI HOC ABC";
+        private const string SO_TAI_KHOAN = "70003690701";
+        private const string TEN_TAI_KHOAN = "NGUYEN XUAN THIET";
         private const string TEMPLATE = "compact2";
 
         private static readonly HttpClient _http = TaoHttpClient();

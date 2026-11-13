@@ -46,5 +46,11 @@ namespace QLSV.Forms.HeThong
         {
             Close();
         }
+
+        private void frmForgotPassword_Load(object sender, EventArgs e)
+        {
+            ThemeManager.Load();
+            ThemeManager.Apply(this);
+        }
     }
 }
