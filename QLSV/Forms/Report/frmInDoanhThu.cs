@@ -88,5 +88,10 @@ namespace QLSV.Forms.Report
                 MessageBox.Show(root.Message, "Lỗi report");
             }
         }
+
+        private void dtpTuNgay_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

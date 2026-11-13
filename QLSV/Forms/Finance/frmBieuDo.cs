@@ -157,5 +157,10 @@ namespace QLSV.Forms.Finance
         {
 
         }
+
+        private void chartTopMon_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
