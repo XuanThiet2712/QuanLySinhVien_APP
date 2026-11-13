@@ -69,7 +69,7 @@
             // 
             this.btnThem.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(33, 428);
+            this.btnThem.Location = new System.Drawing.Point(28, 475);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(99, 45);
             this.btnThem.TabIndex = 0;
@@ -82,11 +82,11 @@
             this.dgvSinhVien.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvSinhVien.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvSinhVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSinhVien.Location = new System.Drawing.Point(661, 68);
+            this.dgvSinhVien.Location = new System.Drawing.Point(518, 71);
             this.dgvSinhVien.Name = "dgvSinhVien";
             this.dgvSinhVien.RowHeadersWidth = 51;
             this.dgvSinhVien.RowTemplate.Height = 24;
-            this.dgvSinhVien.Size = new System.Drawing.Size(615, 309);
+            this.dgvSinhVien.Size = new System.Drawing.Size(470, 304);
             this.dgvSinhVien.TabIndex = 1;
             // 
             // label1
@@ -106,16 +106,16 @@
             this.txtMaSV.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtMaSV.Location = new System.Drawing.Point(118, 14);
             this.txtMaSV.Name = "txtMaSV";
-            this.txtMaSV.Size = new System.Drawing.Size(225, 22);
+            this.txtMaSV.Size = new System.Drawing.Size(185, 22);
             this.txtMaSV.TabIndex = 3;
             // 
             // picAnh
             // 
             this.picAnh.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.picAnh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picAnh.Location = new System.Drawing.Point(424, 128);
+            this.picAnh.Location = new System.Drawing.Point(346, 181);
             this.picAnh.Name = "picAnh";
-            this.picAnh.Size = new System.Drawing.Size(150, 150);
+            this.picAnh.Size = new System.Drawing.Size(140, 140);
             this.picAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAnh.TabIndex = 4;
             this.picAnh.TabStop = false;
@@ -125,9 +125,9 @@
             this.cboLocLop.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.cboLocLop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboLocLop.FormattingEnabled = true;
-            this.cboLocLop.Location = new System.Drawing.Point(472, 12);
+            this.cboLocLop.Location = new System.Drawing.Point(149, 125);
             this.cboLocLop.Name = "cboLocLop";
-            this.cboLocLop.Size = new System.Drawing.Size(191, 24);
+            this.cboLocLop.Size = new System.Drawing.Size(154, 24);
             this.cboLocLop.TabIndex = 5;
             // 
             // radNam
@@ -149,7 +149,7 @@
             this.grbGioiTinh.Controls.Add(this.radNam);
             this.grbGioiTinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grbGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbGioiTinh.Location = new System.Drawing.Point(7, 128);
+            this.grbGioiTinh.Location = new System.Drawing.Point(14, 182);
             this.grbGioiTinh.Name = "grbGioiTinh";
             this.grbGioiTinh.Size = new System.Drawing.Size(258, 29);
             this.grbGioiTinh.TabIndex = 7;
@@ -172,7 +172,7 @@
             // 
             this.btnLuu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Location = new System.Drawing.Point(173, 428);
+            this.btnLuu.Location = new System.Drawing.Point(168, 475);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(99, 45);
             this.btnLuu.TabIndex = 8;
@@ -183,7 +183,7 @@
             // 
             this.btnXoa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(313, 428);
+            this.btnXoa.Location = new System.Drawing.Point(308, 475);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(99, 45);
             this.btnXoa.TabIndex = 9;
@@ -194,7 +194,7 @@
             // 
             this.btnLamMoi.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLamMoi.Location = new System.Drawing.Point(453, 428);
+            this.btnLamMoi.Location = new System.Drawing.Point(448, 475);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(99, 45);
             this.btnLamMoi.TabIndex = 10;
@@ -207,7 +207,7 @@
             this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 303);
+            this.label2.Location = new System.Drawing.Point(14, 355);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 18);
             this.label2.TabIndex = 11;
@@ -219,7 +219,7 @@
             this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(14, 249);
+            this.label3.Location = new System.Drawing.Point(14, 301);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 18);
             this.label3.TabIndex = 12;
@@ -231,7 +231,7 @@
             this.label4.BackColor = System.Drawing.SystemColors.Control;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(14, 195);
+            this.label4.Location = new System.Drawing.Point(14, 247);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 18);
             this.label4.TabIndex = 13;
@@ -256,7 +256,7 @@
             this.label6.BackColor = System.Drawing.SystemColors.Control;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(364, 20);
+            this.label6.Location = new System.Drawing.Point(14, 131);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(101, 18);
             this.label6.TabIndex = 15;
@@ -268,7 +268,7 @@
             this.label7.BackColor = System.Drawing.SystemColors.Control;
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(14, 357);
+            this.label7.Location = new System.Drawing.Point(14, 409);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 18);
             this.label7.TabIndex = 16;
@@ -280,7 +280,7 @@
             this.label8.BackColor = System.Drawing.SystemColors.Control;
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(691, 39);
+            this.label8.Location = new System.Drawing.Point(518, 45);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(72, 18);
             this.label8.TabIndex = 17;
@@ -290,9 +290,9 @@
             // 
             this.btnTim.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.Location = new System.Drawing.Point(1177, 30);
+            this.btnTim.Location = new System.Drawing.Point(902, 38);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(99, 25);
+            this.btnTim.Size = new System.Drawing.Size(86, 25);
             this.btnTim.TabIndex = 18;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = false;
@@ -300,7 +300,7 @@
             // btnTruoc
             // 
             this.btnTruoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTruoc.Location = new System.Drawing.Point(794, 382);
+            this.btnTruoc.Location = new System.Drawing.Point(583, 381);
             this.btnTruoc.Name = "btnTruoc";
             this.btnTruoc.Size = new System.Drawing.Size(99, 25);
             this.btnTruoc.TabIndex = 19;
@@ -310,7 +310,7 @@
             // btnSau
             // 
             this.btnSau.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSau.Location = new System.Drawing.Point(1048, 382);
+            this.btnSau.Location = new System.Drawing.Point(837, 381);
             this.btnSau.Name = "btnSau";
             this.btnSau.Size = new System.Drawing.Size(99, 25);
             this.btnSau.TabIndex = 20;
@@ -320,16 +320,16 @@
             // txtTim
             // 
             this.txtTim.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtTim.Location = new System.Drawing.Point(788, 33);
+            this.txtTim.Location = new System.Drawing.Point(617, 41);
             this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(362, 22);
+            this.txtTim.Size = new System.Drawing.Size(261, 22);
             this.txtTim.TabIndex = 21;
             // 
             // btnImport
             // 
             this.btnImport.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImport.Location = new System.Drawing.Point(743, 428);
+            this.btnImport.Location = new System.Drawing.Point(532, 412);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(150, 45);
             this.btnImport.TabIndex = 22;
@@ -340,7 +340,7 @@
             // 
             this.btnExport.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExport.Location = new System.Drawing.Point(1048, 428);
+            this.btnExport.Location = new System.Drawing.Point(837, 413);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(150, 45);
             this.btnExport.TabIndex = 23;
@@ -350,48 +350,48 @@
             // txtHoTen
             // 
             this.txtHoTen.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtHoTen.Location = new System.Drawing.Point(71, 68);
+            this.txtHoTen.Location = new System.Drawing.Point(71, 70);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(272, 22);
+            this.txtHoTen.Size = new System.Drawing.Size(232, 22);
             this.txtHoTen.TabIndex = 24;
             this.txtHoTen.TextChanged += new System.EventHandler(this.txtHoTen_TextChanged);
             // 
             // dtpNgaySinh
             // 
-            this.dtpNgaySinh.Location = new System.Drawing.Point(99, 189);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(99, 243);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(244, 22);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(204, 22);
             this.dtpNgaySinh.TabIndex = 25;
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtDiaChi.Location = new System.Drawing.Point(86, 243);
+            this.txtDiaChi.Location = new System.Drawing.Point(86, 297);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(257, 22);
+            this.txtDiaChi.Size = new System.Drawing.Size(217, 22);
             this.txtDiaChi.TabIndex = 26;
             // 
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtEmail.Location = new System.Drawing.Point(87, 297);
+            this.txtEmail.Location = new System.Drawing.Point(87, 351);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(256, 22);
+            this.txtEmail.Size = new System.Drawing.Size(216, 22);
             this.txtEmail.TabIndex = 27;
             // 
             // txtSDT
             // 
             this.txtSDT.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtSDT.Location = new System.Drawing.Point(118, 351);
+            this.txtSDT.Location = new System.Drawing.Point(118, 405);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(225, 22);
+            this.txtSDT.Size = new System.Drawing.Size(185, 22);
             this.txtSDT.TabIndex = 28;
             // 
             // btnChonAnh
             // 
             this.btnChonAnh.BackColor = System.Drawing.Color.LightGray;
             this.btnChonAnh.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChonAnh.Location = new System.Drawing.Point(455, 286);
+            this.btnChonAnh.Location = new System.Drawing.Point(373, 333);
             this.btnChonAnh.Name = "btnChonAnh";
             this.btnChonAnh.Size = new System.Drawing.Size(85, 33);
             this.btnChonAnh.TabIndex = 29;
@@ -402,7 +402,7 @@
             // 
             this.lblTrang.AutoSize = true;
             this.lblTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTrang.Location = new System.Drawing.Point(911, 391);
+            this.lblTrang.Location = new System.Drawing.Point(700, 390);
             this.lblTrang.Name = "lblTrang";
             this.lblTrang.Size = new System.Drawing.Size(119, 16);
             this.lblTrang.TabIndex = 30;
@@ -415,7 +415,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::QLSV.Properties.Resources.abstract_background_with_soft_gradient_color_and_dynamic_shadow_on_background_background_for_wallpaper_eps_10_free_vector;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1300, 500);
+            this.ClientSize = new System.Drawing.Size(1000, 550);
             this.Controls.Add(this.lblTrang);
             this.Controls.Add(this.btnChonAnh);
             this.Controls.Add(this.txtSDT);
