@@ -104,7 +104,7 @@
             // txtMaSV
             // 
             this.txtMaSV.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtMaSV.Location = new System.Drawing.Point(118, 14);
+            this.txtMaSV.Location = new System.Drawing.Point(121, 14);
             this.txtMaSV.Name = "txtMaSV";
             this.txtMaSV.Size = new System.Drawing.Size(185, 22);
             this.txtMaSV.TabIndex = 3;
@@ -125,7 +125,7 @@
             this.cboLocLop.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.cboLocLop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboLocLop.FormattingEnabled = true;
-            this.cboLocLop.Location = new System.Drawing.Point(149, 125);
+            this.cboLocLop.Location = new System.Drawing.Point(152, 125);
             this.cboLocLop.Name = "cboLocLop";
             this.cboLocLop.Size = new System.Drawing.Size(154, 24);
             this.cboLocLop.TabIndex = 5;
@@ -350,7 +350,7 @@
             // txtHoTen
             // 
             this.txtHoTen.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtHoTen.Location = new System.Drawing.Point(71, 70);
+            this.txtHoTen.Location = new System.Drawing.Point(74, 70);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(232, 22);
             this.txtHoTen.TabIndex = 24;
@@ -358,7 +358,7 @@
             // 
             // dtpNgaySinh
             // 
-            this.dtpNgaySinh.Location = new System.Drawing.Point(99, 243);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(102, 243);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(204, 22);
             this.dtpNgaySinh.TabIndex = 25;
@@ -366,7 +366,7 @@
             // txtDiaChi
             // 
             this.txtDiaChi.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtDiaChi.Location = new System.Drawing.Point(86, 297);
+            this.txtDiaChi.Location = new System.Drawing.Point(89, 297);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(217, 22);
             this.txtDiaChi.TabIndex = 26;
@@ -374,7 +374,7 @@
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtEmail.Location = new System.Drawing.Point(87, 351);
+            this.txtEmail.Location = new System.Drawing.Point(90, 351);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(216, 22);
             this.txtEmail.TabIndex = 27;
@@ -382,7 +382,7 @@
             // txtSDT
             // 
             this.txtSDT.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtSDT.Location = new System.Drawing.Point(118, 405);
+            this.txtSDT.Location = new System.Drawing.Point(121, 405);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(185, 22);
             this.txtSDT.TabIndex = 28;
@@ -410,8 +410,7 @@
             // 
             // frmSinhVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::QLSV.Properties.Resources.abstract_background_with_soft_gradient_color_and_dynamic_shadow_on_background_background_for_wallpaper_eps_10_free_vector;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;

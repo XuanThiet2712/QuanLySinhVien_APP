@@ -205,8 +205,7 @@
             // 
             // frmNhapDiem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(960, 472);
             this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.btnLichSu);

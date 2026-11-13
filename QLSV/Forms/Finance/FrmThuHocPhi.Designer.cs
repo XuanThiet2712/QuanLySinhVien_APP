@@ -99,7 +99,6 @@
             this.groupBox1.Size = new System.Drawing.Size(526, 178);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // label2
             // 
@@ -141,7 +140,6 @@
             this.groupBox2.Size = new System.Drawing.Size(526, 257);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
             // 
             // btnTaoQR
             // 
@@ -282,7 +280,6 @@
             this.groupBox3.Size = new System.Drawing.Size(426, 479);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
             // 
             // btnLapPhieu
             // 
@@ -342,8 +339,7 @@
             // 
             // frmThuHocPhi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(982, 503);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
