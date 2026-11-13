@@ -56,7 +56,7 @@
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnLuu
             // 
@@ -68,6 +68,7 @@
             this.btnLuu.TabIndex = 1;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
@@ -79,6 +80,7 @@
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLamMoi
             // 
@@ -90,6 +92,7 @@
             this.btnLamMoi.TabIndex = 3;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // txtMaLop
             // 
@@ -157,9 +160,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(66, 98);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 18);
+            this.label4.Size = new System.Drawing.Size(114, 18);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Ngành trực thuộc";
+            this.label4.Text = "Khoa trực thuộc";
             // 
             // label5
             // 
@@ -185,6 +188,7 @@
             this.dgvLop.RowTemplate.Height = 24;
             this.dgvLop.Size = new System.Drawing.Size(870, 287);
             this.dgvLop.TabIndex = 12;
+            this.dgvLop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLop_CellClick);
             // 
             // cboNganh
             // 
@@ -195,6 +199,7 @@
             this.cboNganh.Name = "cboNganh";
             this.cboNganh.Size = new System.Drawing.Size(200, 24);
             this.cboNganh.TabIndex = 13;
+            this.cboNganh.SelectedIndexChanged += new System.EventHandler(this.cboKhoa_SelectionChangeCommitted);
             // 
             // cboLocNganh
             // 
@@ -232,7 +237,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLopSinhHoat";
             this.Text = "LopSinhHoat";
-            this.Load += new System.EventHandler(this.frmLopSinhHoat_Load_1);
+            this.Load += new System.EventHandler(this.frmLopSinhHoat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLop)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

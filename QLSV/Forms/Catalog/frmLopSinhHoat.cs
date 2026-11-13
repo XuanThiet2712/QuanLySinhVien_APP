@@ -24,19 +24,7 @@ namespace QLSV.Forms.Catalog
         public frmLopSinhHoat()
         {
             InitializeComponent();
-            GanSuKien();
-        }
-
-        private void GanSuKien()
-        {
-            Load += frmLopSinhHoat_Load;
-            btnThem.Click += btnThem_Click;
-            btnLuu.Click += btnLuu_Click;
-            btnXoa.Click += btnXoa_Click;
-            btnLamMoi.Click += btnLamMoi_Click;
-            dgvLop.CellClick += dgvLop_CellClick;
-            cboNganh.SelectionChangeCommitted += cboKhoa_SelectionChangeCommitted;
-            cboLocNganh.SelectionChangeCommitted += cboLocNganh_SelectionChangeCommitted;
+          
         }
 
         private void frmLopSinhHoat_Load(object sender, EventArgs e)
@@ -178,16 +166,6 @@ namespace QLSV.Forms.Catalog
         {
             MessageBox.Show(r.Message, "Thông báo", MessageBoxButtons.OK,
                 r.Success ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
-        }
-
-        private void frmLopSinhHoat_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnThem_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         private void cboLocNganh_SelectedIndexChanged(object sender, EventArgs e)
