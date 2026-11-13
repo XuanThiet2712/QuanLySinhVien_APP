@@ -103,6 +103,7 @@
             // 
             // txtMaSV
             // 
+            this.txtMaSV.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtMaSV.Location = new System.Drawing.Point(118, 14);
             this.txtMaSV.Name = "txtMaSV";
             this.txtMaSV.Size = new System.Drawing.Size(225, 22);
@@ -110,6 +111,7 @@
             // 
             // picAnh
             // 
+            this.picAnh.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.picAnh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picAnh.Location = new System.Drawing.Point(424, 128);
             this.picAnh.Name = "picAnh";
@@ -120,6 +122,8 @@
             // 
             // cboLocLop
             // 
+            this.cboLocLop.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cboLocLop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboLocLop.FormattingEnabled = true;
             this.cboLocLop.Location = new System.Drawing.Point(472, 12);
             this.cboLocLop.Name = "cboLocLop";
@@ -315,6 +319,7 @@
             // 
             // txtTim
             // 
+            this.txtTim.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtTim.Location = new System.Drawing.Point(788, 33);
             this.txtTim.Name = "txtTim";
             this.txtTim.Size = new System.Drawing.Size(362, 22);
@@ -344,6 +349,7 @@
             // 
             // txtHoTen
             // 
+            this.txtHoTen.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtHoTen.Location = new System.Drawing.Point(71, 68);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(272, 22);
@@ -359,6 +365,7 @@
             // 
             // txtDiaChi
             // 
+            this.txtDiaChi.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtDiaChi.Location = new System.Drawing.Point(86, 243);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(257, 22);
@@ -366,6 +373,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtEmail.Location = new System.Drawing.Point(87, 297);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(256, 22);
@@ -373,6 +381,7 @@
             // 
             // txtSDT
             // 
+            this.txtSDT.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtSDT.Location = new System.Drawing.Point(118, 351);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(225, 22);
