@@ -80,5 +80,15 @@ namespace QLSV.Forms.Enroll
             MessageBox.Show(kq.Message);
             if (kq.Success) TaiLai();
         }
+
+        private void dgvDaDangKy_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
