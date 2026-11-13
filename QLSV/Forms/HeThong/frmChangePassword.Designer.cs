@@ -91,24 +91,26 @@
             // 
             // btnDoi
             // 
+            this.btnDoi.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnDoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoi.Location = new System.Drawing.Point(135, 211);
             this.btnDoi.Name = "btnDoi";
             this.btnDoi.Size = new System.Drawing.Size(99, 45);
             this.btnDoi.TabIndex = 6;
             this.btnDoi.Text = "Đổi";
-            this.btnDoi.UseVisualStyleBackColor = true;
+            this.btnDoi.UseVisualStyleBackColor = false;
             this.btnDoi.Click += new System.EventHandler(this.btnDoi_Click);
             // 
             // btnHuy
             // 
+            this.btnHuy.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.Location = new System.Drawing.Point(337, 211);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(99, 45);
             this.btnHuy.TabIndex = 7;
-            this.btnHuy.Text = "Huy";
-            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // frmChangePassword
