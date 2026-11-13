@@ -112,20 +112,21 @@
             this.dgvNhapDiem.Size = new System.Drawing.Size(651, 150);
             this.dgvNhapDiem.TabIndex = 4;
             this.dgvNhapDiem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhapDiem_CellContentClick);
+            this.dgvNhapDiem.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhapDiem_CellEndEdit);
+            this.dgvNhapDiem.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvNhapDiem_CellValidating);
+            this.dgvNhapDiem.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvNhapDiem_DataError);
             // 
             // colSV
             // 
             this.colSV.DataPropertyName = "MaSV";
             this.colSV.HeaderText = "MSSV";
             this.colSV.Name = "colSV";
-            this.colSV.ReadOnly = true;
             // 
             // colHoTen
             // 
             this.colHoTen.DataPropertyName = "HoTen";
             this.colHoTen.HeaderText = "Họ tên";
             this.colHoTen.Name = "colHoTen";
-            this.colHoTen.ReadOnly = true;
             // 
             // colCC
             // 
@@ -150,21 +151,18 @@
             this.colTK.DataPropertyName = "DiemTongKet";
             this.colTK.HeaderText = "Tổng kết";
             this.colTK.Name = "colTK";
-            this.colTK.ReadOnly = true;
             // 
             // colChu
             // 
             this.colChu.DataPropertyName = "DiemChu";
             this.colChu.HeaderText = "Điểm chữ";
             this.colChu.Name = "colChu";
-            this.colChu.ReadOnly = true;
             // 
             // colHe4
             // 
             this.colHe4.DataPropertyName = "Diem4";
             this.colHe4.HeaderText = "Hệ 4";
             this.colHe4.Name = "colHe4";
-            this.colHe4.ReadOnly = true;
             // 
             // btnLuu
             // 

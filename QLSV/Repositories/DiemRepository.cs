@@ -49,6 +49,40 @@ namespace QLSV.Repositories
                      };
             return ds.ToList();
         }
-        
+        //lay diem theo mhp
+        public Diem GetByDangKy(int maDK)
+        {
+            return _db.Diems.FirstOrDefault(x => x.MaDK == maDK);
+        }
+        //chx co diem -> them moi
+        //co = cap nhat
+        public void Upsert(Diem diem)
+        {
+            Diem cu = GetByDangKy(diem.MaDK);
+            if (cu == null)
+            {
+                _db.Diems.InsertOnSubmit(diem);
+            }
+            else
+            {
+                cu.DiemCC = diem.DiemCC;
+                cu.DiemGK = diem.DiemGK;
+                cu.DiemCK = diem.DiemCK;
+                cu.DiemTongKet = diem.DiemTongKet;
+                cu.DiemChu = diem.DiemChu;
+                cu.Diem4 = diem.Diem4;
+            }
+        }
+        // doc diem
+        public List<Diem> GetByStudent(string maSV)
+        {
+            return (from d in _db.Diems
+                    join dk in _db.DangKyHocPhans
+                        on d.MaDK equals dk.MaDK
+                    where dk.MaSV == maSV
+                    orderby dk.MaDK
+                    select d).ToList();
+        }
+
     }
 }
