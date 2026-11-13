@@ -13,7 +13,7 @@ namespace QLSV.Forms.Report
         private DateTime _tuNgay;
         private DateTime _denNgay;
 
-        // Mở mặc định: đầu tháng -> hôm nay
+        //mặc định đầu tháng
         public frmInDoanhThu()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace QLSV.Forms.Report
             _denNgay = DateTime.Now;
         }
 
-        // Mở với dữ liệu có sẵn
+        // mở với dữ liệu có sẵn
         public frmInDoanhThu(List<DoanhThuDTO> data, DateTime tuNgay, DateTime denNgay)
         {
             InitializeComponent();

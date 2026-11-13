@@ -42,7 +42,6 @@ namespace QLSV.Forms.Finance
             chartHocLuc.Visible = false;
             chartTopMon.Visible = false;
 
-            // Kiểm tra xem ComboBox đang chọn mục nào thì Load và Mở Visible cho mục đó
             switch (cboLoaiBieuDo.SelectedIndex)
             {
                 case 0:
@@ -125,7 +124,7 @@ namespace QLSV.Forms.Finance
             chartHocLuc.Titles.Add($"TỈ LỆ HỌC LỰC - HỌC KỲ {maHK}");
         }
 
-        // Hàm vẽ biểu đồ Top 5 môn (Column hoặc Bar Chart)
+        // Hàm vẽ biểu đồ Top 5 môn
         private void LoadBieuDoTopMon(string maHK)
         {
             var data = _thongKeService.Top5MonDongNhat(maHK);

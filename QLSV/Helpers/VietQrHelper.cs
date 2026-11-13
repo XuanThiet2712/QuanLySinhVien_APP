@@ -54,7 +54,6 @@ namespace QLSV.Helpers
                    $"&accountName={Uri.EscapeDataString(TEN_TAI_KHOAN)}";
         }
 
-        // Giữ nguyên tên và chữ ký để frmThuHocPhi không phải sửa
         public static Task<Image> TaiQrAsync(decimal soTien, string noiDung)
         {
             return Task.FromResult(TaoQr(soTien, noiDung));
@@ -83,9 +82,9 @@ namespace QLSV.Helpers
 
             string s =
                 Tlv("00", "01") +
-                Tlv("01", "12") +                                  // 12 = QR động (có số tiền)
+                Tlv("01", "12") +                 // 12 = QR động
                 Tlv("38", merchant) +
-                Tlv("53", "704") +                                 // VND
+                Tlv("53", "704") +              // VND
                 Tlv("54", decimal.Truncate(soTien).ToString(CultureInfo.InvariantCulture)) +
                 Tlv("58", "VN") +
                 Tlv("62", Tlv("08", noiDung)) +

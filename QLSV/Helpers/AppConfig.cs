@@ -9,12 +9,9 @@ using System.Threading.Tasks;
 
 namespace QLSV.Helpers
 {
-    // Đọc cấu hình từ App.config
-    //D bổ sung Save(...) và TestConnection(...) cho frmConnectionConfig
     public static class AppConfig
     {
-        //Chuỗi kết nối tới CSDL QLSV ,khóa "QLSV" trong App.config
-        // mở file App.config, tìm thẻ <add name="QLSV" ... 
+        // kết nối tới CSDL QLSV ,khóa "QLSV" trong App.config
         public static string ConnectionString
         {
             get
@@ -53,8 +50,7 @@ namespace QLSV.Helpers
 
 
 
-       //Ghi chuỗi kết nối mới vào App.config (khóa "QLSV")
-
+       // lưu kết nối mới vào
         public static Result Save(string server, string db, bool winAuth, string user, string pass)
         {
             try

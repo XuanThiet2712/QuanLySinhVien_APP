@@ -36,6 +36,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnTaoQR = new System.Windows.Forms.Button();
+            this.picQR = new System.Windows.Forms.PictureBox();
             this.lblDaThu = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lblConNo = new System.Windows.Forms.Label();
@@ -52,13 +54,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.nudSoTienThu = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
-            this.picQR = new System.Windows.Forms.PictureBox();
-            this.btnTaoQR = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picQR)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoTienThu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picQR)).BeginInit();
             this.SuspendLayout();
             // 
             // txtMaSV
@@ -97,7 +97,7 @@
             this.groupBox1.Size = new System.Drawing.Size(526, 178);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Tra cứu";
             // 
             // label2
             // 
@@ -137,7 +137,27 @@
             this.groupBox2.Size = new System.Drawing.Size(526, 269);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Thông tin";
+            // 
+            // btnTaoQR
+            // 
+            this.btnTaoQR.Location = new System.Drawing.Point(388, 227);
+            this.btnTaoQR.Name = "btnTaoQR";
+            this.btnTaoQR.Size = new System.Drawing.Size(86, 41);
+            this.btnTaoQR.TabIndex = 11;
+            this.btnTaoQR.Text = "Tạo QR";
+            this.btnTaoQR.UseVisualStyleBackColor = true;
+            this.btnTaoQR.Click += new System.EventHandler(this.btnTaoQR_Click);
+            // 
+            // picQR
+            // 
+            this.picQR.Image = ((System.Drawing.Image)(resources.GetObject("picQR.Image")));
+            this.picQR.Location = new System.Drawing.Point(323, 13);
+            this.picQR.Name = "picQR";
+            this.picQR.Size = new System.Drawing.Size(197, 208);
+            this.picQR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picQR.TabIndex = 10;
+            this.picQR.TabStop = false;
             // 
             // lblDaThu
             // 
@@ -251,7 +271,7 @@
             this.groupBox3.Size = new System.Drawing.Size(363, 491);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.groupBox3.Text = "Hóa đơn";
             // 
             // btnLapPhieu
             // 
@@ -307,26 +327,6 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Số tiền thu (VNĐ):";
             // 
-            // picQR
-            // 
-            this.picQR.Image = ((System.Drawing.Image)(resources.GetObject("picQR.Image")));
-            this.picQR.Location = new System.Drawing.Point(323, 13);
-            this.picQR.Name = "picQR";
-            this.picQR.Size = new System.Drawing.Size(197, 208);
-            this.picQR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picQR.TabIndex = 10;
-            this.picQR.TabStop = false;
-            // 
-            // btnTaoQR
-            // 
-            this.btnTaoQR.Location = new System.Drawing.Point(388, 227);
-            this.btnTaoQR.Name = "btnTaoQR";
-            this.btnTaoQR.Size = new System.Drawing.Size(86, 41);
-            this.btnTaoQR.TabIndex = 11;
-            this.btnTaoQR.Text = "Tạo QR";
-            this.btnTaoQR.UseVisualStyleBackColor = true;
-            this.btnTaoQR.Click += new System.EventHandler(this.btnTaoQR_Click);
-            // 
             // frmThuHocPhi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -335,6 +335,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmThuHocPhi";
             this.Text = "FrmThuHocPhi";
             this.Load += new System.EventHandler(this.FrmThuHocPhi_Load);
@@ -342,10 +343,10 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picQR)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoTienThu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picQR)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -12,7 +12,7 @@ namespace QLSV.Services
 {
     public class FeeService
     {
-        private const int GHI_CHU_TOI_DA = 200; // khớp NVARCHAR(200) của PhieuThu.GhiChu
+        private const int GHI_CHU_TOI_DA = 200; // NVARCHAR(200) 
 
         // tính học phí và công nợ của sinh viên trong một học kỳ
         public Result<HocPhiDTO> TinhHocPhi(string maSV, string maHK)
@@ -107,7 +107,6 @@ namespace QLSV.Services
                 {
                     // Khóa dòng sinh viên cho tới khi transaction kết thúc: hai người cùng thu
                     // cho một sinh viên sẽ phải xếp hàng, người sau tính công nợ trên số liệu
-                    // đã có phiếu của người trước => không thu vượt nợ, không deadlock.
                     db.ExecuteCommand("SELECT 1 FROM dbo.SinhVien WITH (UPDLOCK, HOLDLOCK) WHERE MaSV = {0}", maSV);
 
                     var resHocPhi = TinhHocPhiInternal(db, maSV, maHK);

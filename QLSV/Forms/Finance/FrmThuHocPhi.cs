@@ -9,17 +9,12 @@ namespace QLSV.Forms.Finance
     public partial class frmThuHocPhi : Form
     {
         private readonly FeeService _feeService = new FeeService();
-
-        // Giới hạn trên của ô nhập tiền khi không có công nợ
         private const decimal MAX_TIEN_MAC_DINH = 100000000000m;
         private int _qrRequestId;
 
         private bool _coQuyenThu;
         private bool _daTraCuuThanhCong;
         private decimal _conNoHienTai;
-
-        // Mã SV / HK đã tra cứu thành công: lập phiếu luôn dùng đúng cặp này,
-        // tránh trường hợp người dùng sửa ô text sau khi tra cứu rồi bấm Lập phiếu.
         private string _maSVDaTraCuu = "";
         private string _maHKDaTraCuu = "";
 
@@ -29,7 +24,6 @@ namespace QLSV.Forms.Finance
         }
 
         // Giữ lại các handler rỗng vì Designer có thể đang đăng ký sự kiện.
-        // Nếu muốn xóa: xóa cả dòng "+= new EventHandler(...)" trong file .Designer.cs.
         private void lblHoTen_Click(object sender, EventArgs e) { }
         private void label4_Click(object sender, EventArgs e) { }
         private void lblPhaiThu_Click(object sender, EventArgs e) { }
@@ -150,13 +144,11 @@ namespace QLSV.Forms.Finance
             }
             else
             {
-#if DEBUG
+
                 maNguoiLap = 1; // chỉ dùng khi test trực tiếp, bỏ qua form Login
-#else
                 MessageBox.Show("Bạn chưa đăng nhập.", "Cảnh báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-#endif
             }
 
             var xacNhan = MessageBox.Show(
@@ -213,7 +205,7 @@ namespace QLSV.Forms.Finance
             }
         }
 
-        //>Đưa giao diện về trạng thái chưa tra cứu.
+        //Đưa giao diện về trạng thái chưa tra cứu.
         private void ResetGiaoDien()
         {
             _daTraCuuThanhCong = false;
