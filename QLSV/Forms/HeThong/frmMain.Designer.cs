@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuHeThong = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +45,7 @@
             this.mnuSinhVien = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuGiangVien = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMonHoc = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuHocKy = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHocVu = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuLopHocPhan = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDangKyHocPhan = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,9 +61,11 @@
             this.mnuQuyenCuaToi = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblNguoiDung = new System.Windows.Forms.ToolStripStatusLabel();
-            this.mnuHocKy = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+//            this.toolStripButtonOverride1 = new Microsoft.Reporting.WinForms.ReportToolBar.ToolStripButtonOverride();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -158,44 +162,51 @@
             // mnuKhoa
             // 
             this.mnuKhoa.Name = "mnuKhoa";
-            this.mnuKhoa.Size = new System.Drawing.Size(224, 26);
+            this.mnuKhoa.Size = new System.Drawing.Size(181, 26);
             this.mnuKhoa.Text = "Khoa";
             this.mnuKhoa.Click += new System.EventHandler(this.mnuKhoa_Click);
             // 
             // mnuNganh
             // 
             this.mnuNganh.Name = "mnuNganh";
-            this.mnuNganh.Size = new System.Drawing.Size(224, 26);
+            this.mnuNganh.Size = new System.Drawing.Size(181, 26);
             this.mnuNganh.Text = "Ngành";
             this.mnuNganh.Click += new System.EventHandler(this.mnuNganh_Click);
             // 
             // mnuLopSinhHoat
             // 
             this.mnuLopSinhHoat.Name = "mnuLopSinhHoat";
-            this.mnuLopSinhHoat.Size = new System.Drawing.Size(224, 26);
+            this.mnuLopSinhHoat.Size = new System.Drawing.Size(181, 26);
             this.mnuLopSinhHoat.Text = "Lớp sinh hoạt";
             this.mnuLopSinhHoat.Click += new System.EventHandler(this.mnuLopSinhHoat_Click);
             // 
             // mnuSinhVien
             // 
             this.mnuSinhVien.Name = "mnuSinhVien";
-            this.mnuSinhVien.Size = new System.Drawing.Size(224, 26);
+            this.mnuSinhVien.Size = new System.Drawing.Size(181, 26);
             this.mnuSinhVien.Text = "Sinh viên";
             this.mnuSinhVien.Click += new System.EventHandler(this.mnuSinhVien_Click);
             // 
             // mnuGiangVien
             // 
             this.mnuGiangVien.Name = "mnuGiangVien";
-            this.mnuGiangVien.Size = new System.Drawing.Size(224, 26);
+            this.mnuGiangVien.Size = new System.Drawing.Size(181, 26);
             this.mnuGiangVien.Text = "Giảng viên";
             this.mnuGiangVien.Click += new System.EventHandler(this.mnuGiangVien_Click);
             // 
             // mnuMonHoc
             // 
             this.mnuMonHoc.Name = "mnuMonHoc";
-            this.mnuMonHoc.Size = new System.Drawing.Size(224, 26);
+            this.mnuMonHoc.Size = new System.Drawing.Size(181, 26);
             this.mnuMonHoc.Text = "Môn học";
             this.mnuMonHoc.Click += new System.EventHandler(this.mnuMonHoc_Click);
+            // 
+            // mnuHocKy
+            // 
+            this.mnuHocKy.Name = "mnuHocKy";
+            this.mnuHocKy.Size = new System.Drawing.Size(181, 26);
+            this.mnuHocKy.Text = "Học kỳ";
+            this.mnuHocKy.Click += new System.EventHandler(this.mnuHocKy_Click);
             // 
             // mnuHocVu
             // 
@@ -257,32 +268,30 @@
             // mnuBangDiem
             // 
             this.mnuBangDiem.Name = "mnuBangDiem";
-            this.mnuBangDiem.Size = new System.Drawing.Size(224, 26);
+            this.mnuBangDiem.Size = new System.Drawing.Size(217, 26);
             this.mnuBangDiem.Text = "Bảng điểm";
             this.mnuBangDiem.Click += new System.EventHandler(this.mnuBangDiem_Click);
             // 
             // mnuBieuDo
             // 
             this.mnuBieuDo.Name = "mnuBieuDo";
-            this.mnuBieuDo.Size = new System.Drawing.Size(224, 26);
+            this.mnuBieuDo.Size = new System.Drawing.Size(217, 26);
             this.mnuBieuDo.Text = "Biểu đồ thống kê";
             this.mnuBieuDo.Click += new System.EventHandler(this.mnuBieuDo_Click);
             // 
             // mnuBaoCaoDoanhThu
             // 
             this.mnuBaoCaoDoanhThu.Name = "mnuBaoCaoDoanhThu";
-            this.mnuBaoCaoDoanhThu.Size = new System.Drawing.Size(224, 26);
+            this.mnuBaoCaoDoanhThu.Size = new System.Drawing.Size(217, 26);
             this.mnuBaoCaoDoanhThu.Text = "Báo cáo doanh thu";
             this.mnuBaoCaoDoanhThu.Click += new System.EventHandler(this.mnuBaoCaoDoanhThu_Click);
-
             // 
             // inDoanhThuToolStripMenuItem
             // 
             this.inDoanhThuToolStripMenuItem.Name = "inDoanhThuToolStripMenuItem";
-            this.inDoanhThuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.inDoanhThuToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
             this.inDoanhThuToolStripMenuItem.Text = "In Doanh Thu";
             this.inDoanhThuToolStripMenuItem.Click += new System.EventHandler(this.inDoanhThuToolStripMenuItem_Click);
-
             // 
             // mnuTroGiup
             // 
@@ -295,7 +304,7 @@
             // mnuQuyenCuaToi
             // 
             this.mnuQuyenCuaToi.Name = "mnuQuyenCuaToi";
-            this.mnuQuyenCuaToi.Size = new System.Drawing.Size(224, 26);
+            this.mnuQuyenCuaToi.Size = new System.Drawing.Size(183, 26);
             this.mnuQuyenCuaToi.Text = "Quyền của tôi";
             this.mnuQuyenCuaToi.Click += new System.EventHandler(this.mnuQuyenCuaToi_Click);
             // 
@@ -316,18 +325,32 @@
             this.lblNguoiDung.Size = new System.Drawing.Size(151, 20);
             this.lblNguoiDung.Text = "toolStripStatusLabel1";
             // 
-            // mnuHocKy
+            // toolStrip1
             // 
-            this.mnuHocKy.Name = "mnuHocKy";
-            this.mnuHocKy.Size = new System.Drawing.Size(224, 26);
-            this.mnuHocKy.Text = "Học kỳ";
-            this.mnuHocKy.Click += new System.EventHandler(this.mnuHocKy_Click);
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonOverride1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 28);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(800, 27);
+            this.toolStrip1.TabIndex = 4;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButtonOverride1
+            // 
+            this.toolStripButtonOverride1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonOverride1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonOverride1.Image")));
+            this.toolStripButtonOverride1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonOverride1.Name = "toolStripButtonOverride1";
+            this.toolStripButtonOverride1.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButtonOverride1.Text = "toolStripButtonOverride1";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 490);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
@@ -339,6 +362,8 @@
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,6 +405,7 @@
         private System.Windows.Forms.ToolStripMenuItem inDoanhThuToolStripMenuItem;
 
         private System.Windows.Forms.ToolStripMenuItem mnuHocKy;
-
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonOverride1;
     }
 }
