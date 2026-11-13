@@ -61,6 +61,7 @@
             this.dgvMonHoc.RowTemplate.Height = 24;
             this.dgvMonHoc.Size = new System.Drawing.Size(564, 318);
             this.dgvMonHoc.TabIndex = 0;
+            this.dgvMonHoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonHoc_CellClick);
             // 
             // btnThem
             // 
@@ -72,7 +73,7 @@
             this.btnThem.TabIndex = 1;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // clbTienQuyet
             // 
@@ -112,6 +113,7 @@
             this.cboLocKhoa.Name = "cboLocKhoa";
             this.cboLocKhoa.Size = new System.Drawing.Size(202, 24);
             this.cboLocKhoa.TabIndex = 5;
+            this.cboLocKhoa.SelectionChangeCommitted += new System.EventHandler(this.cboLocKhoa_SelectionChangeCommitted);
             // 
             // btnLuu
             // 
@@ -123,6 +125,7 @@
             this.btnLuu.TabIndex = 6;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
@@ -134,6 +137,7 @@
             this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLamMoi
             // 
@@ -145,6 +149,7 @@
             this.btnLamMoi.TabIndex = 8;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnTim
             // 
@@ -156,6 +161,7 @@
             this.btnTim.TabIndex = 9;
             this.btnTim.Text = "Tìm ";
             this.btnTim.UseVisualStyleBackColor = false;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // label2
             // 
@@ -256,7 +262,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMonHoc";
             this.Text = "frmMonHoc";
-            this.Load += new System.EventHandler(this.frmMonHoc_Load_1);
+            this.Load += new System.EventHandler(this.frmMonHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonHoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTinChi)).EndInit();
             this.ResumeLayout(false);

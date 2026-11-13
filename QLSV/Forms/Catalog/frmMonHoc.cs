@@ -21,21 +21,7 @@ namespace QLSV.Forms.Catalog
         public frmMonHoc()
         {
             InitializeComponent();
-            GanSuKien();
         }
-
-        private void GanSuKien()
-        {
-            Load += frmMonHoc_Load;
-            btnTim.Click += btnTim_Click;
-            btnThem.Click += btnThem_Click;
-            btnLuu.Click += btnLuu_Click;
-            btnXoa.Click += btnXoa_Click;
-            btnLamMoi.Click += btnLamMoi_Click;
-            dgvMonHoc.CellClick += dgvMonHoc_CellClick;
-            cboLocKhoa.SelectionChangeCommitted += cboLocKhoa_SelectionChangeCommitted;
-        }
-
         private void frmMonHoc_Load(object sender, EventArgs e)
         {
             
@@ -177,16 +163,6 @@ namespace QLSV.Forms.Catalog
         {
             MessageBox.Show(r.Message, "Thông báo", MessageBoxButtons.OK,
                 r.Success ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
-        }
-
-        private void btnThem_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmMonHoc_Load_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

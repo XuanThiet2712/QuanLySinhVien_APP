@@ -75,6 +75,7 @@
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // dgvSinhVien
             // 
@@ -88,6 +89,7 @@
             this.dgvSinhVien.RowTemplate.Height = 24;
             this.dgvSinhVien.Size = new System.Drawing.Size(470, 304);
             this.dgvSinhVien.TabIndex = 1;
+            this.dgvSinhVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSinhVien_CellClick);
             // 
             // label1
             // 
@@ -129,6 +131,7 @@
             this.cboLocLop.Name = "cboLocLop";
             this.cboLocLop.Size = new System.Drawing.Size(154, 24);
             this.cboLocLop.TabIndex = 5;
+            this.cboLocLop.SelectionChangeCommitted += new System.EventHandler(this.cboLocLop_SelectionChangeCommitted);
             // 
             // radNam
             // 
@@ -178,6 +181,7 @@
             this.btnLuu.TabIndex = 8;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
@@ -189,6 +193,7 @@
             this.btnXoa.TabIndex = 9;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLamMoi
             // 
@@ -200,6 +205,7 @@
             this.btnLamMoi.TabIndex = 10;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // label2
             // 
@@ -248,7 +254,6 @@
             this.label5.Size = new System.Drawing.Size(54, 18);
             this.label5.TabIndex = 14;
             this.label5.Text = "Họ tên";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -296,6 +301,7 @@
             this.btnTim.TabIndex = 18;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = false;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // btnTruoc
             // 
@@ -306,6 +312,7 @@
             this.btnTruoc.TabIndex = 19;
             this.btnTruoc.Text = "<";
             this.btnTruoc.UseVisualStyleBackColor = true;
+            this.btnTruoc.Click += new System.EventHandler(this.btnTruoc_Click);
             // 
             // btnSau
             // 
@@ -316,6 +323,7 @@
             this.btnSau.TabIndex = 20;
             this.btnSau.Text = ">\r\n";
             this.btnSau.UseVisualStyleBackColor = true;
+            this.btnSau.Click += new System.EventHandler(this.btnSau_Click);
             // 
             // txtTim
             // 
@@ -335,6 +343,7 @@
             this.btnImport.TabIndex = 22;
             this.btnImport.Text = "Nhập danh sách";
             this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btnExport
             // 
@@ -346,6 +355,7 @@
             this.btnExport.TabIndex = 23;
             this.btnExport.Text = "Xuất danh sách";
             this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // txtHoTen
             // 
@@ -354,7 +364,6 @@
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(232, 22);
             this.txtHoTen.TabIndex = 24;
-            this.txtHoTen.TextChanged += new System.EventHandler(this.txtHoTen_TextChanged);
             // 
             // dtpNgaySinh
             // 
@@ -397,6 +406,7 @@
             this.btnChonAnh.TabIndex = 29;
             this.btnChonAnh.Text = "Chọn ảnh";
             this.btnChonAnh.UseVisualStyleBackColor = false;
+            this.btnChonAnh.Click += new System.EventHandler(this.btnChonAnh_Click);
             // 
             // lblTrang
             // 
@@ -448,7 +458,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSinhVien";
             this.Text = "frmSinhVien";
-            this.Load += new System.EventHandler(this.frmSinhVien_Load_1);
+            this.Load += new System.EventHandler(this.frmSinhVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSinhVien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAnh)).EndInit();
             this.grbGioiTinh.ResumeLayout(false);
