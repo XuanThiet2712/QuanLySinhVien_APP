@@ -95,5 +95,10 @@ namespace QLSV.Forms.HeThong
             frmConnectionConfig f = new frmConnectionConfig();
             f.ShowDialog();
         }
+
+        private void lnkQuenMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new frmForgotPassword().ShowDialog();
+        }
     }
 }

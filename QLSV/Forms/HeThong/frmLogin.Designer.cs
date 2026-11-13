@@ -39,6 +39,7 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.lnkDangKy = new System.Windows.Forms.LinkLabel();
             this.btnSQL = new System.Windows.Forms.Button();
+            this.lnkQuenMatKhau = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -130,7 +131,7 @@
             // lnkDangKy
             // 
             this.lnkDangKy.AutoSize = true;
-            this.lnkDangKy.Location = new System.Drawing.Point(265, 149);
+            this.lnkDangKy.Location = new System.Drawing.Point(308, 120);
             this.lnkDangKy.Name = "lnkDangKy";
             this.lnkDangKy.Size = new System.Drawing.Size(172, 16);
             this.lnkDangKy.TabIndex = 9;
@@ -149,11 +150,23 @@
             this.btnSQL.UseVisualStyleBackColor = true;
             this.btnSQL.Click += new System.EventHandler(this.btnSQL_Click);
             // 
+            // lnkQuenMatKhau
+            // 
+            this.lnkQuenMatKhau.AutoSize = true;
+            this.lnkQuenMatKhau.Location = new System.Drawing.Point(347, 68);
+            this.lnkQuenMatKhau.Name = "lnkQuenMatKhau";
+            this.lnkQuenMatKhau.Size = new System.Drawing.Size(109, 16);
+            this.lnkQuenMatKhau.TabIndex = 11;
+            this.lnkQuenMatKhau.TabStop = true;
+            this.lnkQuenMatKhau.Text = "Quên mật khẩu ? ";
+            this.lnkQuenMatKhau.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkQuenMatKhau_LinkClicked);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(528, 283);
+            this.Controls.Add(this.lnkQuenMatKhau);
             this.Controls.Add(this.btnSQL);
             this.Controls.Add(this.lnkDangKy);
             this.Controls.Add(this.btnThoat);
@@ -190,5 +203,6 @@
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.LinkLabel lnkDangKy;
         private System.Windows.Forms.Button btnSQL;
+        private System.Windows.Forms.LinkLabel lnkQuenMatKhau;
     }
 }
