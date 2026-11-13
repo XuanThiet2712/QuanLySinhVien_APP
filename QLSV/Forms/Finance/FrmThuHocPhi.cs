@@ -272,6 +272,9 @@ namespace QLSV.Forms.Finance
             }
         }
 
-        
+        private void txtMaHK_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

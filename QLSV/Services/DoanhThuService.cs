@@ -19,13 +19,13 @@ namespace QLSV.Services
                     DateTime tu = tuNgay.Date;
                     DateTime den = denNgay.Date.AddDays(1).AddTicks(-1);
 
-                    // 1) Chỉ lấy 2 cột cần thiết từ DB (SQL đơn giản, không lỗi dịch)
+                    // Chỉ lấy 2 cột cần thiết từ DB
                     var rows = db.PhieuThus
                         .Where(p => !p.DaHuy && p.NgayLap >= tu && p.NgayLap <= den)
                         .Select(p => new { p.NgayLap, p.DaThu })
                         .ToList();
 
-                    // 2) Gom nhóm theo ngày trong bộ nhớ
+                    // Gom nhóm theo ngày trong bộ nhớ
                     var resultList = rows
                         .GroupBy(x => x.NgayLap.Date)
                         .OrderBy(g => g.Key)
@@ -106,7 +106,7 @@ namespace QLSV.Services
             }
         }
 
-        // Biểu đồ tròn (hiện vẫn là dữ liệu mẫu)
+        // Biểu đồ tròn
         public List<ThongKeDTO> TyLeXepLoaiHocLuc(string maHK)
         {
             return new List<ThongKeDTO>

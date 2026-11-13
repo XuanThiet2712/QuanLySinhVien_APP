@@ -74,6 +74,7 @@
             this.txtMaHK.Name = "txtMaHK";
             this.txtMaHK.Size = new System.Drawing.Size(169, 22);
             this.txtMaHK.TabIndex = 2;
+            this.txtMaHK.TextChanged += new System.EventHandler(this.txtMaHK_TextChanged);
             // 
             // btnTraCuu
             // 
