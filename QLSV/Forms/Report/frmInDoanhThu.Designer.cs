@@ -116,6 +116,7 @@
             this.ClientSize = new System.Drawing.Size(882, 453);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmInDoanhThu";
             this.Text = "Doanh thu";
             this.Load += new System.EventHandler(this.frmInDoanhThu_Load);

@@ -33,9 +33,11 @@
             // frmReportBangDiem
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = global::QLSV.Properties.Resources.abstract_background_with_soft_gradient_color_and_dynamic_shadow_on_background_background_for_wallpaper_eps_10_free_vector;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "frmReportBangDiem";
-            this.Text = "frmReportBangDiem";
+            this.Text = "Bảng điểm";
             this.ResumeLayout(false);
 
         }

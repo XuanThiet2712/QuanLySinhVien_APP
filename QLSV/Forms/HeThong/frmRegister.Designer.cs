@@ -162,6 +162,8 @@
             // frmRegister
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = global::QLSV.Properties.Resources.abstract_background_with_soft_gradient_color_and_dynamic_shadow_on_background_background_for_wallpaper_eps_10_free_vector;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(648, 393);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnDangKy);
@@ -176,6 +178,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRegister";
             this.Text = "Đăng ký tài khoản";
             this.Load += new System.EventHandler(this.frmRegister_Load);

@@ -63,7 +63,7 @@
             this.cboLopHocPhan.DropDownWidth = 350;
             this.cboLopHocPhan.FormattingEnabled = true;
             this.cboLopHocPhan.Location = new System.Drawing.Point(202, 30);
-            this.cboLopHocPhan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboLopHocPhan.Margin = new System.Windows.Forms.Padding(4);
             this.cboLopHocPhan.Name = "cboLopHocPhan";
             this.cboLopHocPhan.Size = new System.Drawing.Size(491, 24);
             this.cboLopHocPhan.TabIndex = 2;
@@ -98,7 +98,7 @@
             this.colChu,
             this.colHe4});
             this.dgvNhapDiem.Location = new System.Drawing.Point(40, 140);
-            this.dgvNhapDiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvNhapDiem.Margin = new System.Windows.Forms.Padding(4);
             this.dgvNhapDiem.MultiSelect = false;
             this.dgvNhapDiem.Name = "dgvNhapDiem";
             this.dgvNhapDiem.RowHeadersVisible = false;
@@ -172,7 +172,7 @@
             this.btnLuu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.Location = new System.Drawing.Point(121, 377);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(99, 45);
             this.btnLuu.TabIndex = 5;
@@ -184,7 +184,7 @@
             this.btnLichSu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnLichSu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLichSu.Location = new System.Drawing.Point(394, 377);
-            this.btnLichSu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLichSu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLichSu.Name = "btnLichSu";
             this.btnLichSu.Size = new System.Drawing.Size(136, 45);
             this.btnLichSu.TabIndex = 6;
@@ -196,7 +196,7 @@
             this.btnLamMoi.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLamMoi.Location = new System.Drawing.Point(704, 377);
-            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(99, 45);
             this.btnLamMoi.TabIndex = 7;
@@ -206,6 +206,8 @@
             // frmNhapDiem
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = global::QLSV.Properties.Resources.abstract_background_with_soft_gradient_color_and_dynamic_shadow_on_background_background_for_wallpaper_eps_10_free_vector;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(960, 472);
             this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.btnLichSu);
@@ -214,6 +216,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cboLopHocPhan);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmNhapDiem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

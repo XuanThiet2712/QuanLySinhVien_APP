@@ -218,6 +218,8 @@
             // frmBieuDo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = global::QLSV.Properties.Resources.abstract_background_with_soft_gradient_color_and_dynamic_shadow_on_background_background_for_wallpaper_eps_10_free_vector;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(942, 547);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
@@ -227,6 +229,7 @@
             this.Controls.Add(this.cboLoaiBieuDo);
             this.Controls.Add(this.btnLoc);
             this.Controls.Add(this.nudNam);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBieuDo";
             this.Text = "Biểu đồ";
             this.Load += new System.EventHandler(this.frmChartDashboard_Load);

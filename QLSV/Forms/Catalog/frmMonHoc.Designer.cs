@@ -261,7 +261,7 @@
             this.Controls.Add(this.dgvMonHoc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMonHoc";
-            this.Text = "frmMonHoc";
+            this.Text = "Quản lý môn học";
             this.Load += new System.EventHandler(this.frmMonHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonHoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTinChi)).EndInit();

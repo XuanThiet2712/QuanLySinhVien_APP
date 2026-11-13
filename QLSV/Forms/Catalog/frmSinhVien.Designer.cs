@@ -457,7 +457,7 @@
             this.Controls.Add(this.btnThem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSinhVien";
-            this.Text = "frmSinhVien";
+            this.Text = "Quản lý sinh viên";
             this.Load += new System.EventHandler(this.frmSinhVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSinhVien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAnh)).EndInit();

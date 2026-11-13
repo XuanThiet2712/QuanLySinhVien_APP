@@ -236,7 +236,7 @@
             this.Controls.Add(this.btnThem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLopSinhHoat";
-            this.Text = "LopSinhHoat";
+            this.Text = "Quản lý lớp sinh hoạt";
             this.Load += new System.EventHandler(this.frmLopSinhHoat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLop)).EndInit();
             this.ResumeLayout(false);

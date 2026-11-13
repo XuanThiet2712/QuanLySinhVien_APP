@@ -164,6 +164,8 @@
             // frmConnectionConfig
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = global::QLSV.Properties.Resources.abstract_background_with_soft_gradient_color_and_dynamic_shadow_on_background_background_for_wallpaper_eps_10_free_vector;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(715, 334);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -177,9 +179,10 @@
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.txtDatabase);
             this.Controls.Add(this.txtServer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "frmConnectionConfig";
-            this.Text = "Kết nối SQL";
+            this.Text = "Kết nối cơ sở dữ liệu";
             this.Load += new System.EventHandler(this.frmConnectionConfig_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

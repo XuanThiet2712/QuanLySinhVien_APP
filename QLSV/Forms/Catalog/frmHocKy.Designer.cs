@@ -260,7 +260,7 @@
             this.Controls.Add(this.btnThem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmHocKy";
-            this.Text = "frmHocKy";
+            this.Text = "Quản lý Học kỳ";
             this.Load += new System.EventHandler(this.frmHocKy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHocKy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDonGia)).EndInit();

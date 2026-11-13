@@ -136,6 +136,8 @@
             // frmThongKeDoanhThu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = global::QLSV.Properties.Resources.abstract_background_with_soft_gradient_color_and_dynamic_shadow_on_background_background_for_wallpaper_eps_10_free_vector;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1000, 457);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -147,7 +149,7 @@
             this.Controls.Add(this.dtpTuNgay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmThongKeDoanhThu";
-            this.Text = "frmThongKeDoanhThu";
+            this.Text = "Thống kê doanh thu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmThongKeDoanhThu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoanhThu)).EndInit();
