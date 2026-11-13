@@ -260,6 +260,7 @@
             this.Controls.Add(this.btnThem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmHocKy";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý Học kỳ";
             this.Load += new System.EventHandler(this.frmHocKy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHocKy)).EndInit();

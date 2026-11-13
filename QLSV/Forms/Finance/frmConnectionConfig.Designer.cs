@@ -44,6 +44,7 @@
             // 
             // txtServer
             // 
+            this.txtServer.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtServer.Location = new System.Drawing.Point(119, 53);
             this.txtServer.Name = "txtServer";
             this.txtServer.Size = new System.Drawing.Size(179, 22);
@@ -51,6 +52,7 @@
             // 
             // txtDatabase
             // 
+            this.txtDatabase.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtDatabase.Location = new System.Drawing.Point(119, 117);
             this.txtDatabase.Name = "txtDatabase";
             this.txtDatabase.Size = new System.Drawing.Size(179, 22);
@@ -58,6 +60,7 @@
             // 
             // txtUser
             // 
+            this.txtUser.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtUser.Location = new System.Drawing.Point(119, 181);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(178, 22);
@@ -65,6 +68,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtPassword.Location = new System.Drawing.Point(119, 245);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -182,6 +186,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "frmConnectionConfig";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kết nối cơ sở dữ liệu";
             this.Load += new System.EventHandler(this.frmConnectionConfig_Load);
             this.ResumeLayout(false);

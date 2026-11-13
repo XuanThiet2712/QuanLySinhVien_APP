@@ -226,7 +226,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::QLSV.Properties.Resources.abstract_background_with_soft_gradient_color_and_dynamic_shadow_on_background_background_for_wallpaper_eps_10_free_vector;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(819, 457);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvUser);
             this.Controls.Add(this.label1);
@@ -234,6 +234,7 @@
             this.Controls.Add(this.txtTim);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmUserManagement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý người dùng";
             this.Load += new System.EventHandler(this.frmUserManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();

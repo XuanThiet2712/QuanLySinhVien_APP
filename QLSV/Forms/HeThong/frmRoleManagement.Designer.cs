@@ -95,8 +95,8 @@
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.clbQuyen);
             this.Controls.Add(this.cboNhom);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRoleManagement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phân quyền";
             this.Load += new System.EventHandler(this.frmRoleManagement_Load);
             this.ResumeLayout(false);
