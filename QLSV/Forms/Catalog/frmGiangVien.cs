@@ -21,19 +21,6 @@ namespace QLSV.Forms.Catalog
         public frmGiangVien()
         {
             InitializeComponent();
-            GanSuKien();
-        }
-
-        private void GanSuKien()
-        {
-            Load += frmGiangVien_Load;
-            btnTim.Click += btnTim_Click;
-            btnThem.Click += btnThem_Click;
-            btnLuu.Click += btnLuu_Click;
-            btnXoa.Click += btnXoa_Click;
-            btnLamMoi.Click += btnLamMoi_Click;
-            dgvGiangVien.CellClick += dgvGiangVien_CellClick;
-            cboLocKhoa.SelectionChangeCommitted += cboLocKhoa_SelectionChangeCommitted;
         }
 
         private void frmGiangVien_Load(object sender, EventArgs e)
@@ -156,108 +143,7 @@ namespace QLSV.Forms.Catalog
             MessageBox.Show(r.Message, "Thông báo", MessageBoxButtons.OK,
                 r.Success ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
         }
-
-        private void frmGiangVien_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvGiangVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMaGV_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtHoTen_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void cboLocKhoa_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnTim_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTimKiem_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboKhoa_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSDT_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnThem_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLuu_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLamMoi_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnXoa_Click_1(object sender, EventArgs e)
         {
 
         }

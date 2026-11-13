@@ -57,7 +57,6 @@
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(174, 22);
             this.txtHoTen.TabIndex = 0;
-            this.txtHoTen.TextChanged += new System.EventHandler(this.txtHoTen_TextChanged);
             // 
             // txtMaGV
             // 
@@ -65,7 +64,6 @@
             this.txtMaGV.Name = "txtMaGV";
             this.txtMaGV.Size = new System.Drawing.Size(121, 22);
             this.txtMaGV.TabIndex = 1;
-            this.txtMaGV.TextChanged += new System.EventHandler(this.txtMaGV_TextChanged);
             // 
             // txtSDT
             // 
@@ -73,7 +71,6 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(120, 22);
             this.txtSDT.TabIndex = 2;
-            this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
             // 
             // txtEmail
             // 
@@ -81,7 +78,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(195, 22);
             this.txtEmail.TabIndex = 3;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // label1
             // 
@@ -94,7 +90,6 @@
             this.label1.Size = new System.Drawing.Size(116, 18);
             this.label1.TabIndex = 4;
             this.label1.Text = "Tên Giảng Viên";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -107,7 +102,6 @@
             this.label3.Size = new System.Drawing.Size(48, 18);
             this.label3.TabIndex = 6;
             this.label3.Text = "Email";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -120,7 +114,6 @@
             this.label4.Size = new System.Drawing.Size(110, 18);
             this.label4.TabIndex = 7;
             this.label4.Text = "Mã Giảng Viên";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -133,7 +126,6 @@
             this.label5.Size = new System.Drawing.Size(107, 18);
             this.label5.TabIndex = 8;
             this.label5.Text = "Số Điện Thoại";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -146,7 +138,6 @@
             this.label6.Size = new System.Drawing.Size(126, 18);
             this.label6.TabIndex = 9;
             this.label6.Text = "Khoa Trực Thuộc";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // dgvGiangVien
             // 
@@ -160,7 +151,7 @@
             this.dgvGiangVien.RowTemplate.Height = 24;
             this.dgvGiangVien.Size = new System.Drawing.Size(870, 250);
             this.dgvGiangVien.TabIndex = 10;
-            this.dgvGiangVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiangVien_CellContentClick);
+            this.dgvGiangVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiangVien_CellClick);
             // 
             // cboKhoa
             // 
@@ -170,7 +161,7 @@
             this.cboKhoa.Name = "cboKhoa";
             this.cboKhoa.Size = new System.Drawing.Size(174, 24);
             this.cboKhoa.TabIndex = 11;
-            this.cboKhoa.SelectedIndexChanged += new System.EventHandler(this.cboKhoa_SelectedIndexChanged);
+            this.cboKhoa.SelectedIndexChanged += new System.EventHandler(this.cboLocKhoa_SelectedIndexChanged);
             // 
             // btnLamMoi
             // 
@@ -182,7 +173,7 @@
             this.btnLamMoi.TabIndex = 12;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
-            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click_1);
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnXoa
             // 
@@ -194,7 +185,7 @@
             this.btnXoa.TabIndex = 13;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click_1);
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
@@ -206,7 +197,7 @@
             this.btnLuu.TabIndex = 14;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click_1);
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnThem
             // 
@@ -219,7 +210,7 @@
             this.btnThem.TabIndex = 15;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnTim
             // 
@@ -230,7 +221,7 @@
             this.btnTim.TabIndex = 16;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = false;
-            this.btnTim.Click += new System.EventHandler(this.btnTim_Click_1);
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // txtTimKiem
             // 
@@ -238,7 +229,6 @@
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(330, 22);
             this.txtTimKiem.TabIndex = 17;
-            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // label2
             // 
@@ -251,7 +241,6 @@
             this.label2.Size = new System.Drawing.Size(73, 18);
             this.label2.TabIndex = 18;
             this.label2.Text = "Tìm Kiếm";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label7
             // 
@@ -264,7 +253,6 @@
             this.label7.Size = new System.Drawing.Size(73, 18);
             this.label7.TabIndex = 19;
             this.label7.Text = "Lọc Khoa";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // cboLocKhoa
             // 
@@ -274,7 +262,7 @@
             this.cboLocKhoa.Name = "cboLocKhoa";
             this.cboLocKhoa.Size = new System.Drawing.Size(195, 24);
             this.cboLocKhoa.TabIndex = 20;
-            this.cboLocKhoa.SelectedIndexChanged += new System.EventHandler(this.cboLocKhoa_SelectedIndexChanged);
+            this.cboLocKhoa.SelectedIndexChanged += new System.EventHandler(this.cboLocKhoa_SelectionChangeCommitted);
             // 
             // frmGiangVien
             // 
@@ -307,7 +295,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGiangVien";
             this.Text = "Giảng viên";
-            this.Load += new System.EventHandler(this.frmGiangVien_Load_1);
+            this.Load += new System.EventHandler(this.frmGiangVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiangVien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
