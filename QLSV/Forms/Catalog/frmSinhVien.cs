@@ -294,6 +294,16 @@ namespace QLSV.Forms.Catalog
         {
 
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtHoTen_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
