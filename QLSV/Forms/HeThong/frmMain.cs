@@ -30,6 +30,7 @@ namespace QLSV.Forms.HeThong
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            ThemeManager.Apply(this);
             var nd = SessionManager.CurrentUser;
             if (nd == null)
             {
@@ -396,6 +397,17 @@ namespace QLSV.Forms.HeThong
             this.Height = frm.Height + 100;
             this.Width = frm.Width + 100;
             frm.Show();
+        }
+
+        private void mnuTheme_Click(object sender, EventArgs e)
+        {
+            ThemeManager.Toggle();
+        }
+
+        private void frmMain_MdiChildActivate(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null) 
+                ThemeManager.Apply(ActiveMdiChild);
         }
     }
 }

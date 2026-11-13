@@ -274,10 +274,9 @@
     <Compile Include="Helpers\PasswordHasher.cs" />
     <Compile Include="Helpers\Result.cs" />
     <Compile Include="Helpers\SessionManager.cs" />
+    <Compile Include="Helpers\ThemeManager.cs" />
     <Compile Include="Helpers\ValidationHelpers.cs" />
     <Compile Include="Helpers\VietQrHelper.cs" />
-    <Compile Include="Repositories\DangKyRepository.cs" />
-    <Compile Include="Repositories\DiemRepository.cs" />
     <Compile Include="Repositories\GiangVienRepository.cs" />
     <Compile Include="Repositories\HocKyRepository.cs" />
     <Compile Include="Repositories\DangKyRepository.cs" />
@@ -373,11 +372,9 @@
     <EmbeddedResource Include="Forms\Report\frmNhapDiem.resx">
       <DependentUpon>frmNhapDiem.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Forms\Catalog\frmLopSinhHoat.resx">
-   <DependentUpon>frmLopSinhHoat.cs</DependentUpon>
+      <DependentUpon>frmLopSinhHoat.cs</DependentUpon>
     </EmbeddedResource>
-   
     <EmbeddedResource Include="Forms\Catalog\frmSinhVien.resx">
       <DependentUpon>frmSinhVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -414,7 +411,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\Grade\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
