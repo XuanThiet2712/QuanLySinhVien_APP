@@ -184,5 +184,15 @@ namespace QLSV.Forms.Catalog
         {
 
         }
+
+        private void btnThem_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboLocNganh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
