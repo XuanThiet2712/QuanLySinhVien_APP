@@ -41,7 +41,8 @@ namespace QLSV.Forms.HeThong
 
         private void frmChangePassword_Load(object sender, EventArgs e)
         {
-
+            ThemeManager.Load();
+            ThemeManager.Apply(this);
         }
     }
 }
