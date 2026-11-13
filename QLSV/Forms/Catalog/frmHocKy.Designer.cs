@@ -59,6 +59,7 @@
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnLuu
             // 
@@ -70,6 +71,7 @@
             this.btnLuu.TabIndex = 1;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
@@ -81,6 +83,7 @@
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLamMoi
             // 
@@ -92,6 +95,7 @@
             this.btnLamMoi.TabIndex = 3;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // dgvHocKy
             // 
@@ -105,6 +109,7 @@
             this.dgvHocKy.RowTemplate.Height = 24;
             this.dgvHocKy.Size = new System.Drawing.Size(870, 250);
             this.dgvHocKy.TabIndex = 4;
+            this.dgvHocKy.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHocKy_CellClick);
             // 
             // label1
             // 
@@ -117,7 +122,6 @@
             this.label1.Size = new System.Drawing.Size(85, 18);
             this.label1.TabIndex = 5;
             this.label1.Text = "Tên học kỳ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtTenHK
             // 
@@ -125,7 +129,6 @@
             this.txtTenHK.Name = "txtTenHK";
             this.txtTenHK.Size = new System.Drawing.Size(240, 22);
             this.txtTenHK.TabIndex = 6;
-            this.txtTenHK.TextChanged += new System.EventHandler(this.txtTenHK_TextChanged);
             // 
             // label2
             // 
@@ -162,7 +165,6 @@
             this.label4.Size = new System.Drawing.Size(70, 18);
             this.label4.TabIndex = 9;
             this.label4.Text = "Năm học";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtMaHK
             // 
@@ -177,7 +179,6 @@
             this.txtNamHoc.Name = "txtNamHoc";
             this.txtNamHoc.Size = new System.Drawing.Size(175, 22);
             this.txtNamHoc.TabIndex = 11;
-            this.txtNamHoc.TextChanged += new System.EventHandler(this.txtNamHoc_TextChanged);
             // 
             // numDonGia
             // 
@@ -260,7 +261,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmHocKy";
             this.Text = "frmHocKy";
-            this.Load += new System.EventHandler(this.frmHocKy_Load_1);
+            this.Load += new System.EventHandler(this.frmHocKy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHocKy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDonGia)).EndInit();
             this.ResumeLayout(false);

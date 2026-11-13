@@ -21,17 +21,7 @@ namespace QLSV.Forms.Catalog
         public frmHocKy()
         {
             InitializeComponent();
-            GanSuKien();
-        }
-
-        private void GanSuKien()
-        {
-            Load += frmHocKy_Load;
-            btnThem.Click += btnThem_Click;
-            btnLuu.Click += btnLuu_Click;
-            btnXoa.Click += btnXoa_Click;
-            btnLamMoi.Click += btnLamMoi_Click;
-            dgvHocKy.CellClick += dgvHocKy_CellClick;
+            
         }
 
         private void frmHocKy_Load(object sender, EventArgs e)
@@ -141,31 +131,6 @@ namespace QLSV.Forms.Catalog
         {
             MessageBox.Show(r.Message, "Thông báo", MessageBoxButtons.OK,
                 r.Success ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
-        }
-
-        private void frmHocKy_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNamHoc_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTenHK_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
