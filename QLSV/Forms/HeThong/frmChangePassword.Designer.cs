@@ -41,76 +41,84 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 46);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(74, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 16);
+            this.label1.Size = new System.Drawing.Size(89, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mật khẩu cũ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(74, 122);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(74, 97);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 16);
+            this.label2.Size = new System.Drawing.Size(98, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mật khẩu mới";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(74, 202);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(74, 149);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 16);
+            this.label3.Size = new System.Drawing.Size(160, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nhập lại mật khẩu mới";
             // 
             // txtCu
             // 
-            this.txtCu.Location = new System.Drawing.Point(245, 36);
+            this.txtCu.Location = new System.Drawing.Point(272, 39);
             this.txtCu.Name = "txtCu";
             this.txtCu.Size = new System.Drawing.Size(215, 22);
             this.txtCu.TabIndex = 3;
             // 
             // txtNhapLai
             // 
-            this.txtNhapLai.Location = new System.Drawing.Point(245, 196);
+            this.txtNhapLai.Location = new System.Drawing.Point(272, 149);
             this.txtNhapLai.Name = "txtNhapLai";
             this.txtNhapLai.Size = new System.Drawing.Size(215, 22);
             this.txtNhapLai.TabIndex = 4;
             // 
             // txtMoi
             // 
-            this.txtMoi.Location = new System.Drawing.Point(245, 116);
+            this.txtMoi.Location = new System.Drawing.Point(272, 94);
             this.txtMoi.Name = "txtMoi";
             this.txtMoi.Size = new System.Drawing.Size(215, 22);
             this.txtMoi.TabIndex = 5;
             // 
             // btnDoi
             // 
-            this.btnDoi.Location = new System.Drawing.Point(155, 288);
+            this.btnDoi.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnDoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoi.Location = new System.Drawing.Point(135, 211);
             this.btnDoi.Name = "btnDoi";
-            this.btnDoi.Size = new System.Drawing.Size(165, 96);
+            this.btnDoi.Size = new System.Drawing.Size(99, 45);
             this.btnDoi.TabIndex = 6;
             this.btnDoi.Text = "Đổi";
-            this.btnDoi.UseVisualStyleBackColor = true;
+            this.btnDoi.UseVisualStyleBackColor = false;
             this.btnDoi.Click += new System.EventHandler(this.btnDoi_Click);
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(460, 288);
+            this.btnHuy.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Location = new System.Drawing.Point(337, 211);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(165, 96);
+            this.btnHuy.Size = new System.Drawing.Size(99, 45);
             this.btnHuy.TabIndex = 7;
-            this.btnHuy.Text = "Huy";
-            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // frmChangePassword
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = global::QLSV.Properties.Resources.abstract_background_with_soft_gradient_color_and_dynamic_shadow_on_background_background_for_wallpaper_eps_10_free_vector;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(602, 303);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnDoi);
             this.Controls.Add(this.txtMoi);
@@ -120,7 +128,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmChangePassword";
-            this.Text = "frmChangePassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Đổi mật khẩu";
             this.Load += new System.EventHandler(this.frmChangePassword_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

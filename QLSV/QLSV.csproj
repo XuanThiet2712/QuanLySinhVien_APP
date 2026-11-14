@@ -389,6 +389,9 @@
     <EmbeddedResource Include="Forms\Catalog\frmSinhVien.resx">
       <DependentUpon>frmSinhVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Report\frmReportBangDiem.resx">
+      <DependentUpon>frmReportBangDiem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -397,6 +400,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Data\QLSV.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
@@ -430,5 +434,17 @@
   <ItemGroup>
     <EmbeddedResource Include="Forms\Report\rptDoanhThu.rdlc" />
     <EmbeddedResource Include="Forms\Report\rptPhieuThu.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nguồn Báo Quân đội nhân dân.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d0df3c36-de01-4cd8-9e07-4775be854041.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a-wooden-dock-stretches-out-into-the-ocean-at-sunset-ai-generated-free-photo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abstract-background-with-soft-gradient-color-and-dynamic-shadow-on-background-background-for-wallpaper-eps-10-free-vector.jpg" />
   </ItemGroup>
 </Project>

@@ -30,26 +30,7 @@ namespace QLSV.Forms.Catalog
         public frmSinhVien()
         {
             InitializeComponent();
-            GanSuKien();
         }
-
-        private void GanSuKien()
-        {
-            Load += frmSinhVien_Load;
-            btnTim.Click += btnTim_Click;
-            btnTruoc.Click += btnTruoc_Click;
-            btnSau.Click += btnSau_Click;
-            btnChonAnh.Click += btnChonAnh_Click;
-            btnImport.Click += btnImport_Click;
-            btnExport.Click += btnExport_Click;
-            btnThem.Click += btnThem_Click;
-            btnLuu.Click += btnLuu_Click;
-            btnXoa.Click += btnXoa_Click;
-            btnLamMoi.Click += btnLamMoi_Click;
-            dgvSinhVien.CellClick += dgvSinhVien_CellClick;
-            cboLocLop.SelectionChangeCommitted += cboLocLop_SelectionChangeCommitted;
-        }
-
         private void frmSinhVien_Load(object sender, EventArgs e)
         {
            
@@ -288,21 +269,6 @@ namespace QLSV.Forms.Catalog
         {
             MessageBox.Show(r.Message, "Thông báo", MessageBoxButtons.OK,
                 r.Success ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
-        }
-
-        private void frmSinhVien_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtHoTen_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

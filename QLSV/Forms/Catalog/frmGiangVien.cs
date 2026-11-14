@@ -21,19 +21,6 @@ namespace QLSV.Forms.Catalog
         public frmGiangVien()
         {
             InitializeComponent();
-            GanSuKien();
-        }
-
-        private void GanSuKien()
-        {
-            Load += frmGiangVien_Load;
-            btnTim.Click += btnTim_Click;
-            btnThem.Click += btnThem_Click;
-            btnLuu.Click += btnLuu_Click;
-            btnXoa.Click += btnXoa_Click;
-            btnLamMoi.Click += btnLamMoi_Click;
-            dgvGiangVien.CellClick += dgvGiangVien_CellClick;
-            cboLocKhoa.SelectionChangeCommitted += cboLocKhoa_SelectionChangeCommitted;
         }
 
         private void frmGiangVien_Load(object sender, EventArgs e)
@@ -156,8 +143,7 @@ namespace QLSV.Forms.Catalog
             MessageBox.Show(r.Message, "Thông báo", MessageBoxButtons.OK,
                 r.Success ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
         }
-
-        private void frmGiangVien_Load_1(object sender, EventArgs e)
+        private void cboLocKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

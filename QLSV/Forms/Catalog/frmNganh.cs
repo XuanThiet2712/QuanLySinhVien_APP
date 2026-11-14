@@ -22,20 +22,10 @@ namespace QLSV.Forms.Catalog
         public frmNganh()
         {
             InitializeComponent();
-            GanSuKien();
+           
         }
 
-        private void GanSuKien()
-        {
-            Load += frmNganh_Load;
-            btnThem.Click += btnThem_Click;
-            btnLuu.Click += btnLuu_Click;
-            btnXoa.Click += btnXoa_Click;
-            btnLamMoi.Click += btnLamMoi_Click;
-            dgvNganh.CellClick += dgvNganh_CellClick;
-            // SelectionChangeCommitted chỉ chạy khi NGƯỜI DÙNG chọn (tránh NullReference lúc nạp dữ liệu)
-            cboLocKhoa.SelectionChangeCommitted += cboLocKhoa_SelectionChangeCommitted;
-        }
+       
 
         private void frmNganh_Load(object sender, EventArgs e)
         {
@@ -45,6 +35,7 @@ namespace QLSV.Forms.Catalog
             SetupGrid();
             LoadData();
             LamMoi();
+            dgvNganh.AutoGenerateColumns = false;
         }
 
         // Nạp 2 ComboBox từ 2 bản sao danh sách để chúng không chọn dính nhau
@@ -62,6 +53,7 @@ namespace QLSV.Forms.Catalog
             var loc = new List<Khoa>(ds);
             loc.Insert(0, new Khoa { MaKhoa = "", TenKhoa = "-- Tất cả --" });
             cboLocKhoa.DataSource = loc;
+            //cboLocKhoa.SelectionChangeCommitted += cboLocKhoa_SelectionChangeCommitted;
             /*cboLocKhoa.DisplayMember = "TenKhoa";
             cboLocKhoa.ValueMember = "MaKhoa";*/
         }

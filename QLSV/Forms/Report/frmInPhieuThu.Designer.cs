@@ -42,12 +42,12 @@
             // 
             // frmInPhieuThu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmInPhieuThu";
-            this.Text = "frmInPhieuThu";
+            this.Text = "Phiếu thu";
             this.Load += new System.EventHandler(this.frmInPhieuThu_Load);
             this.ResumeLayout(false);
 
