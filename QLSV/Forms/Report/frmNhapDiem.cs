@@ -1,16 +1,17 @@
-﻿using System;
+﻿using QLSV.Data;
+using QLSV.DTOs;
+using QLSV.Helpers;
+using QLSV.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QLSV.Services;
-using QLSV.DTOs;
-using QLSV.Helpers;
-using System.Globalization;
 
 namespace QLSV.Forms.Report
 {
@@ -125,6 +126,57 @@ namespace QLSV.Forms.Report
         {
             MessageBox.Show("Giá trị điểm không hợp lệ.");
             e.ThrowException = false;
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            var lop = cboLopHocPhan.SelectedItem as LopHocPhanDTO;
+
+            if (lop == null)
+            {
+                MessageBox.Show("Chưa chọn lớp học phần.");
+                return;
+            }
+            if (!dgvNhapDiem.EndEdit())
+                return;
+            var ds = dgvNhapDiem.DataSource as List<DiemDTO>;
+            if (ds == null)
+            {
+                MessageBox.Show("Chưa có danh sách điểm.");
+                return;
+            }
+            int maNguoiSua = SessionManager.CurrentUser.MaND;
+            Result kq = _service.LuuDiem(lop.MaLHP, ds, maNguoiSua);
+            MessageBox.Show(kq.Message);
+            if (kq.Success)
+            {
+                dgvNhapDiem.DataSource = _service.GetDanhSachNhapDiem(lop.MaLHP);
+            }
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            var lop = cboLopHocPhan.SelectedItem as LopHocPhanDTO;
+            if (lop == null) return;
+            dgvNhapDiem.DataSource = _service.GetDanhSachNhapDiem(lop.MaLHP);
+        }
+
+        private void btnLichSu_Click(object sender, EventArgs e)
+        {
+            if (dgvNhapDiem.CurrentRow == null)
+            {
+                MessageBox.Show("Hãy chọn sinh viên.");
+                return;
+            }
+
+            var dto = dgvNhapDiem.CurrentRow.DataBoundItem as DiemDTO;
+
+            if (dto == null) return;
+
+            using (var f = new frmLichSuDiem(dto.MaDK))
+            {
+                f.ShowDialog(this);
+            }
         }
     }
 }

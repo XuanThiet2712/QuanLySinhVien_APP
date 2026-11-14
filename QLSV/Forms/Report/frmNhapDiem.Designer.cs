@@ -172,6 +172,7 @@
             this.btnLuu.TabIndex = 5;
             this.btnLuu.Text = "Lưu điểm";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnLichSu
             // 
@@ -181,6 +182,7 @@
             this.btnLichSu.TabIndex = 6;
             this.btnLichSu.Text = "Lịch sử sửa điểm";
             this.btnLichSu.UseVisualStyleBackColor = true;
+            this.btnLichSu.Click += new System.EventHandler(this.btnLichSu_Click);
             // 
             // btnLamMoi
             // 
@@ -190,6 +192,7 @@
             this.btnLamMoi.TabIndex = 7;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // frmNhapDiem
             // 

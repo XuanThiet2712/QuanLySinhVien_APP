@@ -185,7 +185,7 @@ namespace QLSV.Services
                             he4 = (decimal)QuyDoiHe4(tong);
                         }
 
-                        // 6. Thêm hoặc cập nhật điểm
+                        // them/cap nhat diem
                         repo.Upsert(new Diem
                         {
                             MaDK = x.MaDK,
@@ -197,7 +197,7 @@ namespace QLSV.Services
                             Diem4 = he4
                         });
 
-                        // 7. Ghi lịch sử thay đổi
+                        //luu lich su sua
                         nhatKyRepo.Add(new NhatKyDiem
                         {
                             MaDK = x.MaDK,
@@ -209,7 +209,7 @@ namespace QLSV.Services
                         });
                     }
 
-                    // 8. Lưu điểm và nhật ký cùng lúc
+                    // luu diem + nhat ki
                     db.SubmitChanges();
 
                     return Result.Ok("Lưu điểm thành công.");
@@ -220,7 +220,186 @@ namespace QLSV.Services
                 return Result.Fail("Lỗi lưu điểm: " + ex.Message);
             }
         }
+        public List<NhatKyDiem> GetLichSuSuaDiem(int maDK)
+        {
+            if (!SessionManager.HasPermission(
+                MaChucNang.NHAP_DIEM))
+                return new List<NhatKyDiem>();
 
+            using (var db = DbFactory.Create())
+            {
+                var dk = db.DangKyHocPhans
+                    .FirstOrDefault(x => x.MaDK == maDK);
 
+                if (dk == null)
+                    return new List<NhatKyDiem>();
+
+                // gv chi xem ls lop minh
+                if (SessionManager.IsInRole(MaNhom.GV))
+                {
+                    var lop = db.LopHocPhans
+                        .FirstOrDefault(x => x.MaLHP == dk.MaLHP);
+
+                    if (lop == null || lop.MaGV != SessionManager.CurrentUser.MaGV)
+                        return new List<NhatKyDiem>();
+                }
+
+                var repo = new NhatKyDiemRepository(db);
+                return repo.GetByDangKy(maDK);
+            }
+        }
+        private double TinhGPA(QLSVDataContext db, string maSV, string maHK)
+        {
+            var ds = (from dk in db.DangKyHocPhans
+                      join lhp in db.LopHocPhans
+                          on dk.MaLHP equals lhp.MaLHP
+                      join mon in db.MonHocs
+                          on lhp.MaMon equals mon.MaMon
+                      join d in db.Diems
+                          on dk.MaDK equals d.MaDK
+                      where dk.MaSV == maSV
+                          && (maHK == null || lhp.MaHK == maHK)
+                          && d.Diem4.HasValue
+                      select new
+                      {
+                          Diem4 = d.Diem4.Value,
+                          SoTinChi = mon.SoTinChi
+                      }).ToList();
+
+            if (ds.Count == 0)
+                return 0;
+
+            decimal tongTinChi = ds.Sum(x => (decimal)x.SoTinChi);
+
+            if (tongTinChi == 0)
+                return 0;
+
+            decimal tongDiem = ds.Sum(x => x.Diem4 * x.SoTinChi);
+
+            return (double)Math.Round(
+                tongDiem / tongTinChi, 2, MidpointRounding.AwayFromZero);
+        }
+        public double TinhGPA(string maSV, string maHK)
+        {
+            using (var db = DbFactory.Create())
+            {
+                return TinhGPA(db, maSV, maHK);
+            }
+        }
+        public string XepLoaiHocLuc(double gpa)
+        {
+            if (gpa < 0 || gpa > 4)
+                return "Không hợp lệ";
+
+            if (gpa >= 3.6) return "Xuất sắc";
+            if (gpa >= 3.2) return "Giỏi";
+            if (gpa >= 2.5) return "Khá";
+            if (gpa >= 2.0) return "Trung bình";
+            return "Yếu";
+        }
+
+        public Result<string> CanhBaoHocVu(string maSV, string maHK)
+        {
+            try
+            {
+                using (var db = DbFactory.Create())
+                {
+                    var ds = (from dk in db.DangKyHocPhans
+                              join lhp in db.LopHocPhans
+                                  on dk.MaLHP equals lhp.MaLHP
+                              join mon in db.MonHocs
+                                  on lhp.MaMon equals mon.MaMon
+                              join d in db.Diems
+                                  on dk.MaDK equals d.MaDK
+                              where dk.MaSV == maSV
+                                  && lhp.MaHK == maHK
+                                  && d.DiemTongKet.HasValue
+                              select new
+                              {
+                                  d.DiemTongKet,
+                                  mon.SoTinChi
+                              }).ToList();
+
+                    if (ds.Count == 0)
+                        return Result<string>.Ok("Chưa có dữ liệu điểm để đánh giá.");
+
+                    double gpa = TinhGPA(db, maSV, maHK);
+
+                    int tinChiNo = ds
+                        .Where(x => x.DiemTongKet.Value < 4m)
+                        .Sum(x => (int)x.SoTinChi);
+
+                    if (gpa < 1.0 || tinChiNo > 8)
+                    {
+                        return Result<string>.Ok(
+                            "Cảnh báo học vụ! GPA: " +
+                            gpa.ToString("0.00") +
+                            ", số tín chỉ nợ: " + tinChiNo);
+                    }
+
+                    return Result<string>.Ok("Không bị cảnh báo học vụ.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Result<string>.Fail(ex.Message);
+            }
+        }
+        public List<BangDiemItemDTO> GetBangDiem(string maSV, string maHK)
+        {
+            if (!SessionManager.HasPermission(
+                MaChucNang.XEM_DIEM))
+                return new List<BangDiemItemDTO>();
+
+            if (SessionManager.IsInRole(MaNhom.SV) &&
+                SessionManager.CurrentUser.MaSV != maSV)
+                return new List<BangDiemItemDTO>();
+
+            using (var db = DbFactory.Create())
+            {
+                bool laGV = SessionManager.IsInRole(MaNhom.GV);
+                string maGV = SessionManager.CurrentUser.MaGV;
+
+                var ds = from dk in db.DangKyHocPhans
+                         join sv in db.SinhViens
+                             on dk.MaSV equals sv.MaSV
+                         join lhp in db.LopHocPhans
+                             on dk.MaLHP equals lhp.MaLHP
+                         join mon in db.MonHocs
+                             on lhp.MaMon equals mon.MaMon
+                         join d in db.Diems
+                             on dk.MaDK equals d.MaDK
+                             into bangDiem
+                         from d in bangDiem.DefaultIfEmpty()
+
+                         where dk.MaSV == maSV
+                            && (maHK == null || lhp.MaHK == maHK)
+                            && (!laGV || lhp.MaGV == maGV)
+
+                         orderby mon.MaMon
+
+                         select new BangDiemItemDTO
+                         {
+                             MaSV = sv.MaSV,
+                             HoTen = sv.HoTen,
+                             MaHK = lhp.MaHK,
+                             MaLHP = lhp.MaLHP,
+                             MaMon = mon.MaMon,
+                             TenMon = mon.TenMon,
+                             SoTinChi = mon.SoTinChi,
+
+                             DiemCC = d == null ? null : d.DiemCC,
+                             DiemGK = d == null ? null : d.DiemGK,
+                             DiemCK = d == null ? null : d.DiemCK,
+                             DiemTongKet = d == null
+                                 ? null : d.DiemTongKet,
+                             DiemChu = d == null
+                                 ? null : d.DiemChu,
+                             Diem4 = d == null ? null : d.Diem4
+                         };
+
+                return ds.ToList();
+            }
+        }
     }
 }
