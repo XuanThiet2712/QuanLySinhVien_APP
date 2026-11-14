@@ -92,6 +92,135 @@ namespace QLSV.Services
                 + ";CK=" + (ck.HasValue ? ck.Value.ToString() : "-");
         }
 
+        //Luu diem lop
+        public Result LuuDiem(
+            string maLHP,
+            List<DiemDTO> ds,
+            int maNguoiSua)
+        {
+            //Ktra ng dung
+            if (!SessionManager.HasPermission(
+                    MaChucNang.NHAP_DIEM))
+                return Result.Fail("Không có quyền nhập điểm.");
+
+            if (SessionManager.CurrentUser == null ||
+                SessionManager.CurrentUser.MaND != maNguoiSua)
+                return Result.Fail("Người sửa không hợp lệ.");
+
+            if (ds == null)
+                return Result.Fail("Danh sách điểm không hợp lệ.");
+
+            if (string.IsNullOrWhiteSpace(maLHP))
+                return Result.Fail("Chưa chọn lớp học phần.");
+
+            try
+            {
+                using (var db = DbFactory.Create())
+                {
+                    //ktra lhp
+                    var lop = db.LopHocPhans.FirstOrDefault(x => x.MaLHP == maLHP);
+                    if (lop == null)
+                        return Result.Fail("Không tìm thấy lớp.");
+                
+                    //gv chi sua lop minh phu trach
+                    if (SessionManager.IsInRole(MaNhom.GV) &&
+                        lop.MaGV != SessionManager.CurrentUser.MaGV)
+                        return Result.Fail("Không được sửa điểm lớp khác.");
+     
+                    //ktra madk thuoc dung lop
+                    var maHopLe = db.DangKyHocPhans
+                        .Where(x => x.MaLHP == maLHP)
+                        .Select(x => x.MaDK)
+                        .ToList();
+
+                    if (ds.Any(x => !maHopLe.Contains(x.MaDK)))
+                        return Result.Fail("Có sinh viên không thuộc lớp.");
+
+                    if (ds.GroupBy(x => x.MaDK).Any(g => g.Count() > 1))
+                        return Result.Fail("Danh sách bị trùng MaDK.");
+
+                    var repo = new DiemRepository(db);
+                    var nhatKyRepo = new NhatKyDiemRepository(db);
+
+                    //duyet sv
+                    foreach (DiemDTO x in ds)
+                    {
+                        if (!DiemHopLe(x.DiemCC) ||
+                            !DiemHopLe(x.DiemGK) ||
+                            !DiemHopLe(x.DiemCK))
+                            return Result.Fail(
+                                "Điểm không hợp lệ: " + x.MaSV);
+                        // lay diem cu ss
+                        Diem cu = repo.GetByDangKy(x.MaDK);
+                        // 0 can tao o trong
+                        if (cu == null &&
+                            !x.DiemCC.HasValue &&
+                            !x.DiemGK.HasValue &&
+                            !x.DiemCK.HasValue)
+                            continue;
+                        bool thayDoi = cu == null || 
+                            cu.DiemCC != x.DiemCC || 
+                            cu.DiemGK != x.DiemGK || 
+                            cu.DiemCK != x.DiemCK;
+                        if (!thayDoi) continue;
+                        string diemCu = cu == null ? "Chưa nhập" : ChuoiDiem
+                            (cu.DiemCC, cu.DiemGK, cu.DiemCK);
+
+                        //tinh lai, pd giao dien
+                        decimal? tk = null;
+                        string chu = null;
+                        decimal? he4 = null;
+
+                        if (x.DiemCC.HasValue &&
+                            x.DiemGK.HasValue &&
+                            x.DiemCK.HasValue)
+                        {
+                            double tong = TinhDiemTongKet(
+                                (double)x.DiemCC.Value,
+                                (double)x.DiemGK.Value,
+                                (double)x.DiemCK.Value);
+
+                            tk = (decimal)tong;
+                            chu = QuyDoiDiemChu(tong);
+                            he4 = (decimal)QuyDoiHe4(tong);
+                        }
+
+                        // 6. Thêm hoặc cập nhật điểm
+                        repo.Upsert(new Diem
+                        {
+                            MaDK = x.MaDK,
+                            DiemCC = x.DiemCC,
+                            DiemGK = x.DiemGK,
+                            DiemCK = x.DiemCK,
+                            DiemTongKet = tk,
+                            DiemChu = chu,
+                            Diem4 = he4
+                        });
+
+                        // 7. Ghi lịch sử thay đổi
+                        nhatKyRepo.Add(new NhatKyDiem
+                        {
+                            MaDK = x.MaDK,
+                            DiemCu = diemCu,
+                            DiemMoi = ChuoiDiem(
+                                x.DiemCC, x.DiemGK, x.DiemCK),
+                            NguoiSua = maNguoiSua,
+                            NgaySua = DateTime.Now
+                        });
+                    }
+
+                    // 8. Lưu điểm và nhật ký cùng lúc
+                    db.SubmitChanges();
+
+                    return Result.Ok("Lưu điểm thành công.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return Result.Fail("Lỗi lưu điểm: " + ex.Message);
+            }
+        }
+
 
     }
 }
