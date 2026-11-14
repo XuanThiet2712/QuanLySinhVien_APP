@@ -38,7 +38,9 @@
             // cboNhom
             // 
             this.cboNhom.FormattingEnabled = true;
+
             this.cboNhom.Location = new System.Drawing.Point(376, 62);
+
             this.cboNhom.Name = "cboNhom";
             this.cboNhom.Size = new System.Drawing.Size(229, 24);
             this.cboNhom.TabIndex = 0;
@@ -49,14 +51,18 @@
             this.clbQuyen.FormattingEnabled = true;
             this.clbQuyen.Location = new System.Drawing.Point(37, 62);
             this.clbQuyen.Name = "clbQuyen";
+
             this.clbQuyen.Size = new System.Drawing.Size(311, 174);
+
             this.clbQuyen.TabIndex = 1;
             // 
             // btnLuu
             // 
+
             this.btnLuu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.Location = new System.Drawing.Point(134, 258);
+
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(99, 45);
             this.btnLuu.TabIndex = 2;

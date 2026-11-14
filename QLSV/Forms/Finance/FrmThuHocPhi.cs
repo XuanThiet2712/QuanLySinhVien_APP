@@ -13,6 +13,7 @@ namespace QLSV.Forms.Finance
         // Giới hạn trên của ô nhập tiền khi không có công nợ
         private const decimal MAX_TIEN_MAC_DINH = 100000000000m;
         private int _qrRequestId;
+        private bool _dangNapDuLieu;   // true khi đang gán số tiền từ công nợ: bỏ qua ValueChanged
 
         private bool _coQuyenThu;
         private bool _daTraCuuThanhCong;
@@ -43,6 +44,8 @@ namespace QLSV.Forms.Finance
                 picQR.Image.Dispose();
                 picQR.Image = null;
             }
+            lblTaiKhoan.Text = "";
+            lblNoiDung.Text = "";
         }
         private void FrmThuHocPhi_Load(object sender, EventArgs e)
         {
@@ -51,7 +54,8 @@ namespace QLSV.Forms.Finance
 
             txtMaSV.TextChanged += (s, ev) => ResetGiaoDien();
             txtMaHK.TextChanged += (s, ev) => ResetGiaoDien();
-            nudSoTienThu.ValueChanged += (s, ev) => XoaQR();
+            // Đổi số tiền thu thì QR tự tạo lại theo số tiền mới.
+            nudSoTienThu.ValueChanged += (s, ev) => { if (!_dangNapDuLieu) TaiQR(); };
         }
 
         private void btnTraCuu_Click(object sender, EventArgs e)
@@ -96,6 +100,7 @@ namespace QLSV.Forms.Finance
             _conNoHienTai = hp.ConNo;
             _daTraCuuThanhCong = true;
 
+            _dangNapDuLieu = true;
             if (hp.ConNo > 0)
             {
                 // Đặt Maximum TRƯỚC rồi mới gán Value để không bị ngoại lệ
@@ -107,8 +112,10 @@ namespace QLSV.Forms.Finance
                 nudSoTienThu.Maximum = MAX_TIEN_MAC_DINH;
                 nudSoTienThu.Value = 0;
             }
+            _dangNapDuLieu = false;
 
             CapNhatTrangThaiNut();
+            TaiQR();   // tên sinh viên đã hiện thì QR và thông tin chuyển khoản tự hiện theo
             return true;
         }
 
@@ -240,46 +247,48 @@ namespace QLSV.Forms.Finance
             btnLapPhieu.Enabled = _coQuyenThu && _daTraCuuThanhCong && _conNoHienTai > 0;
         }
 
-     
-        private async void btnTaoQR_Click(object sender, EventArgs e)
+
+        // Thông tin tài khoản nhận tiền hiện trên màn hình.
+        // PHẢI khớp với tài khoản mà VietQrHelper đang dùng để tạo QR: sửa lại cho đúng.
+        private string ThongTinTaiKhoan()
         {
-            if (!_daTraCuuThanhCong || _conNoHienTai <= 0)
-            {
-                MessageBox.Show("Vui lòng tra cứu sinh viên còn dư nợ trước khi tạo QR.", "Cảnh báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            return "SO_TAI_KHOAN - TEN_CHU_TAI_KHOAN - NGAN_HANG";
+        }
 
+        // Tạo QR cho số tiền đang nhập. Không hợp lệ thì chỉ xóa QR, không hiện hộp thoại.
+        private async void TaiQR()
+        {
             decimal soTien = nudSoTienThu.Value;
-            if (soTien <= 0 || soTien > _conNoHienTai)
+            if (!_daTraCuuThanhCong || _conNoHienTai <= 0 || soTien <= 0 || soTien > _conNoHienTai)
             {
-                MessageBox.Show("Số tiền phải lớn hơn 0 và không vượt quá số còn nợ.", "Cảnh báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                XoaQR();
                 return;
             }
 
-            int id = ++_qrRequestId;
+            XoaQR();   // xóa QR cũ và tăng mã yêu cầu để bỏ qua kết quả của lần gọi trước
+            int id = _qrRequestId;
             string noiDung = VietQrHelper.TaoNoiDung(_maSVDaTraCuu, _maHKDaTraCuu);
+            lblTaiKhoan.Text = "Tài khoản: " + ThongTinTaiKhoan();
+            lblNoiDung.Text = "Nội dung CK: " + noiDung;
 
-            btnTaoQR.Enabled = false;
             try
             {
                 Image img = await VietQrHelper.TaiQrAsync(soTien, noiDung);
-                if (id != _qrRequestId) { img.Dispose(); return; }
-                XoaQR();
+                if (id != _qrRequestId || IsDisposed) { img.Dispose(); return; }
+                if (picQR.Image != null) picQR.Image.Dispose();
                 picQR.Image = img;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Không tải được mã QR: " + ex.Message, "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                btnTaoQR.Enabled = true;
+                // Không có mạng: vẫn còn tài khoản và nội dung để chuyển khoản tay.
+                if (id == _qrRequestId && !IsDisposed)
+                    lblNoiDung.Text += "  (không tải được QR, kiểm tra mạng)";
             }
         }
 
-        
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

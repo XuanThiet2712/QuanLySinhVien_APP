@@ -121,6 +121,7 @@
   <data name="picQR.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMUAAADQCAYAAAC3I6XYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
+
         cQAAEnEB89x6jgAAUTtJREFUeF7tnQeYZFWVx9norpvXXXZdE0EUA6uimBUBBdOq6LIoAoIgkiSIKIIB
         BHENICxIEJGcRAQEYRAlSGZIkvMwAwNM6jCdqiud/X6v+l996tR7Fbt7umfq9Pf/Xtd7N9/zf++Gc+9d
         q1ActZnDiBWLwxNYOYGBGUepNNgRYjg9zAwKhf4ZxVqTSjqcosRTjR4pemiMqKCrAj1StIEYTg9Tj6ig
@@ -469,6 +470,7 @@
         RBopuE+HO234NaIzUkzMale/EFr3ECbWIEsCmjbqnPclCj3W4MjfmL4kXBd23eSd0j6xBmOtesVc1Zj8
         UlRIgVLPXVLM9om6RqRopU/RNSkmRpsUXlVJJ/ocvrNeCXdi84I2SJFmCVtBOin+HzC08HFEOBedAAAA
         AElFTkSuQmCC
+
 </value>
   </data>
 </root>

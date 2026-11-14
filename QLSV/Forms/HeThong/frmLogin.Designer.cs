@@ -38,6 +38,7 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.lnkDangKy = new System.Windows.Forms.LinkLabel();
             this.btnSQL = new System.Windows.Forms.Button();
+            this.lnkQuenMatKhau = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label2
@@ -127,7 +128,9 @@
             // lnkDangKy
             // 
             this.lnkDangKy.AutoSize = true;
+
             this.lnkDangKy.Location = new System.Drawing.Point(231, 174);
+
             this.lnkDangKy.Name = "lnkDangKy";
             this.lnkDangKy.Size = new System.Drawing.Size(172, 16);
             this.lnkDangKy.TabIndex = 9;
@@ -148,12 +151,30 @@
             this.btnSQL.UseVisualStyleBackColor = false;
             this.btnSQL.Click += new System.EventHandler(this.btnSQL_Click);
             // 
+            // lnkQuenMatKhau
+            // 
+            this.lnkQuenMatKhau.AutoSize = true;
+            this.lnkQuenMatKhau.Location = new System.Drawing.Point(347, 68);
+            this.lnkQuenMatKhau.Name = "lnkQuenMatKhau";
+            this.lnkQuenMatKhau.Size = new System.Drawing.Size(109, 16);
+            this.lnkQuenMatKhau.TabIndex = 11;
+            this.lnkQuenMatKhau.TabStop = true;
+            this.lnkQuenMatKhau.Text = "Quên mật khẩu ? ";
+            this.lnkQuenMatKhau.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkQuenMatKhau_LinkClicked);
+            // 
             // frmLogin
             // 
+
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::QLSV.Properties.Resources.abstract_background_with_soft_gradient_color_and_dynamic_shadow_on_background_background_for_wallpaper_eps_10_free_vector;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(590, 353);
+
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(528, 283);
+            this.Controls.Add(this.lnkQuenMatKhau);
+
             this.Controls.Add(this.btnSQL);
             this.Controls.Add(this.lnkDangKy);
             this.Controls.Add(this.btnThoat);
@@ -187,5 +208,6 @@
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.LinkLabel lnkDangKy;
         private System.Windows.Forms.Button btnSQL;
+        private System.Windows.Forms.LinkLabel lnkQuenMatKhau;
     }
 }

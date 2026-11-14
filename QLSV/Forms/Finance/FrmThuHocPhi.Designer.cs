@@ -36,7 +36,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+
             this.btnTaoQR = new System.Windows.Forms.Button();
+
             this.picQR = new System.Windows.Forms.PictureBox();
             this.lblDaThu = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -54,6 +56,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.nudSoTienThu = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
+
+            this.lblTaiKhoan = new System.Windows.Forms.Label();
+            this.lblNoiDung = new System.Windows.Forms.Label();
+
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picQR)).BeginInit();
@@ -123,7 +129,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnTaoQR);
+            this.groupBox2.Controls.Add(this.lblTaiKhoan);
+            this.groupBox2.Controls.Add(this.lblNoiDung);
             this.groupBox2.Controls.Add(this.picQR);
             this.groupBox2.Controls.Add(this.lblDaThu);
             this.groupBox2.Controls.Add(this.label9);
@@ -159,6 +166,16 @@
             this.picQR.Location = new System.Drawing.Point(323, 13);
             this.picQR.Name = "picQR";
             this.picQR.Size = new System.Drawing.Size(197, 208);
+            this.picQR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picQR.TabIndex = 10;
+            this.picQR.TabStop = false;
+            // 
+            // picQR
+            // 
+            this.picQR.Image = ((System.Drawing.Image)(resources.GetObject("picQR.Image")));
+            this.picQR.Location = new System.Drawing.Point(312, 80);
+            this.picQR.Name = "picQR";
+            this.picQR.Size = new System.Drawing.Size(187, 172);
             this.picQR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picQR.TabIndex = 10;
             this.picQR.TabStop = false;
@@ -280,6 +297,11 @@
             this.groupBox3.Size = new System.Drawing.Size(426, 479);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
+
+
+            this.groupBox3.Text = "groupBox3";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+
             // 
             // btnLapPhieu
             // 
@@ -301,7 +323,11 @@
             this.txtGhiChu.Location = new System.Drawing.Point(66, 123);
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
+
             this.txtGhiChu.Size = new System.Drawing.Size(354, 127);
+
+            this.txtGhiChu.Size = new System.Drawing.Size(291, 87);
+
             this.txtGhiChu.TabIndex = 3;
             // 
             // label8
@@ -337,6 +363,26 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Số tiền thu (VNĐ):";
             // 
+
+            // lblTaiKhoan
+            // 
+            this.lblTaiKhoan.AutoSize = true;
+            this.lblTaiKhoan.Location = new System.Drawing.Point(245, 56);
+            this.lblTaiKhoan.Name = "lblTaiKhoan";
+            this.lblTaiKhoan.Size = new System.Drawing.Size(51, 16);
+            this.lblTaiKhoan.TabIndex = 7;
+            this.lblTaiKhoan.Text = "label10";
+            // 
+            // lblNoiDung
+            // 
+            this.lblNoiDung.AutoSize = true;
+            this.lblNoiDung.Location = new System.Drawing.Point(245, 27);
+            this.lblNoiDung.Name = "lblNoiDung";
+            this.lblNoiDung.Size = new System.Drawing.Size(51, 16);
+            this.lblNoiDung.TabIndex = 8;
+            this.lblNoiDung.Text = "label11";
+            // 
+
             // frmThuHocPhi
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -388,7 +434,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblDaThu;
-        private System.Windows.Forms.Button btnTaoQR;
         private System.Windows.Forms.PictureBox picQR;
+        private System.Windows.Forms.Label lblNoiDung;
+        private System.Windows.Forms.Label lblTaiKhoan;
     }
 }
