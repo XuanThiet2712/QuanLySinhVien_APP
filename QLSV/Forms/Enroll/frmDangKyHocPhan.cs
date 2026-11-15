@@ -35,6 +35,7 @@ namespace QLSV.Forms.Enroll
             TaiLai();
         }
 
+        //Tải lại danh sách lớp mở và danh sách đã đăng ký, đồng thời tính tổng tín chỉ
         private void TaiLai()
         {
             string maHK = cboHocKy.SelectedValue as string;
@@ -87,6 +88,16 @@ namespace QLSV.Forms.Enroll
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvLopMo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtMaSV_TextChanged(object sender, EventArgs e)
         {
 
         }

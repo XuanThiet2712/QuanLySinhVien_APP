@@ -165,7 +165,7 @@
             this.dgvGiangVien.RowHeadersWidth = 51;
             this.dgvGiangVien.RowTemplate.Height = 24;
             this.dgvGiangVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGiangVien.Size = new System.Drawing.Size(770, 155);
+            this.dgvGiangVien.Size = new System.Drawing.Size(770, 174);
             this.dgvGiangVien.TabIndex = 10;
             this.dgvGiangVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiangVien_CellClick);
             this.dgvGiangVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiangVien_CellContentClick);
@@ -338,7 +338,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BackgroundImage = global::QLSV.Properties.Resources.abstract_background_with_soft_gradient_color_and_dynamic_shadow_on_background_background_for_wallpaper_eps_10_free_vector;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(825, 528);
             this.Controls.Add(this.groupBox1);

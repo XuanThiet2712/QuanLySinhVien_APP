@@ -150,5 +150,10 @@ namespace QLSV.Forms.Catalog
         {
 
         }
+
+        private void frmLopSinhHoat_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
