@@ -73,6 +73,16 @@ namespace QLSV.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _5632370 {
+            get {
+                object obj = ResourceManager.GetObject("5632370", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap a_wooden_dock_stretches_out_into_the_ocean_at_sunset_ai_generated_free_photo {
             get {
                 object obj = ResourceManager.GetObject("a-wooden-dock-stretches-out-into-the-ocean-at-sunset-ai-generated-free-photo", resourceCulture);
