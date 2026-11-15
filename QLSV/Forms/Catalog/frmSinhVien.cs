@@ -30,25 +30,10 @@ namespace QLSV.Forms.Catalog
         public frmSinhVien()
         {
             InitializeComponent();
-            GanSuKien();
+            dgvSinhVien.AutoGenerateColumns = false;
         }
 
-        private void GanSuKien()
-        {
-            Load += frmSinhVien_Load;
-            btnTim.Click += btnTim_Click;
-            btnTruoc.Click += btnTruoc_Click;
-            btnSau.Click += btnSau_Click;
-            btnChonAnh.Click += btnChonAnh_Click;
-            btnImport.Click += btnImport_Click;
-            btnExport.Click += btnExport_Click;
-            btnThem.Click += btnThem_Click;
-            btnLuu.Click += btnLuu_Click;
-            btnXoa.Click += btnXoa_Click;
-            btnLamMoi.Click += btnLamMoi_Click;
-            dgvSinhVien.CellClick += dgvSinhVien_CellClick;
-            cboLocLop.SelectionChangeCommitted += cboLocLop_SelectionChangeCommitted;
-        }
+ 
 
         private void frmSinhVien_Load(object sender, EventArgs e)
         {
@@ -56,11 +41,8 @@ namespace QLSV.Forms.Catalog
             bool q = SessionManager.HasPermission(MaChucNang.QL_SINHVIEN);
             btnThem.Enabled = btnLuu.Enabled = btnXoa.Enabled = q;
             btnImport.Enabled = btnExport.Enabled = q;
-
-            
-
+         
             NapCboLop();
-            SetupGrid();
             LoadData();
             LamMoi();
         }
@@ -80,22 +62,7 @@ namespace QLSV.Forms.Catalog
             cboLocLop.ValueMember = "MaLop";
         }
 
-        private void SetupGrid()
-        {
-            dgvSinhVien.AutoGenerateColumns = false;
-            dgvSinhVien.Columns.Clear();
-            Action<string, string> them = (prop, head) =>
-                dgvSinhVien.Columns.Add(new DataGridViewTextBoxColumn
-                { Name = prop, DataPropertyName = prop, HeaderText = head });
-
-            them("MaSV", "MSSV");
-            them("HoTen", "Họ tên");
-            them("NgaySinh", "Ngày sinh");
-            them("TenLop", "Lớp");
-            them("TenNganh", "Ngành");
-            them("TenKhoa", "Khoa");
-            dgvSinhVien.Columns["NgaySinh"].DefaultCellStyle.Format = "dd/MM/yyyy";
-        }
+      
 
         private string LopDangLoc()
         {
@@ -122,17 +89,30 @@ namespace QLSV.Forms.Catalog
         }
 
         // Tìm kiếm hoặc đổi bộ lọc thì quay về trang 1
-        private void btnTim_Click(object sender, EventArgs e) { _page = 1; LoadData(); }
-        private void cboLocLop_SelectionChangeCommitted(object sender, EventArgs e) { _page = 1; LoadData(); }
-        private void btnTruoc_Click(object sender, EventArgs e) { _page--; LoadData(); }
-        private void btnSau_Click(object sender, EventArgs e) { _page++; LoadData(); }
+        private void btnTim_Click(object sender, EventArgs e) { 
+            _page = 1; LoadData(); 
+        }
+        private void cboLocLop_SelectionChangeCommitted(object sender, EventArgs e) { 
+            _page = 1; LoadData(); 
+        }
+        private void btnTruoc_Click(object sender, EventArgs e) { 
+            _page--; 
+            LoadData(); 
+        }
+        private void btnSau_Click(object sender, EventArgs e) { 
+            _page++; 
+            LoadData(); 
+        }
 
         // Ảnh đại diện
         private void btnChonAnh_Click(object sender, EventArgs e)
         {
-            using (var ofd = new OpenFileDialog { Filter = "Ảnh|*.jpg;*.jpeg;*.png;*.bmp" })
+            using (var ofd = new OpenFileDialog { 
+                Filter = "Ảnh|*.jpg;*.jpeg;*.png;*.bmp" }
+            )
             {
-                if (ofd.ShowDialog() != DialogResult.OK) return;
+                if (ofd.ShowDialog() != DialogResult.OK) 
+                    return;
                 _anhMoi = File.ReadAllBytes(ofd.FileName);
                 picAnh.Image = ByteToImage(_anhMoi);
             }
@@ -237,14 +217,21 @@ namespace QLSV.Forms.Catalog
             };
             Result r = _svc.Luu(s);
             HienThongBao(r);
-            if (r.Success) { LoadData(); LamMoi(); }
+            if (r.Success) { 
+                LoadData(); 
+                LamMoi(); 
+            }
         }
+
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtMaSV.Text)) { MessageBox.Show("Hãy chọn sinh viên cần xóa."); return; }
+            if (string.IsNullOrWhiteSpace(txtMaSV.Text)) { 
+                MessageBox.Show("Hãy chọn sinh viên cần xóa."); 
+                return; }
             if (MessageBox.Show("Xóa sinh viên " + txtMaSV.Text + "?", "Xác nhận",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) 
+                return;
             Result r = _svc.Xoa(txtMaSV.Text.Trim());
             HienThongBao(r);
             if (r.Success) { LoadData(); LamMoi(); }
@@ -288,11 +275,6 @@ namespace QLSV.Forms.Catalog
         {
             MessageBox.Show(r.Message, "Thông báo", MessageBoxButtons.OK,
                 r.Success ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
-        }
-
-        private void frmSinhVien_Load_1(object sender, EventArgs e)
-        {
-
         }
 
         private void label5_Click(object sender, EventArgs e)

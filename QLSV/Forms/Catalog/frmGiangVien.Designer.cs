@@ -148,6 +148,7 @@
             // 
             // dgvGiangVien
             // 
+            this.dgvGiangVien.AllowUserToAddRows = false;
             this.dgvGiangVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGiangVien.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvGiangVien.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -164,7 +165,7 @@
             this.dgvGiangVien.RowHeadersWidth = 51;
             this.dgvGiangVien.RowTemplate.Height = 24;
             this.dgvGiangVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGiangVien.Size = new System.Drawing.Size(770, 236);
+            this.dgvGiangVien.Size = new System.Drawing.Size(770, 155);
             this.dgvGiangVien.TabIndex = 10;
             this.dgvGiangVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiangVien_CellClick);
             this.dgvGiangVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiangVien_CellContentClick);
