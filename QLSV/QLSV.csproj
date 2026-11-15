@@ -399,6 +399,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Data\QLSV.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
@@ -422,7 +423,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
@@ -430,5 +430,11 @@
   <ItemGroup>
     <EmbeddedResource Include="Forms\Report\rptDoanhThu.rdlc" />
     <EmbeddedResource Include="Forms\Report\rptPhieuThu.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password-la-gi-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
   </ItemGroup>
 </Project>

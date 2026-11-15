@@ -44,5 +44,36 @@ namespace QLSV.Forms.HeThong
             ThemeManager.Load();
             ThemeManager.Apply(this);
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtCu.UseSystemPasswordChar =!txtCu.UseSystemPasswordChar;
+
+            btnHienMatKhauCu.Text = txtCu.UseSystemPasswordChar ? "👁" : "🙈";
+        }
+
+        private void txtMoi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHienMatKhauMoi_Click(object sender, EventArgs e)
+        {
+            txtMoi.UseSystemPasswordChar = !txtMoi.UseSystemPasswordChar;
+
+            btnHienMatKhauMoi.Text = txtMoi.UseSystemPasswordChar ? "👁" : "🙈";
+        }
+
+        private void btnXacNhanMatKhau_Click(object sender, EventArgs e)
+        {
+            txtNhapLai.UseSystemPasswordChar =!txtNhapLai.UseSystemPasswordChar;
+
+            btnXacNhanMatKhau.Text = txtNhapLai.UseSystemPasswordChar ? "👁" : "🙈";
+        }
     }
 }
