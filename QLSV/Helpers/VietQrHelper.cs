@@ -13,11 +13,15 @@ namespace QLSV.Helpers
 {
     public static class VietQrHelper
     {
-        private const string BANK_ID = "MB";
-        private const string BANK_BIN = "970422"; 
-        private const string SO_TAI_KHOAN = "70003690701";
-        private const string TEN_TAI_KHOAN = "NGUYEN XUAN THIET";
-        private const string TEMPLATE = "compact2";
+        public static string BankId { get; set; } = "MB";
+
+        public static string BankBin { get; set; } = "970422";
+
+        public static string SoTaiKhoan { get; set; } = "70003690701";
+
+        public static string TenTaiKhoan { get; set; } = "NGUYEN XUAN THIET";
+
+        public static string Template { get; set; } = "compact2";
 
         private static readonly HttpClient _http = TaoHttpClient();
 
@@ -48,10 +52,10 @@ namespace QLSV.Helpers
 
         public static string TaoUrl(decimal soTien, string noiDung)
         {
-            return $"https://img.vietqr.io/image/{BANK_ID}-{SO_TAI_KHOAN}-{TEMPLATE}.png" +
+            return $"https://img.vietqr.io/image/{BankId}-{SoTaiKhoan}-{Template}.png" +
                    $"?amount={decimal.Truncate(soTien)}" +
                    $"&addInfo={Uri.EscapeDataString(noiDung)}" +
-                   $"&accountName={Uri.EscapeDataString(TEN_TAI_KHOAN)}";
+                   $"&accountName={Uri.EscapeDataString(TenTaiKhoan)}";
         }
 
         // Giữ nguyên tên và chữ ký để frmThuHocPhi không phải sửa
@@ -78,7 +82,7 @@ namespace QLSV.Helpers
 
         public static string TaoPayload(decimal soTien, string noiDung)
         {
-            string bank = Tlv("00", BANK_BIN) + Tlv("01", SO_TAI_KHOAN);
+            string bank = Tlv("00", BankBin) + Tlv("01", SoTaiKhoan);
             string merchant = Tlv("00", "A000000727") + Tlv("01", bank) + Tlv("02", "QRIBFTTA");
 
             string s =

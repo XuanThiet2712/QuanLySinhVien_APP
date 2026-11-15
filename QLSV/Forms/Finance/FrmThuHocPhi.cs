@@ -250,10 +250,7 @@ namespace QLSV.Forms.Finance
 
         // Thông tin tài khoản nhận tiền hiện trên màn hình.
         // PHẢI khớp với tài khoản mà VietQrHelper đang dùng để tạo QR: sửa lại cho đúng.
-        private string ThongTinTaiKhoan()
-        {
-            return "SO_TAI_KHOAN - TEN_CHU_TAI_KHOAN - NGAN_HANG";
-        }
+
 
         // Tạo QR cho số tiền đang nhập. Không hợp lệ thì chỉ xóa QR, không hiện hộp thoại.
         private async void TaiQR()
@@ -268,8 +265,9 @@ namespace QLSV.Forms.Finance
             XoaQR();   // xóa QR cũ và tăng mã yêu cầu để bỏ qua kết quả của lần gọi trước
             int id = _qrRequestId;
             string noiDung = VietQrHelper.TaoNoiDung(_maSVDaTraCuu, _maHKDaTraCuu);
-            lblTaiKhoan.Text = "Tài khoản: " + ThongTinTaiKhoan();
-            lblNoiDung.Text = "Nội dung CK: " + noiDung;
+            lblTaiKhoan.Text = "Tài khoản nhận tiền: \n" + VietQrHelper.SoTaiKhoan 
+                + "\n" + VietQrHelper.TenTaiKhoan;
+            lblNoiDung.Text = "Nội dung CK: \n" + noiDung;
 
             try
             {
@@ -287,6 +285,11 @@ namespace QLSV.Forms.Finance
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDaThu_Click(object sender, EventArgs e)
         {
 
         }
