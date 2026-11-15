@@ -31,6 +31,7 @@ namespace QLSV.Forms.HeThong
 
             ThemeManager.Load();
             ThemeManager.Apply(this);
+            btnTheme.Text = ThemeManager.IsDark ? "🌙Tối" : "☀Sáng";
             try
             {
                 if (File.Exists(FileNho))
@@ -92,13 +93,44 @@ namespace QLSV.Forms.HeThong
 
         private void btnSQL_Click(object sender, EventArgs e)
         {
-            frmConnectionConfig f = new frmConnectionConfig();
-            f.ShowDialog();
+
         }
 
         private void lnkQuenMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             new frmForgotPassword().ShowDialog();
+        }
+
+        private void lnkSQL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmConnectionConfig f = new frmConnectionConfig();
+            f.ShowDialog();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnHienMatKhau_Click(object sender, EventArgs e)
+        {
+            txtMatKhau.UseSystemPasswordChar = !txtMatKhau.UseSystemPasswordChar;
+
+            btnHienMatKhau.Text = txtMatKhau.UseSystemPasswordChar ? "👁" : "🙈";
+        }
+
+        private void btnTheme_Click(object sender, EventArgs e)
+        {
+            ThemeManager.Toggle();
+
+            ThemeManager.Apply(this);
+
+            btnTheme.Text = ThemeManager.IsDark ? "🌙Tối" : "☀Sáng";
         }
     }
 }

@@ -437,4 +437,7 @@
   <ItemGroup>
     <None Include="Resources\1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\top-phan-mem-quan-ly-hoc-sinh.jpg" />
+  </ItemGroup>
 </Project>

@@ -120,5 +120,15 @@ namespace QLSV.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap top_phan_mem_quan_ly_hoc_sinh {
+            get {
+                object obj = ResourceManager.GetObject("top-phan-mem-quan-ly-hoc-sinh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
