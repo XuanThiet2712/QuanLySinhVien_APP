@@ -18,6 +18,7 @@ namespace QLSV.Forms.Finance
         public frmThongKeDoanhThu()
         {
             InitializeComponent();
+            
         }
 
         private void frmThongKeDoanhThu_Load(object sender, EventArgs e)
@@ -52,7 +53,7 @@ namespace QLSV.Forms.Finance
                 dgvDoanhThu.Columns["SoGiaoDich"].HeaderText = "Số Phiếu Thu";
                 dgvDoanhThu.Columns["TongDoanhThu"].HeaderText = "Tổng Doanh Thu (VNĐ)";
                 dgvDoanhThu.Columns["TongDoanhThu"].DefaultCellStyle.Format = "N0"; 
-                dgvDoanhThu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            
             }
             chartDoanhThu.Series.Clear();
 
@@ -68,10 +69,16 @@ namespace QLSV.Forms.Finance
 
             //tổng tất cả
             decimal tongTatCa = data.Sum(x => x.TongDoanhThu);
+            lblTongCong.ForeColor = Color.Red;
             lblTongCong.Text = $"Tổng cộng: {tongTatCa:N0} VNĐ";
         }
 
         private void chartDoanhThu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTongCong_Click(object sender, EventArgs e)
         {
 
         }
