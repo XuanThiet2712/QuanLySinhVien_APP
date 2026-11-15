@@ -334,7 +334,7 @@ namespace QLSV.Forms.HeThong
 
         private void mnuBieuDo_Click(object sender, EventArgs e)
         {
-            OpenMdiChild(() => new frmThongKeDoanhThu());
+            OpenMdiChild(() => new frmBieuDo());
         }
 
         private void mnuBaoCaoDoanhThu_Click(object sender, EventArgs e)

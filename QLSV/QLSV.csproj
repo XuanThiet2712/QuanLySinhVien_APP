@@ -298,6 +298,7 @@
     <Compile Include="Repositories\PhanQuyenRepositories.cs" />
     <Compile Include="Repositories\PhieuThuRepository.cs" />
     <Compile Include="Repositories\SinhVienRepository.cs" />
+    <Compile Include="Repositories\ThongKeRepository.cs" />
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\DangKyService.cs" />
     <Compile Include="Services\DiemService.cs" />
@@ -315,6 +316,7 @@
     <Compile Include="Services\SinhVienService.cs" />
     <Compile Include="Services\SinhVienService.Excel.cs" />
     <Compile Include="Services\DoanhThuService.cs" />
+    <Compile Include="Services\ThongKeService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

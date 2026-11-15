@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QLSV.DTOs
 {
-    internal class ThongKeDTO
+    public class ThongKeDTO
     {
         public string Nhan { get; set; }
         public decimal GiaTri { get; set; }
