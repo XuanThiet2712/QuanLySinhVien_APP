@@ -63,7 +63,7 @@
             this.Column4,
             this.Column5});
             this.dgvLichSu.Location = new System.Drawing.Point(40, 89);
-            this.dgvLichSu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvLichSu.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLichSu.MultiSelect = false;
             this.dgvLichSu.Name = "dgvLichSu";
             this.dgvLichSu.ReadOnly = true;
@@ -115,7 +115,7 @@
             // btnDong
             // 
             this.btnDong.Location = new System.Drawing.Point(835, 424);
-            this.btnDong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDong.Margin = new System.Windows.Forms.Padding(4);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(187, 35);
             this.btnDong.TabIndex = 2;
@@ -131,8 +131,8 @@
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.dgvLichSu);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLichSuDiem";
             this.Text = "frmLichSuDiem";
             this.Load += new System.EventHandler(this.frmLichSuDiem_Load);

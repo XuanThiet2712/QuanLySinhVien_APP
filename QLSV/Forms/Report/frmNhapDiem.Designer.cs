@@ -51,9 +51,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 26);
+            this.label1.Location = new System.Drawing.Point(35, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 21);
+            this.label1.Size = new System.Drawing.Size(192, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản lý nhập điểm";
             // 
@@ -61,9 +62,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 61);
+            this.label2.Location = new System.Drawing.Point(38, 78);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 15);
+            this.label2.Size = new System.Drawing.Size(129, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Chọn lớp học phần";
             // 
@@ -72,19 +74,21 @@
             this.cboLopHocPhan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboLopHocPhan.DropDownWidth = 350;
             this.cboLopHocPhan.FormattingEnabled = true;
-            this.cboLopHocPhan.Location = new System.Drawing.Point(30, 97);
+            this.cboLopHocPhan.Location = new System.Drawing.Point(39, 110);
+            this.cboLopHocPhan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboLopHocPhan.Name = "cboLopHocPhan";
-            this.cboLopHocPhan.Size = new System.Drawing.Size(369, 21);
+            this.cboLopHocPhan.Size = new System.Drawing.Size(491, 24);
             this.cboLopHocPhan.TabIndex = 2;
             this.cboLopHocPhan.SelectedIndexChanged += new System.EventHandler(this.cboLopHocPhan_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 136);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(35, 150);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 15);
+            this.label3.Size = new System.Drawing.Size(207, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Danh sách điểm sinh viên";
             // 
@@ -104,12 +108,14 @@
             this.colTK,
             this.colChu,
             this.colHe4});
-            this.dgvNhapDiem.Location = new System.Drawing.Point(30, 183);
+            this.dgvNhapDiem.Location = new System.Drawing.Point(38, 185);
+            this.dgvNhapDiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvNhapDiem.MultiSelect = false;
             this.dgvNhapDiem.Name = "dgvNhapDiem";
             this.dgvNhapDiem.RowHeadersVisible = false;
+            this.dgvNhapDiem.RowHeadersWidth = 51;
             this.dgvNhapDiem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvNhapDiem.Size = new System.Drawing.Size(651, 150);
+            this.dgvNhapDiem.Size = new System.Drawing.Size(977, 293);
             this.dgvNhapDiem.TabIndex = 4;
             this.dgvNhapDiem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhapDiem_CellContentClick);
             this.dgvNhapDiem.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhapDiem_CellEndEdit);
@@ -120,55 +126,64 @@
             // 
             this.colSV.DataPropertyName = "MaSV";
             this.colSV.HeaderText = "MSSV";
+            this.colSV.MinimumWidth = 6;
             this.colSV.Name = "colSV";
             // 
             // colHoTen
             // 
             this.colHoTen.DataPropertyName = "HoTen";
             this.colHoTen.HeaderText = "Họ tên";
+            this.colHoTen.MinimumWidth = 6;
             this.colHoTen.Name = "colHoTen";
             // 
             // colCC
             // 
             this.colCC.DataPropertyName = "DiemCC";
             this.colCC.HeaderText = "CC";
+            this.colCC.MinimumWidth = 6;
             this.colCC.Name = "colCC";
             // 
             // colGK
             // 
             this.colGK.DataPropertyName = "DiemGK";
             this.colGK.HeaderText = "GK";
+            this.colGK.MinimumWidth = 6;
             this.colGK.Name = "colGK";
             // 
             // colCK
             // 
             this.colCK.DataPropertyName = "DiemCK";
             this.colCK.HeaderText = "CK";
+            this.colCK.MinimumWidth = 6;
             this.colCK.Name = "colCK";
             // 
             // colTK
             // 
             this.colTK.DataPropertyName = "DiemTongKet";
             this.colTK.HeaderText = "Tổng kết";
+            this.colTK.MinimumWidth = 6;
             this.colTK.Name = "colTK";
             // 
             // colChu
             // 
             this.colChu.DataPropertyName = "DiemChu";
             this.colChu.HeaderText = "Điểm chữ";
+            this.colChu.MinimumWidth = 6;
             this.colChu.Name = "colChu";
             // 
             // colHe4
             // 
             this.colHe4.DataPropertyName = "Diem4";
             this.colHe4.HeaderText = "Hệ 4";
+            this.colHe4.MinimumWidth = 6;
             this.colHe4.Name = "colHe4";
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(30, 358);
+            this.btnLuu.Location = new System.Drawing.Point(38, 486);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnLuu.Size = new System.Drawing.Size(100, 28);
             this.btnLuu.TabIndex = 5;
             this.btnLuu.Text = "Lưu điểm";
             this.btnLuu.UseVisualStyleBackColor = true;
@@ -176,9 +191,10 @@
             // 
             // btnLichSu
             // 
-            this.btnLichSu.Location = new System.Drawing.Point(143, 358);
+            this.btnLichSu.Location = new System.Drawing.Point(170, 486);
+            this.btnLichSu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLichSu.Name = "btnLichSu";
-            this.btnLichSu.Size = new System.Drawing.Size(102, 23);
+            this.btnLichSu.Size = new System.Drawing.Size(136, 28);
             this.btnLichSu.TabIndex = 6;
             this.btnLichSu.Text = "Lịch sử sửa điểm";
             this.btnLichSu.UseVisualStyleBackColor = true;
@@ -186,9 +202,10 @@
             // 
             // btnLamMoi
             // 
-            this.btnLamMoi.Location = new System.Drawing.Point(279, 358);
+            this.btnLamMoi.Location = new System.Drawing.Point(337, 486);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(75, 23);
+            this.btnLamMoi.Size = new System.Drawing.Size(100, 28);
             this.btnLamMoi.TabIndex = 7;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = true;
@@ -196,9 +213,9 @@
             // 
             // frmNhapDiem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 611);
+            this.ClientSize = new System.Drawing.Size(1028, 600);
             this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.btnLichSu);
             this.Controls.Add(this.btnLuu);
@@ -207,8 +224,8 @@
             this.Controls.Add(this.cboLopHocPhan);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(900, 550);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmNhapDiem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhập điểm sinh viên";
