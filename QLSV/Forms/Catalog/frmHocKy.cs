@@ -21,48 +21,22 @@ namespace QLSV.Forms.Catalog
         public frmHocKy()
         {
             InitializeComponent();
-            GanSuKien();
+            dgvHocKy.AutoGenerateColumns = false;
         }
 
-        private void GanSuKien()
-        {
-            Load += frmHocKy_Load;
-            btnThem.Click += btnThem_Click;
-            btnLuu.Click += btnLuu_Click;
-            btnXoa.Click += btnXoa_Click;
-            btnLamMoi.Click += btnLamMoi_Click;
-            dgvHocKy.CellClick += dgvHocKy_CellClick;
-        }
+  
 
         private void frmHocKy_Load(object sender, EventArgs e)
         {
             // Bảng phân quyền không có mã riêng cho học kỳ nên dùng chung QL_LOPHOCPHAN 
             btnThem.Enabled = btnLuu.Enabled = btnXoa.Enabled =
                 SessionManager.HasPermission(MaChucNang.QL_LOPHOCPHAN);
-            SetupGrid();
+     
             LoadData();
             LamMoi();
         }
 
-        private void SetupGrid()
-        {
-            dgvHocKy.AutoGenerateColumns = false;
-            dgvHocKy.Columns.Clear();
-            dgvHocKy.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "MaHK", HeaderText = "Mã HK" });
-            dgvHocKy.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "TenHK", HeaderText = "Tên học kỳ" });
-            dgvHocKy.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "NamHoc", HeaderText = "Năm học" });
 
-            var tu = new DataGridViewTextBoxColumn { DataPropertyName = "TuNgay", HeaderText = "Từ ngày" };
-            tu.DefaultCellStyle.Format = "dd/MM/yyyy";
-            var den = new DataGridViewTextBoxColumn { DataPropertyName = "DenNgay", HeaderText = "Đến ngày" };
-            den.DefaultCellStyle.Format = "dd/MM/yyyy";
-            var gia = new DataGridViewTextBoxColumn { DataPropertyName = "DonGiaTinChi", HeaderText = "Đơn giá/TC" };
-            gia.DefaultCellStyle.Format = "N0";   // 500,000
-
-            dgvHocKy.Columns.Add(tu);
-            dgvHocKy.Columns.Add(den);
-            dgvHocKy.Columns.Add(gia);
-        }
 
         private void LoadData() { dgvHocKy.DataSource = _svc.GetAll(); }
 
@@ -107,7 +81,10 @@ namespace QLSV.Forms.Catalog
             };
             Result r = _svc.ThemMoi(h);
             HienThongBao(r);
-            if (r.Success) { LoadData(); LamMoi(); }
+            if (r.Success) { 
+                LoadData(); 
+                LamMoi(); 
+            }
         }
         private void btnLamMoi_Click(object sender, EventArgs e) { LamMoi(); LoadData(); }
 
@@ -129,23 +106,24 @@ namespace QLSV.Forms.Catalog
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtMaHK.Text)) { MessageBox.Show("Hãy chọn học kỳ cần xóa."); return; }
+            if (string.IsNullOrWhiteSpace(txtMaHK.Text)) { 
+                MessageBox.Show("Hãy chọn học kỳ cần xóa."); 
+                return; 
+            }
             if (MessageBox.Show("Xóa học kỳ " + txtMaHK.Text + "?", "Xác nhận",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
             Result r = _svc.Xoa(txtMaHK.Text.Trim());
             HienThongBao(r);
-            if (r.Success) { LoadData(); LamMoi(); }
+            if (r.Success) { 
+                LoadData(); 
+                LamMoi(); 
+            }
         }
 
         private void HienThongBao(Result r)
         {
             MessageBox.Show(r.Message, "Thông báo", MessageBoxButtons.OK,
                 r.Success ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
-        }
-
-        private void frmHocKy_Load_1(object sender, EventArgs e)
-        {
-
         }
 
         private void txtNamHoc_TextChanged(object sender, EventArgs e)
@@ -164,6 +142,11 @@ namespace QLSV.Forms.Catalog
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvHocKy_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

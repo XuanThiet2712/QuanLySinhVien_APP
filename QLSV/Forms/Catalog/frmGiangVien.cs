@@ -31,7 +31,7 @@ namespace QLSV.Forms.Catalog
                 SessionManager.HasPermission(MaChucNang.QL_GIANGVIEN);
 
             var ds = new KhoaService().GetAll();
-            MessageBox.Show("Số lượng khoa: " + ds.Count);
+            //MessageBox.Show("Số lượng khoa: " + ds.Count);
 
             // ComboBox khoa trực thuộc
             cboKhoa.DataSource = null;
@@ -155,6 +155,11 @@ namespace QLSV.Forms.Catalog
         }
 
         private void cboKhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvGiangVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

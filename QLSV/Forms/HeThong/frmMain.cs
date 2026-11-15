@@ -1,8 +1,9 @@
-﻿
-using QLSV.Helpers;
+﻿using QLSV.Helpers;
 using QLSV.Services;
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 
 using QLSV.Forms.Catalog;
@@ -21,11 +22,27 @@ namespace QLSV.Forms.HeThong
         public frmMain()
         {
             InitializeComponent();
+
+            // Chống nhấp nháy khi chuyển form: bật vẽ đệm cho form chính và vùng chứa form con.
+            DoubleBuffered = true;
+            BatDoubleBufferChoVungMdi();
         }
 
-        // =========================
+        // Vùng nền chứa các form con (MdiClient) mặc định không bật double buffer
+        // và thuộc tính này không public, nên phải bật bằng reflection.
+        private void BatDoubleBufferChoVungMdi()
+        {
+            PropertyInfo pi = typeof(Control).GetProperty(
+                "DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            foreach (Control c in Controls)
+            {
+                if (c is MdiClient) pi.SetValue(c, true, null);
+            }
+        }
+
+  
         // KHỞI TẠO FORM CHÍNH
-        // =========================
+     
 
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -51,11 +68,12 @@ namespace QLSV.Forms.HeThong
                 "   |   Nhóm quyền: " + nd.MaNhom;
 
             PhanQuyenMenu();
+            MoFormMacDinh();
         }
 
-        // =========================
+    
         // PHÂN QUYỀN MENU
-        // =========================
+      
 
         private void PhanQuyenMenu()
         {
@@ -113,38 +131,52 @@ namespace QLSV.Forms.HeThong
                 SessionManager.HasPermission(MaChucNang.THONG_KE);
         }
 
-        // =========================
-        // HÀM MỞ FORM MDI DÙNG CHUNG
-        // =========================
+    
+  
 
+        // Mở một form con. Form đang mở khác sẽ được đóng, form mới lấp đầy vùng làm việc.
+        // Thứ tự: dựng và tô màu form mới -> hiện nó -> rồi mới đóng form cũ,
+        // nhờ vậy màn hình không bị nháy trắng ở giữa.
         private void OpenMdiChild<T>(Func<T> createForm) where T : Form
         {
-            // Kiểm tra Form đã được mở chưa
+            // Đang mở đúng form này rồi thì chỉ cần kích hoạt.
             foreach (Form f in MdiChildren)
             {
                 if (f is T)
                 {
                     f.Activate();
-                    f.BringToFront();
                     return;
                 }
             }
 
-            // Chỉ tạo Form mới khi chưa tồn tại
-            T frm = createForm();
+            List<Form> formCu = MdiChildren.ToList();
 
+            T frm = createForm();
             frm.MdiParent = this;
+            frm.FormBorderStyle = FormBorderStyle.None;   // bỏ thanh tiêu đề và viền
             frm.Dock = DockStyle.Fill;
 
-            // Chỉ áp dụng giao diện một lần khi tạo Form
+            // Tô màu theo giao diện hiện tại khi form chưa hiện, tránh vẽ lại hai lần.
             ThemeManager.Apply(frm);
 
             frm.Show();
+
+            foreach (Form f in formCu) f.Close();
         }
 
-        // =========================
+        // Form tự mở sau khi đăng nhập: form đầu tiên mà nhóm quyền này được dùng.
+        private void MoFormMacDinh()
+        {
+            if (mnuDangKyHocPhan.Visible) OpenMdiChild(() => new frmDangKyHocPhan());
+            else if (mnuNhapDiem.Visible) OpenMdiChild(() => new frmNhapDiem());
+            else if (mnuSinhVien.Visible) OpenMdiChild(() => new frmSinhVien());
+            else if (mnuThuHocPhi.Visible) OpenMdiChild(() => new frmThuHocPhi());
+            else if (mnuQuanLyNguoiDung.Visible) OpenMdiChild(() => new frmUserManagement());
+        }
+
+       
         // ĐĂNG XUẤT - THOÁT
-        // =========================
+   
 
         private void mnuDangXuat_Click(object sender, EventArgs e)
         {
@@ -169,9 +201,9 @@ namespace QLSV.Forms.HeThong
             Close();
         }
 
-        // =========================
+   
         // THÔNG TIN QUYỀN
-        // =========================
+    
 
         private void mnuQuyenCuaToi_Click(object sender, EventArgs e)
         {
@@ -189,14 +221,14 @@ namespace QLSV.Forms.HeThong
                 MessageBoxIcon.Information);
         }
 
-        // =========================
+       
         // HỆ THỐNG
-        // =========================
-
+      
         private void mnuDoiMatKhau_Click(object sender, EventArgs e)
         {
             using (frmChangePassword f = new frmChangePassword())
             {
+                ThemeManager.Apply(f);
                 f.ShowDialog(this);
             }
         }
@@ -210,6 +242,7 @@ namespace QLSV.Forms.HeThong
         {
             using (frmRoleManagement frm = new frmRoleManagement())
             {
+                ThemeManager.Apply(frm);
                 frm.ShowDialog(this);
             }
         }
@@ -219,9 +252,8 @@ namespace QLSV.Forms.HeThong
             OpenMdiChild(() => new frmConnectionConfig());
         }
 
-        // =========================
         // DANH MỤC
-        // =========================
+
 
         private void mnuKhoa_Click(object sender, EventArgs e)
         {
@@ -258,10 +290,9 @@ namespace QLSV.Forms.HeThong
             OpenMdiChild(() => new frmHocKy());
         }
 
-        // =========================
+       
         // HỌC VỤ
-        // =========================
-
+    
         private void mnuLopHocPhan_Click(object sender, EventArgs e)
         {
             OpenMdiChild(() => new frmLopHocPhan());
@@ -277,9 +308,9 @@ namespace QLSV.Forms.HeThong
             OpenMdiChild(() => new frmNhapDiem());
         }
 
-        // =========================
+  
         // TÀI CHÍNH
-        // =========================
+
 
         private void mnuThuHocPhi_Click(object sender, EventArgs e)
         {
@@ -292,9 +323,9 @@ namespace QLSV.Forms.HeThong
             OpenMdiChild(() => new frmInDoanhThu());
         }
 
-        // =========================
+ 
         // BÁO CÁO - THỐNG KÊ
-        // =========================
+
 
         private void mnuBangDiem_Click(object sender, EventArgs e)
         {
@@ -311,9 +342,9 @@ namespace QLSV.Forms.HeThong
             OpenMdiChild(() => new frmThongKeDoanhThu());
         }
 
-        // =========================
+   
         // GIAO DIỆN
-        // =========================
+  
 
         private void mnuTheme_Click(object sender, EventArgs e)
         {
@@ -322,9 +353,7 @@ namespace QLSV.Forms.HeThong
 
         private void frmMain_MdiChildActivate(object sender, EventArgs e)
         {
-            // Không gọi ThemeManager.Apply() tại đây.
-            // Theme đã được áp dụng khi Form con được tạo.
-            // Tránh vẽ lại toàn bộ giao diện mỗi lần chuyển Form.
+ 
         }
     }
 }
