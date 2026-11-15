@@ -25,6 +25,7 @@ namespace QLSV.Forms.Catalog
         public frmKhoa()
         {
             InitializeComponent();
+            dgvKhoa.AutoGenerateColumns = false;
         }
 
         private void frmKhoa_Load(object sender, EventArgs e)
@@ -34,34 +35,11 @@ namespace QLSV.Forms.Catalog
             bool coQuyen = SessionManager.HasPermission(MaChucNang.QL_KHOA);
             btnThem.Enabled = btnLuu.Enabled = btnXoa.Enabled = coQuyen;
 
-            SetupGrid();   //Khai báo các cột của lưới
             LoadData();    //Đổ dữ liệu từ CSDL lên lưới
             LamMoi();      //Đưa các ô nhập về trạng thái trống
         }
 
-        private void SetupGrid()
-        {
-
-            dgvKhoa.AutoGenerateColumns = false;   // Tắt chế độ tự sinh cột.
-            dgvKhoa.Columns.Clear();               // Xóa cột cũ (tránh bị nhân đôi nếu gọi lại).
-            // Cột 1: Mã Khoa (Chiếm 30% độ rộng).
-            dgvKhoa.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "MaKhoa",
-                HeaderText = "Mã Khoa",
-                FillWeight = 30
-            });
-
-            // Cột 2: Tên Khoa (Chiếm 70% độ rộng)
-            dgvKhoa.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "TenKhoa",
-                HeaderText = "Tên Khoa",
-                FillWeight = 70
-            });
-
-
-        }
+ 
 
         //Lấy danh sách khoa từ Service và hiện lên lưới
         private void LoadData()

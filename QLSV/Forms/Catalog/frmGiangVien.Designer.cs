@@ -222,7 +222,7 @@
             // btnTim
             // 
             this.btnTim.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnTim.Location = new System.Drawing.Point(200, 207);
+            this.btnTim.Location = new System.Drawing.Point(200, 187);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(106, 40);
             this.btnTim.TabIndex = 16;
@@ -232,9 +232,9 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(100, 157);
+            this.txtTimKiem.Location = new System.Drawing.Point(91, 157);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(206, 19);
+            this.txtTimKiem.Size = new System.Drawing.Size(215, 19);
             this.txtTimKiem.TabIndex = 17;
             // 
             // label2
@@ -243,7 +243,7 @@
             this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 161);
+            this.label2.Location = new System.Drawing.Point(14, 161);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 15);
             this.label2.TabIndex = 18;
