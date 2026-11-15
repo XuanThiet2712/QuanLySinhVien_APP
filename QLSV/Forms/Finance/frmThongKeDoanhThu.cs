@@ -25,6 +25,7 @@ namespace QLSV.Forms.Finance
         {
             dtpTuNgay.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             dtpDenNgay.Value = DateTime.Now;
+            btnThongKe_Click(sender, e);
         }
         private void btnThongKe_Click(object sender, EventArgs e)
         {

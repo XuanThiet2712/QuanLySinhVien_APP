@@ -30,7 +30,7 @@ namespace QLSV.Forms.HeThong
             cboNhom.ValueMember = "MaNhom";
             cboNhom.DataSource = _role.GetAllNhom();
             TaiLai();
-            txtTim.Text = "Tìm kiếm người dùng ... ";
+      
         }
 
         private void TaiLai()

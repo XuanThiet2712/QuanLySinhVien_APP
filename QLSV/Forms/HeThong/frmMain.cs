@@ -10,6 +10,7 @@ using QLSV.Forms.Catalog;
 using QLSV.Forms.Enroll;
 using QLSV.Forms.Finance;
 using QLSV.Forms.Report;
+using QLSV.DTOs;
 
 namespace QLSV.Forms.HeThong
 {
@@ -354,6 +355,11 @@ namespace QLSV.Forms.HeThong
         private void frmMain_MdiChildActivate(object sender, EventArgs e)
         {
  
+        }
+
+        private void mnuLichSuDiem_Click(object sender, EventArgs e)
+        {
+            //OpenMdiChild(() => new frmLichSuDiem());
         }
     }
 }
