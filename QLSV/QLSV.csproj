@@ -302,6 +302,7 @@
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\DangKyService.cs" />
     <Compile Include="Services\DiemService.cs" />
+    <Compile Include="Services\DoanhThuService.cs" />
     <Compile Include="Services\EmailService.cs" />
     <Compile Include="Services\GiangVienService.cs" />
     <Compile Include="Services\HocKyService.cs" />
@@ -315,7 +316,6 @@
     <Compile Include="Services\RoleService.cs" />
     <Compile Include="Services\SinhVienService.cs" />
     <Compile Include="Services\SinhVienService.Excel.cs" />
-    <Compile Include="Services\DoanhThuService.cs" />
     <Compile Include="Services\ThongKeService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Program.cs" />
@@ -422,9 +422,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\Grade\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
