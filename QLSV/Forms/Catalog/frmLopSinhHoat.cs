@@ -24,20 +24,11 @@ namespace QLSV.Forms.Catalog
         public frmLopSinhHoat()
         {
             InitializeComponent();
-            GanSuKien();
+            dgvLop.AutoGenerateColumns = false;
         }
 
-        private void GanSuKien()
-        {
-            Load += frmLopSinhHoat_Load;
-            btnThem.Click += btnThem_Click;
-            btnLuu.Click += btnLuu_Click;
-            btnXoa.Click += btnXoa_Click;
-            btnLamMoi.Click += btnLamMoi_Click;
-            dgvLop.CellClick += dgvLop_CellClick;
-            cboNganh.SelectionChangeCommitted += cboKhoa_SelectionChangeCommitted;
-            cboLocNganh.SelectionChangeCommitted += cboLocNganh_SelectionChangeCommitted;
-        }
+
+    
 
         private void frmLopSinhHoat_Load(object sender, EventArgs e)
         {
@@ -60,7 +51,7 @@ namespace QLSV.Forms.Catalog
             cboLocNganh.DisplayMember = "TenNganh";
             cboLocNganh.ValueMember = "MaNganh";
 
-            SetupGrid();
+          
             LoadData();
             LamMoi();
         }
@@ -77,15 +68,7 @@ namespace QLSV.Forms.Catalog
 
         private void cboKhoa_SelectionChangeCommitted(object sender, EventArgs e) { NapNganhTheoKhoa(); }
 
-        private void SetupGrid()
-        {
-            dgvLop.AutoGenerateColumns = false;
-            dgvLop.Columns.Clear();
-            dgvLop.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "MaLop", HeaderText = "Mã lớp" });
-            dgvLop.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "TenLop", HeaderText = "Tên lớp" });
-            dgvLop.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "MaNganh", HeaderText = "Mã ngành" });
-            dgvLop.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "NienKhoa", HeaderText = "Niên khóa" });
-        }
+
 
         private void LoadData()
         {
@@ -93,7 +76,9 @@ namespace QLSV.Forms.Catalog
             dgvLop.DataSource = ma == "" ? _svc.GetAll() : _svc.GetByNganh(ma);
         }
 
-        private void cboLocNganh_SelectionChangeCommitted(object sender, EventArgs e) { LoadData(); }
+        private void cboLocNganh_SelectionChangeCommitted(object sender, EventArgs e) { 
+            LoadData(); 
+        }
 
         private void LamMoi()
         {
@@ -147,7 +132,10 @@ namespace QLSV.Forms.Catalog
             }
 
         }
-        private void btnLamMoi_Click(object sender, EventArgs e) { LamMoi(); LoadData(); }
+        private void btnLamMoi_Click(object sender, EventArgs e) { 
+            LamMoi(); 
+            LoadData(); 
+        }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -171,7 +159,10 @@ namespace QLSV.Forms.Catalog
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
             Result r = _svc.Xoa(txtMaLop.Text.Trim());
             HienThongBao(r);
-            if (r.Success) { LoadData(); LamMoi(); }
+            if (r.Success) { 
+                LoadData(); 
+                LamMoi(); 
+            }
         }
 
         private void HienThongBao(Result r)
@@ -180,17 +171,14 @@ namespace QLSV.Forms.Catalog
                 r.Success ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
         }
 
-        private void frmLopSinhHoat_Load_1(object sender, EventArgs e)
-        {
 
-        }
-
-        private void btnThem_Click_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void cboLocNganh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboNganh_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
