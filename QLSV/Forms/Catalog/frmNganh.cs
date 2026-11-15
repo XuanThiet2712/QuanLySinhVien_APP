@@ -22,27 +22,17 @@ namespace QLSV.Forms.Catalog
         public frmNganh()
         {
             InitializeComponent();
-            GanSuKien();
+            dgvNganh.AutoGenerateColumns = false;
         }
 
-        private void GanSuKien()
-        {
-            Load += frmNganh_Load;
-            btnThem.Click += btnThem_Click;
-            btnLuu.Click += btnLuu_Click;
-            btnXoa.Click += btnXoa_Click;
-            btnLamMoi.Click += btnLamMoi_Click;
-            dgvNganh.CellClick += dgvNganh_CellClick;
-            // SelectionChangeCommitted chỉ chạy khi NGƯỜI DÙNG chọn (tránh NullReference lúc nạp dữ liệu)
-            cboLocKhoa.SelectionChangeCommitted += cboLocKhoa_SelectionChangeCommitted;
-        }
+  
 
         private void frmNganh_Load(object sender, EventArgs e)
         {
             btnThem.Enabled = btnLuu.Enabled = btnXoa.Enabled =
                 SessionManager.HasPermission(MaChucNang.QL_NGANH);
             NapKhoa();      // phải nạp ComboBox trước khi tải lưới
-            SetupGrid();
+     
             LoadData();
             LamMoi();
         }
@@ -66,14 +56,9 @@ namespace QLSV.Forms.Catalog
             cboLocKhoa.ValueMember = "MaKhoa";*/
         }
 
-        private void SetupGrid()
-        {
-            dgvNganh.AutoGenerateColumns = false;
-            dgvNganh.Columns.Clear();
-            dgvNganh.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "MaNganh", HeaderText = "Mã ngành", FillWeight = 25 });
-            dgvNganh.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "TenNganh", HeaderText = "Tên ngành", FillWeight = 50 });
-            dgvNganh.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "MaKhoa", HeaderText = "Mã khoa", FillWeight = 25 });
-        }
+   
+           
+       
 
         // Mã lọc rỗng nghĩa là "Tất cả"
         private void LoadData()
@@ -82,7 +67,9 @@ namespace QLSV.Forms.Catalog
             dgvNganh.DataSource = maKhoa == "" ? _svc.GetAll() : _svc.GetByKhoa(maKhoa);
         }
 
-        private void cboLocKhoa_SelectionChangeCommitted(object sender, EventArgs e) { LoadData(); }
+        private void cboLocKhoa_SelectionChangeCommitted(object sender, EventArgs e) { 
+            LoadData(); 
+        }
 
         private void LamMoi()
         {
@@ -122,7 +109,10 @@ namespace QLSV.Forms.Catalog
             }
         }
             //LamMoi(); }
-        private void btnLamMoi_Click(object sender, EventArgs e) { LamMoi(); LoadData(); }
+        private void btnLamMoi_Click(object sender, EventArgs e) { 
+            LamMoi(); 
+            LoadData(); 
+        }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -151,11 +141,6 @@ namespace QLSV.Forms.Catalog
         {
             MessageBox.Show(r.Message, "Thông báo", MessageBoxButtons.OK,
                 r.Success ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
-        }
-
-        private void frmNganh_Load_1(object sender, EventArgs e)
-        {
-
         }
     }
 }
