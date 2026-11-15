@@ -112,6 +112,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\DbFactory.cs" />
+    <Compile Include="DTOs\BangDiemItemDTO.cs" />
+    <Compile Include="DTOs\DanhSachLopDTO.cs" />
     <Compile Include="DTOs\DiemDTO.cs" />
     <Compile Include="DTOs\LopDangKyDTO.cs" />
     <Compile Include="Data\QLSV.cs">
@@ -244,6 +246,12 @@
     <Compile Include="Forms\Catalog\frmSinhVien.Designer.cs">
       <DependentUpon>frmSinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Report\frmLichSuDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Report\frmLichSuDiem.Designer.cs">
+      <DependentUpon>frmLichSuDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Report\frmInDoanhThu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,6 +328,7 @@
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\Finance\frmBieuDo.resx">
@@ -348,6 +357,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmUserManagement.resx">
       <DependentUpon>frmUserManagement.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmChangePassword.resx">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
@@ -373,6 +383,9 @@
     <EmbeddedResource Include="Forms\HeThong\frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Report\frmLichSuDiem.resx">
+      <DependentUpon>frmLichSuDiem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Report\frmInDoanhThu.resx">
       <DependentUpon>frmInDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
@@ -391,6 +404,15 @@
     <EmbeddedResource Include="Forms\Catalog\frmSinhVien.resx">
       <DependentUpon>frmSinhVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Report\frmReportBangDiem.resx">
+      <DependentUpon>frmReportBangDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Forms\Report\rptBangDiem.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Forms\Report\rptDanhSachLop.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -425,6 +447,21 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

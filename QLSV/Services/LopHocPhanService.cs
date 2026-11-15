@@ -196,8 +196,7 @@ namespace QLSV.Services
 
         public Result Xoa(string maLHP)
         {
-            if (!SessionManager.HasPermission(
-                MaChucNang.QL_LOPHOCPHAN))
+            if (!SessionManager.HasPermission(MaChucNang.QL_LOPHOCPHAN))
                 return Result.Fail("Không có quyền xóa lớp.");
 
             try
@@ -205,15 +204,12 @@ namespace QLSV.Services
                 using (var db = DbFactory.Create())
                 {
                     var repo = new LopHocPhanRepository(db);
-
                     LopHocPhan lhp = repo.GetById(maLHP);
-
                     if (lhp == null)
                         return Result.Fail("Không tìm thấy lớp.");
 
                     if (repo.GetSiSoHienTai(maLHP) > 0)
-                        return Result.Fail(
-                            "Lớp đã có sinh viên đăng ký.");
+                        return Result.Fail("Lớp đã có sinh viên đăng ký.");
 
                     repo.Delete(lhp);
                     db.SubmitChanges();
@@ -224,6 +220,36 @@ namespace QLSV.Services
             catch (Exception ex)
             {
                 return Result.Fail("Lỗi: " + ex.Message);
+            }
+        }
+        public List<DanhSachLopDTO> GetDanhSachLopBaoCao(string maLHP)
+        {
+            bool coQuyen =
+                SessionManager.HasPermission(
+                    MaChucNang.QL_LOPHOCPHAN) ||
+                SessionManager.HasPermission(
+                    MaChucNang.NHAP_DIEM);
+
+            if (!coQuyen ||
+                SessionManager.CurrentUser == null)
+                return new List<DanhSachLopDTO>();
+
+            using (var db = DbFactory.Create())
+            {
+                var lop = db.LopHocPhans.FirstOrDefault(x => x.MaLHP == maLHP);
+
+                if (lop == null)
+                    return new List<DanhSachLopDTO>();
+
+                if (SessionManager.IsInRole(MaNhom.GV) &&
+                    lop.MaGV != SessionManager.CurrentUser.MaGV)
+                {
+                    return new List<DanhSachLopDTO>();
+                }
+
+                var repo = new LopHocPhanRepository(db);
+
+                return repo.GetDanhSachLopBaoCao(maLHP);
             }
         }
     }

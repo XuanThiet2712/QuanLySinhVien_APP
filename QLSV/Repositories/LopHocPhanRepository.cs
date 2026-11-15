@@ -125,6 +125,31 @@ namespace QLSV.Repositories
                 .OrderBy(x => x.HoTen)
                 .ToList();
         }
+        public List<DanhSachLopDTO> GetDanhSachLopBaoCao(string maLHP)
+        {
+            var ds = from dk in _db.DangKyHocPhans
+                     join sv in _db.SinhViens
+                         on dk.MaSV equals sv.MaSV
+                     join lhp in _db.LopHocPhans
+                         on dk.MaLHP equals lhp.MaLHP
+                     join mon in _db.MonHocs
+                         on lhp.MaMon equals mon.MaMon
+
+                     where dk.MaLHP == maLHP
+
+                     orderby sv.MaSV
+
+                     select new DanhSachLopDTO
+                     {
+                         MaLHP = lhp.MaLHP,
+                         TenMon = mon.TenMon,
+                         MaSV = sv.MaSV,
+                         HoTen = sv.HoTen,
+                         MaLop = sv.MaLop
+                     };
+
+            return ds.ToList();
+        }
 
     }
 }
