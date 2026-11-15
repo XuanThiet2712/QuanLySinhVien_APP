@@ -22,6 +22,8 @@ namespace QLSV.Forms.HeThong
         private readonly RoleService _role = new RoleService();
         private void frmRoleManagement_Load(object sender, EventArgs e)
         {
+            ThemeManager.Load();
+            ThemeManager.Apply(this);
             // Nạp danh sách chức năng 1 lần; hiển thị cột TenCN.
             clbQuyen.DisplayMember = "TenCN";
             foreach (ChucNang cn in _role.GetAllChucNang())

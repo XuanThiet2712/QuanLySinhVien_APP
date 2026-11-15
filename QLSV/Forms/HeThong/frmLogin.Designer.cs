@@ -221,12 +221,12 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(22, 47);
+            this.label5.Location = new System.Drawing.Point(22, 59);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(332, 63);
+            this.label5.Size = new System.Drawing.Size(332, 51);
             this.label5.TabIndex = 17;
             this.label5.Text = "Hệ thống quản lý thông tin sinh viên,học tập và đào tạo";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label6
             // 
