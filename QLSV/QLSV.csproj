@@ -254,7 +254,7 @@
     </Compile>
     <Compile Include="Forms\Report\frmLichSuDiem.Designer.cs">
       <DependentUpon>frmLichSuDiem.cs</DependentUpon>
-
+   </Compile>
     <Compile Include="Forms\Report\frmInDoanhThu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -387,7 +387,7 @@
 
     <EmbeddedResource Include="Forms\Report\frmLichSuDiem.resx">
       <DependentUpon>frmLichSuDiem.cs</DependentUpon>
-
+  </EmbeddedResource>
     <EmbeddedResource Include="Forms\Report\frmInDoanhThu.resx">
       <DependentUpon>frmInDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
