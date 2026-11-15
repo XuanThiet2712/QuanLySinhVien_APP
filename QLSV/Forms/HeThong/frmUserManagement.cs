@@ -30,6 +30,7 @@ namespace QLSV.Forms.HeThong
             cboNhom.ValueMember = "MaNhom";
             cboNhom.DataSource = _role.GetAllNhom();
             TaiLai();
+            txtTim.Text = "Tìm kiếm người dùng ... ";
         }
 
         private void TaiLai()
@@ -109,6 +110,41 @@ namespace QLSV.Forms.HeThong
         private void dgvUser_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtTim_TextChanged(object sender, EventArgs e)
+        {
+            TaiLai();
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            btnThem_Click(sender, e);
+        }
+
+        private void saveToolStripButton_Click(object sender, EventArgs e)
+        {
+            btnLuu_Click(sender, e);
+        }
+
+        private void helpToolStripButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            btnXoa_Click(sender, e);
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            btnKhoa_Click(sender, e);
         }
     }
 }
