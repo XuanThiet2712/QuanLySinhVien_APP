@@ -21,20 +21,10 @@ namespace QLSV.Forms.Catalog
         public frmMonHoc()
         {
             InitializeComponent();
-            GanSuKien();
+            dgvMonHoc.AutoGenerateColumns = false;
         }
 
-        private void GanSuKien()
-        {
-            Load += frmMonHoc_Load;
-            btnTim.Click += btnTim_Click;
-            btnThem.Click += btnThem_Click;
-            btnLuu.Click += btnLuu_Click;
-            btnXoa.Click += btnXoa_Click;
-            btnLamMoi.Click += btnLamMoi_Click;
-            dgvMonHoc.CellClick += dgvMonHoc_CellClick;
-            cboLocKhoa.SelectionChangeCommitted += cboLocKhoa_SelectionChangeCommitted;
-        }
+
 
         private void frmMonHoc_Load(object sender, EventArgs e)
         {
@@ -55,20 +45,10 @@ namespace QLSV.Forms.Catalog
             cboLocKhoa.DisplayMember = "TenKhoa";
             cboLocKhoa.ValueMember = "MaKhoa";
 
-            SetupGrid();
             LoadData();
             LamMoi();
         }
 
-        private void SetupGrid()
-        {
-            dgvMonHoc.AutoGenerateColumns = false;
-            dgvMonHoc.Columns.Clear();
-            dgvMonHoc.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "MaMon", HeaderText = "Mã môn" });
-            dgvMonHoc.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "TenMon", HeaderText = "Tên môn" });
-            dgvMonHoc.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "SoTinChi", HeaderText = "Tín chỉ" });
-            dgvMonHoc.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "MaKhoa", HeaderText = "Khoa" });
-        }
 
         private void LoadData()
         {
@@ -76,8 +56,10 @@ namespace QLSV.Forms.Catalog
             dgvMonHoc.DataSource = _svc.Search(txtTim.Text.Trim(), khoa);
         }
 
-        private void btnTim_Click(object sender, EventArgs e) { LoadData(); }
-        private void cboLocKhoa_SelectionChangeCommitted(object sender, EventArgs e) { LoadData(); }
+        private void btnTim_Click(object sender, EventArgs e) {
+            LoadData(); }
+        private void cboLocKhoa_SelectionChangeCommitted(object sender, EventArgs e) { 
+            LoadData(); }
 
         // maMonDangSua: bỏ môn này khỏi danh sách (không tự là tiên quyết của chính nó)
         // daChon: các mã môn cần tick sẵn
@@ -127,26 +109,14 @@ namespace QLSV.Forms.Catalog
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            var m = new MonHoc
-            {
-                MaMon = txtMaMon.Text.Trim(),
-                TenMon = txtTenMon.Text.Trim(),
-                SoTinChi = (byte)numTinChi.Value,
-                MaKhoa = cboLocKhoa.SelectedValue == null ? "" : cboLocKhoa.SelectedValue.ToString().Trim()
-            };
-
-            List<string> tq = LayTienQuyetDaTick();
-
-            Result r = _svc.ThemMoi(m, tq);
-            HienThongBao(r);
-
-            if (r.Success)
-            {
-                LoadData();
-                LamMoi();
-            }
+            LamMoi();
+            _dangThem = true;
+            txtMaMon.ReadOnly = false;
+            txtMaMon.Focus();
         }
-        private void btnLamMoi_Click(object sender, EventArgs e) { txtTim.Clear(); LamMoi(); LoadData(); }
+        private void btnLamMoi_Click(object sender, EventArgs e) { 
+            txtTim.Clear(); LamMoi(); LoadData();
+        }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -154,23 +124,64 @@ namespace QLSV.Forms.Catalog
             {
                 MaMon = txtMaMon.Text.Trim(),
                 TenMon = txtTenMon.Text.Trim(),
-                SoTinChi = (byte)numTinChi.Value,   // nếu cột là byte: (byte)numTinChi.Value
-                MaKhoa = cboLocKhoa.SelectedValue == null ? "" : cboLocKhoa.SelectedValue.ToString()
+                SoTinChi = (byte)numTinChi.Value,
+                MaKhoa = cboLocKhoa.SelectedValue?.ToString()
             };
-            List<string> tq = LayTienQuyetDaTick();
-            Result r = _svc.Luu(m, tq);
-            HienThongBao(r);
-            if (r.Success) { LoadData(); LamMoi(); }
+
+            // Lấy danh sách môn tiên quyết đã chọn
+            List<string> tienQuyet = LayTienQuyetDaTick();
+
+            Result kq;
+
+            if (_dangThem)
+            {
+                // Thêm môn mới
+                kq = _svc.ThemMoi(m, tienQuyet);
+            }
+            else
+            {
+                // Cập nhật môn học
+                kq = _svc.Luu(m, tienQuyet);
+            }
+
+            HienThongBao(kq);
+
+            if (kq.Success)
+            {
+                LoadData();
+                LamMoi();
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtMaMon.Text)) { MessageBox.Show("Hãy chọn môn cần xóa."); return; }
-            if (MessageBox.Show("Xóa môn " + txtMaMon.Text + "?", "Xác nhận",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
-            Result r = _svc.Xoa(txtMaMon.Text.Trim());
-            HienThongBao(r);
-            if (r.Success) { LoadData(); LamMoi(); }
+            string maMon = txtMaMon.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(maMon))
+            {
+                MessageBox.Show("Vui lòng chọn môn học cần xóa!");
+                return;
+            }
+
+            DialogResult xacNhan = MessageBox.Show(
+                "Bạn có chắc chắn muốn xóa môn học " + maMon + " không?",
+                "Xác nhận xóa",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (xacNhan != DialogResult.Yes)
+                return;
+
+            Result kq = _svc.Xoa(maMon);
+
+            HienThongBao(kq);
+
+            if (kq.Success)
+            {
+                LoadData();
+                LamMoi();
+            }
         }
 
         private void HienThongBao(Result r)
@@ -179,14 +190,6 @@ namespace QLSV.Forms.Catalog
                 r.Success ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
         }
 
-        private void btnThem_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmMonHoc_Load_1(object sender, EventArgs e)
-        {
-
-        }
+ 
     }
 }

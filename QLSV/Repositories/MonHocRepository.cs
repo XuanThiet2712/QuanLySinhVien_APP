@@ -22,16 +22,20 @@ namespace QLSV.Repositories
             return q.OrderBy(m => m.TenMon).ToList();
         }
 
-        public MonHoc GetById(string maMon) { return _db.MonHocs.FirstOrDefault(m => m.MaMon == maMon); }
-        public void Add(MonHoc m) { _db.MonHocs.InsertOnSubmit(m); }
+        public MonHoc GetById(string maMon) { 
+            return _db.MonHocs.FirstOrDefault(m => m.MaMon == maMon); }
+        public void Add(MonHoc m) { 
+            _db.MonHocs.InsertOnSubmit(m); }
 
         public void Delete(string maMon)
         {
             MonHoc m = GetById(maMon);
-            if (m != null) _db.MonHocs.DeleteOnSubmit(m);
+            if (m != null) 
+                _db.MonHocs.DeleteOnSubmit(m);
         }
 
-        public bool ExistsId(string maMon) { return _db.MonHocs.Any(m => m.MaMon == maMon); }
+        public bool ExistsId(string maMon) { 
+            return _db.MonHocs.Any(m => m.MaMon == maMon); }
 
         //Danh sách mã môn tiên quyết của một môn
         public List<string> GetTienQuyet(string maMon)
@@ -49,7 +53,9 @@ namespace QLSV.Repositories
         }
 
         //Số lớp học phần đã mở của môn
-        public int CountLopHocPhan(string maMon) { return _db.LopHocPhans.Count(l => l.MaMon == maMon); }
+        public int CountLopHocPhan(string maMon) { 
+            return _db.LopHocPhans.Count(l => l.MaMon == maMon); 
+        }
 
         //Số môn khác đang lấy môn này làm tiên quyết
         public int CountLaTienQuyetCuaMonKhac(string maMon)
