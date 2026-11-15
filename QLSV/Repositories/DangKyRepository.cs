@@ -39,22 +39,23 @@ namespace QLSV.Repositories
                        DaDangKy = _db.DangKyHocPhans.Count(d => d.MaLHP == l.MaLHP)
                    };
         }
-
+        //lay danh sach hoc ky moi nhat
         public List<HocKy> GetHocKy()
         {
             return _db.HocKies.OrderByDescending(h => h.TuNgay).ToList();
         }
-
+        // Lấy danh sách lớp học phần theo học kỳ.
         public List<LopDangKyDTO> GetLopTheoHocKy(string maHK)
         {
             return Query().Where(x => x.MaHK == maHK).OrderBy(x => x.MaLHP).ToList();
         }
 
+        // Lấy danh sách lớp học phần theo học kỳ và môn học.
         public List<LopDangKyDTO> GetLop(List<string> dsMaLHP)
         {
             return Query().Where(x => dsMaLHP.Contains(x.MaLHP)).ToList();
         }
-
+        // Lấy danh sách lớp học phần mà sinh viên đã đăng ký trong học kỳ.
         public List<LopDangKyDTO> GetDaDangKy(string maSV, string maHK)
         {
             List<string> dsLop = _db.DangKyHocPhans
@@ -75,23 +76,34 @@ namespace QLSV.Repositories
                     select l.MaMon).Distinct().ToList();
         }
 
+        // Lấy danh sách lớp học phần mà sinh viên chưa đăng ký trong học kỳ.
+        public List<LopDangKyDTO> GetChuaDangKy(string maSV, string maHK)
+        {
+            List<string> dsLop = _db.DangKyHocPhans
+                                    .Where(d => d.MaSV == maSV)
+                                    .Select(d => d.MaLHP)
+                                    .ToList();
+            return Query().Where(x => x.MaHK == maHK && !dsLop.Contains(x.MaLHP))
+                          .OrderBy(x => x.MaLHP).ToList();
+        }
+
         public List<MonTienQuyet> GetTienQuyet(List<string> dsMaMon)
         {
             return _db.MonTienQuyets.Where(t => dsMaMon.Contains(t.MaMon)).ToList();
         }
-
+        // Lay ten mon hoc
         public string GetTenMon(string maMon)
         {
             MonHoc m = _db.MonHocs.FirstOrDefault(x => x.MaMon == maMon);
             return m == null ? maMon : m.TenMon;
         }
-
+        // Kiem tra sinh vien co ton tai ko 
         public bool ExistsSinhVien(string maSV)
         {
             return _db.SinhViens.Any(s => s.MaSV == maSV);
         }
 
-        // Phải gán NgayDK vì cột này không cho NULL.
+        //Xếp hàng thêm một lượt đăng ký
         public void Add(string maSV, string maLHP)
         {
             _db.DangKyHocPhans.InsertOnSubmit(new DangKyHocPhan
@@ -101,11 +113,12 @@ namespace QLSV.Repositories
                 NgayDK = DateTime.Now
             });
         }
-
+        // Phục vụ hủy đăng ký
         public DangKyHocPhan Get(string maSV, string maLHP)
         {
             return _db.DangKyHocPhans.FirstOrDefault(d => d.MaSV == maSV && d.MaLHP == maLHP);
         }
+
 
         public bool CoDiem(int maDK)
         {

@@ -188,5 +188,20 @@ namespace QLSV.Repositories
 
             return danhSach;
         }
+        // Email của sinh viên hoặc giảng viên gắn với tài khoản (null nếu không có).
+        public string GetEmail(string maSV, string maGV)
+        {
+            if (!string.IsNullOrEmpty(maSV))
+            {
+                SinhVien s = _db.SinhViens.FirstOrDefault(x => x.MaSV == maSV);
+                return s == null ? null : s.Email;
+            }
+            if (!string.IsNullOrEmpty(maGV))
+            {
+                GiangVien g = _db.GiangViens.FirstOrDefault(x => x.MaGV == maGV);
+                return g == null ? null : g.Email;
+            }
+            return null;
+        }
     }
 }

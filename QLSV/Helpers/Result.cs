@@ -44,6 +44,8 @@ namespace QLSV.Helpers
     public class Result<T> : Result
     {
         public T Data { get; set; }
+        public bool IsSuccess { get; internal set; }
+
         // T ví dụ là NguoiDung, SinhVien, LopHoc, MonHoc, Diem, ...
 
         //ví dụ

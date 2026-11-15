@@ -58,7 +58,7 @@ namespace QLSV.Services
 
             try
             {
-                using (var db = DbFactory.Create())
+                using (QLSVDataContext db = DbFactory.Create())
                 {
                     NguoiDung user = new NguoiDungRepository(db).GetByUsername(tenDangNhap);
                     if (user == null || !PasswordHasher.Verify(matKhauCu, user.Salt, user.MatKhauHash))

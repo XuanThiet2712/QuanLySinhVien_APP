@@ -20,5 +20,5 @@ namespace QLSV.DTOs
         public int TietBatDau { get; set; }
         public int SoTiet { get; set; }
         public string Phong { get; set; }
-    } 
+    }
 }

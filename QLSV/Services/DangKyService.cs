@@ -56,7 +56,7 @@ namespace QLSV.Services
                 && a.TietBatDau <= b.TietKetThuc
                 && b.TietBatDau <= a.TietKetThuc;
         }
-
+        //Dang ky toi thieu 14 toi da 25 tin chi
         public Result DangKy(string maSV, List<string> dsMaLHP)
         {
             maSV = (maSV ?? "").Trim();
