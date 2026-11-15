@@ -21,20 +21,9 @@ namespace QLSV.Forms.Catalog
         public frmGiangVien()
         {
             InitializeComponent();
-            GanSuKien();
+            dgvGiangVien.AutoGenerateColumns = false;
         }
 
-        private void GanSuKien()
-        {
-            Load += frmGiangVien_Load;
-            btnTim.Click += btnTim_Click;
-            btnThem.Click += btnThem_Click;
-            btnLuu.Click += btnLuu_Click;
-            btnXoa.Click += btnXoa_Click;
-            btnLamMoi.Click += btnLamMoi_Click;
-            dgvGiangVien.CellClick += dgvGiangVien_CellClick;
-            cboLocKhoa.SelectionChangeCommitted += cboLocKhoa_SelectionChangeCommitted;
-        }
 
         private void frmGiangVien_Load(object sender, EventArgs e)
         {
@@ -42,32 +31,30 @@ namespace QLSV.Forms.Catalog
                 SessionManager.HasPermission(MaChucNang.QL_GIANGVIEN);
 
             var ds = new KhoaService().GetAll();
+            MessageBox.Show("Số lượng khoa: " + ds.Count);
 
-            cboKhoa.DataSource = new List<Khoa>(ds);
+            // ComboBox khoa trực thuộc
+            cboKhoa.DataSource = null;
             cboKhoa.DisplayMember = "TenKhoa";
             cboKhoa.ValueMember = "MaKhoa";
+            cboKhoa.DataSource = new List<Khoa>(ds);
 
             var loc = new List<Khoa>(ds);
-            loc.Insert(0, new Khoa { MaKhoa = "", TenKhoa = "-- Tất cả --" });
-            cboLocKhoa.DataSource = loc;
+
+            loc.Insert(0, new Khoa
+            {
+                MaKhoa = "",
+                TenKhoa = "-- Tất cả --"
+            });
+
+            cboLocKhoa.DataSource = null;
             cboLocKhoa.DisplayMember = "TenKhoa";
             cboLocKhoa.ValueMember = "MaKhoa";
-
-            SetupGrid();
+            cboLocKhoa.DataSource = loc;
             LoadData();
             LamMoi();
         }
 
-        private void SetupGrid()
-        {
-            dgvGiangVien.AutoGenerateColumns = false;
-            dgvGiangVien.Columns.Clear();
-            dgvGiangVien.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "MaGV", HeaderText = "Mã GV" });
-            dgvGiangVien.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "HoTen", HeaderText = "Họ tên" });
-            dgvGiangVien.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Email", HeaderText = "Email" });
-            dgvGiangVien.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "SDT", HeaderText = "SĐT" });
-            dgvGiangVien.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "MaKhoa", HeaderText = "Khoa" });
-        }
 
         // Từ khóa và khoa cùng áp dụng
         private void LoadData()
@@ -76,7 +63,9 @@ namespace QLSV.Forms.Catalog
             dgvGiangVien.DataSource = _svc.Search(txtTimKiem.Text.Trim(), khoa);
         }
 
-        private void btnTim_Click(object sender, EventArgs e) { LoadData(); }
+        private void btnTim_Click(object sender, EventArgs e) { 
+            LoadData(); 
+        }
         private void cboLocKhoa_SelectionChangeCommitted(object sender, EventArgs e) { LoadData(); }
 
         private void LamMoi()
@@ -93,9 +82,11 @@ namespace QLSV.Forms.Catalog
 
         private void dgvGiangVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return;
+            if (e.RowIndex < 0) 
+                return;
             var g = dgvGiangVien.Rows[e.RowIndex].DataBoundItem as GiangVien;
-            if (g == null) return;
+            if (g == null) 
+                return;
             txtMaGV.Text = g.MaGV;
             txtMaGV.ReadOnly = true;
             txtHoTen.Text = g.HoTen;
@@ -124,7 +115,9 @@ namespace QLSV.Forms.Catalog
                 LamMoi();
             }
         }
-        private void btnLamMoi_Click(object sender, EventArgs e) { txtTimKiem.Clear(); LamMoi(); LoadData(); }
+        private void btnLamMoi_Click(object sender, EventArgs e) { 
+            txtTimKiem.Clear(); LamMoi(); LoadData(); 
+        }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -143,9 +136,13 @@ namespace QLSV.Forms.Catalog
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtMaGV.Text)) { MessageBox.Show("Hãy chọn giảng viên cần xóa."); return; }
+            if (string.IsNullOrWhiteSpace(txtMaGV.Text)) { 
+                MessageBox.Show("Hãy chọn giảng viên cần xóa."); 
+                return; 
+            }
             if (MessageBox.Show("Xóa giảng viên " + txtMaGV.Text + "?", "Xác nhận",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) 
+                return;
             Result r = _svc.Xoa(txtMaGV.Text.Trim());
             HienThongBao(r);
             if (r.Success) { LoadData(); LamMoi(); }
@@ -157,7 +154,7 @@ namespace QLSV.Forms.Catalog
                 r.Success ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
         }
 
-        private void frmGiangVien_Load_1(object sender, EventArgs e)
+        private void cboKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

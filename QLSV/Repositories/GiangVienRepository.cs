@@ -16,13 +16,16 @@ namespace QLSV.Repositories
         public List<GiangVien> Search(string keyword, string maKhoa)
         {
             IQueryable<GiangVien> q = _db.GiangViens;
-            if (!string.IsNullOrWhiteSpace(maKhoa)) q = q.Where(g => g.MaKhoa == maKhoa);
+            if (!string.IsNullOrWhiteSpace(maKhoa)) 
+                q = q.Where(g => g.MaKhoa == maKhoa);
             if (!string.IsNullOrWhiteSpace(keyword))
                 q = q.Where(g => g.MaGV.Contains(keyword) || g.HoTen.Contains(keyword));
             return q.OrderBy(g => g.HoTen).ToList();
         }
 
-        public GiangVien GetById(string maGV) { return _db.GiangViens.FirstOrDefault(g => g.MaGV == maGV); }
+        public GiangVien GetById(string maGV) { 
+            return _db.GiangViens.FirstOrDefault(g => g.MaGV == maGV);
+        }
         public void Add(GiangVien g) { _db.GiangViens.InsertOnSubmit(g); }
 
         public void Delete(string maGV)
@@ -31,9 +34,13 @@ namespace QLSV.Repositories
             if (g != null) _db.GiangViens.DeleteOnSubmit(g);
         }
 
-        public bool ExistsId(string maGV) { return _db.GiangViens.Any(g => g.MaGV == maGV); }
+        public bool ExistsId(string maGV) { 
+            return _db.GiangViens.Any(g => g.MaGV == maGV); 
+        }
 
         //Số lớp học phần giảng viên đang phụ trách
-        public int CountLopHocPhan(string maGV) { return _db.LopHocPhans.Count(l => l.MaGV == maGV); }
+        public int CountLopHocPhan(string maGV) { 
+            return _db.LopHocPhans.Count(l => l.MaGV == maGV); 
+        }
     }
 }

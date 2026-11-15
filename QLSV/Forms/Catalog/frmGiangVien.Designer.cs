@@ -48,6 +48,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cboLocKhoa = new System.Windows.Forms.ComboBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiangVien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,12 +150,21 @@
             this.dgvGiangVien.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvGiangVien.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvGiangVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGiangVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column5,
+            this.Column3,
+            this.Column4});
             this.dgvGiangVien.Location = new System.Drawing.Point(14, 164);
             this.dgvGiangVien.Name = "dgvGiangVien";
+            this.dgvGiangVien.ReadOnly = true;
             this.dgvGiangVien.RowHeadersWidth = 51;
             this.dgvGiangVien.RowTemplate.Height = 24;
-            this.dgvGiangVien.Size = new System.Drawing.Size(870, 250);
+            this.dgvGiangVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGiangVien.Size = new System.Drawing.Size(960, 250);
             this.dgvGiangVien.TabIndex = 10;
+            this.dgvGiangVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiangVien_CellClick);
             // 
             // cboKhoa
             // 
@@ -160,6 +174,7 @@
             this.cboKhoa.Name = "cboKhoa";
             this.cboKhoa.Size = new System.Drawing.Size(174, 24);
             this.cboKhoa.TabIndex = 11;
+            this.cboKhoa.SelectedIndexChanged += new System.EventHandler(this.cboKhoa_SelectedIndexChanged);
             // 
             // btnLamMoi
             // 
@@ -171,6 +186,7 @@
             this.btnLamMoi.TabIndex = 12;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnXoa
             // 
@@ -182,6 +198,7 @@
             this.btnXoa.TabIndex = 13;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
@@ -193,6 +210,7 @@
             this.btnLuu.TabIndex = 14;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnThem
             // 
@@ -205,6 +223,7 @@
             this.btnThem.TabIndex = 15;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnTim
             // 
@@ -215,6 +234,7 @@
             this.btnTim.TabIndex = 16;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = false;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // txtTimKiem
             // 
@@ -251,10 +271,46 @@
             // 
             this.cboLocKhoa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboLocKhoa.FormattingEnabled = true;
-            this.cboLocKhoa.Location = new System.Drawing.Point(689, 65);
+            this.cboLocKhoa.Location = new System.Drawing.Point(691, 65);
             this.cboLocKhoa.Name = "cboLocKhoa";
             this.cboLocKhoa.Size = new System.Drawing.Size(195, 24);
             this.cboLocKhoa.TabIndex = 20;
+            this.cboLocKhoa.SelectedIndexChanged += new System.EventHandler(this.cboLocKhoa_SelectionChangeCommitted);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaGV";
+            this.Column1.HeaderText = "Mã GV";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "HoTen";
+            this.Column2.HeaderText = "Họ Tên";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Email";
+            this.Column5.HeaderText = "Email";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "SDT";
+            this.Column3.HeaderText = "SĐT";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "MaKhoa";
+            this.Column4.HeaderText = "Khoa";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
             // 
             // frmGiangVien
             // 
@@ -263,7 +319,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::QLSV.Properties.Resources.abstract_background_with_soft_gradient_color_and_dynamic_shadow_on_background_background_for_wallpaper_eps_10_free_vector;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(900, 500);
+            this.ClientSize = new System.Drawing.Size(1100, 650);
             this.Controls.Add(this.cboLocKhoa);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label2);
@@ -288,7 +344,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGiangVien";
             this.Text = "Giảng viên";
-            this.Load += new System.EventHandler(this.frmGiangVien_Load_1);
+            this.Load += new System.EventHandler(this.frmGiangVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiangVien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -317,5 +373,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cboLocKhoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

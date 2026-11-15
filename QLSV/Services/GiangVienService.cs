@@ -14,15 +14,20 @@ namespace QLSV.Services
         //Tìm giảng viên theo từ khóa và khoa
         public List<GiangVien> Search(string kw, string maKhoa)
         {
-            using (var db = DbFactory.Create()) return new GiangVienRepository(db).Search(kw, maKhoa);
+            using (var db = DbFactory.Create()) 
+                return new GiangVienRepository(db).Search(kw, maKhoa);
         }
 
         private Result KiemTra(GiangVien g)
         {
-            if (g == null) return Result.Fail("Dữ liệu rỗng.");
-            if (string.IsNullOrWhiteSpace(g.MaGV)) return Result.Fail("Mã giảng viên không được để trống.");
-            if (string.IsNullOrWhiteSpace(g.HoTen)) return Result.Fail("Họ tên không được để trống.");
-            if (string.IsNullOrWhiteSpace(g.MaKhoa)) return Result.Fail("Hãy chọn khoa.");
+            if (g == null) 
+                return Result.Fail("Dữ liệu rỗng.");
+            if (string.IsNullOrWhiteSpace(g.MaGV)) 
+                return Result.Fail("Mã giảng viên không được để trống.");
+            if (string.IsNullOrWhiteSpace(g.HoTen)) 
+                return Result.Fail("Họ tên không được để trống.");
+            if (string.IsNullOrWhiteSpace(g.MaKhoa)) 
+                return Result.Fail("Hãy chọn khoa.");
 
             if (!string.IsNullOrWhiteSpace(g.Email) && !g.Email.Contains("@"))
                 return Result.Fail("Email không đúng định dạng.");
