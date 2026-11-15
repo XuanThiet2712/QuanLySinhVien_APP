@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using QLSV.Helpers;
 namespace QLSV.Forms.HeThong
 {
     public partial class frmRegister : Form
@@ -27,7 +27,9 @@ namespace QLSV.Forms.HeThong
 
         private void frmRegister_Load(object sender, EventArgs e)
         {
-
+            ThemeManager.Load();
+            ThemeManager.Apply(this);
+            btnTheme.Text = ThemeManager.IsDark ? "🌙Tối" : "☀Sáng";
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)
@@ -50,6 +52,20 @@ namespace QLSV.Forms.HeThong
             MessageBox.Show(r.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             TenDangNhapMoi = txtTenDangNhap.Text.Trim();
             DialogResult = DialogResult.OK;
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTheme_Click(object sender, EventArgs e)
+        {
+            ThemeManager.Toggle();
+
+            ThemeManager.Apply(this);
+
+            btnTheme.Text = ThemeManager.IsDark ? "🌙Tối" : "☀Sáng";
         }
     }
 }
