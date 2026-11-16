@@ -20,14 +20,32 @@ namespace QLSV.Forms.HeThong
             InitializeComponent();
         }
 
-        private void btnGuiMa_Click(object sender, EventArgs e)
+        private async void btnGuiMa_Click(object sender, EventArgs e)
         {
+            string tenDangNhap = txtTenDangNhap.Text.Trim();
+
             btnGuiMa.Enabled = false;
             Cursor = Cursors.WaitCursor;
-            Result kq = _otp.GuiOtp(txtTenDangNhap.Text);   // gửi mail mất vài giây
-            Cursor = Cursors.Default;
-            btnGuiMa.Enabled = true;
-            MessageBox.Show(kq.Message, kq.Success ? "Thành công" : "Lỗi");
+
+            try
+            {
+                Result kq = await Task.Run(() => _otp.GuiOtp(tenDangNhap));
+
+                MessageBox.Show(
+                    kq.Message,
+                    kq.Success ? "Thành công" : "Lỗi",
+                    MessageBoxButtons.OK,
+                    kq.Success ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi gửi OTP: " + ex.Message);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+                btnGuiMa.Enabled = true;
+            }
         }
 
         private void btnDoi_Click(object sender, EventArgs e)

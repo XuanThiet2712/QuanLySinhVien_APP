@@ -42,10 +42,10 @@
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer1.Location = new System.Drawing.Point(0, 38);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(657, 328);
+            this.reportViewer1.Size = new System.Drawing.Size(825, 434);
             this.reportViewer1.TabIndex = 0;
             // 
             // panel1
@@ -57,15 +57,15 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(657, 38);
+            this.panel1.Size = new System.Drawing.Size(825, 38);
             this.panel1.TabIndex = 1;
             // 
             // btnXem
             // 
             this.btnXem.Location = new System.Drawing.Point(473, 5);
-            this.btnXem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXem.Margin = new System.Windows.Forms.Padding(2);
             this.btnXem.Name = "btnXem";
             this.btnXem.Size = new System.Drawing.Size(74, 31);
             this.btnXem.TabIndex = 4;
@@ -77,7 +77,7 @@
             this.dtpDenNgay.CustomFormat = "dd/MM/yyyy";
             this.dtpDenNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDenNgay.Location = new System.Drawing.Point(302, 9);
-            this.dtpDenNgay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpDenNgay.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDenNgay.Name = "dtpDenNgay";
             this.dtpDenNgay.Size = new System.Drawing.Size(84, 20);
             this.dtpDenNgay.TabIndex = 3;
@@ -97,7 +97,7 @@
             this.dtpTuNgay.CustomFormat = "dd/MM/yyyy";
             this.dtpTuNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpTuNgay.Location = new System.Drawing.Point(80, 9);
-            this.dtpTuNgay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpTuNgay.Margin = new System.Windows.Forms.Padding(2);
             this.dtpTuNgay.Name = "dtpTuNgay";
             this.dtpTuNgay.Size = new System.Drawing.Size(80, 20);
             this.dtpTuNgay.TabIndex = 1;
@@ -116,10 +116,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 366);
+            this.ClientSize = new System.Drawing.Size(825, 472);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmInDoanhThu";
             this.Text = "QLSV - In Doanh Thu";
             this.Load += new System.EventHandler(this.frmInDoanhThu_Load);

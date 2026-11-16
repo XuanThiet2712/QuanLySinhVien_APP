@@ -119,7 +119,7 @@
     <Compile Include="Data\QLSV.cs">
       <DependentUpon>QLSV.dbml</DependentUpon>
     </Compile>
-    <Compile Include="DTOs\LopHocPhanDTO.cs" />
+   
     <Compile Include="DTOs\ImportReport.cs" />
     <Compile Include="DTOs\LopHocPhanDTO.cs" />
     <Compile Include="DTOs\NguoiDungDTO.cs" />
