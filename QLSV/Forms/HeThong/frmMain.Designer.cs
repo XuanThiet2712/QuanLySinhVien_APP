@@ -61,6 +61,7 @@
             this.mnuQuyenCuaToi = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblNguoiDung = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -273,28 +274,28 @@
             // mnuBangDiem
             // 
             this.mnuBangDiem.Name = "mnuBangDiem";
-            this.mnuBangDiem.Size = new System.Drawing.Size(224, 26);
+            this.mnuBangDiem.Size = new System.Drawing.Size(217, 26);
             this.mnuBangDiem.Text = "Bảng điểm";
             this.mnuBangDiem.Click += new System.EventHandler(this.mnuBangDiem_Click);
             // 
             // mnuBieuDo
             // 
             this.mnuBieuDo.Name = "mnuBieuDo";
-            this.mnuBieuDo.Size = new System.Drawing.Size(224, 26);
+            this.mnuBieuDo.Size = new System.Drawing.Size(217, 26);
             this.mnuBieuDo.Text = "Biểu đồ thống kê";
             this.mnuBieuDo.Click += new System.EventHandler(this.mnuBieuDo_Click);
             // 
             // mnuBaoCaoDoanhThu
             // 
             this.mnuBaoCaoDoanhThu.Name = "mnuBaoCaoDoanhThu";
-            this.mnuBaoCaoDoanhThu.Size = new System.Drawing.Size(224, 26);
+            this.mnuBaoCaoDoanhThu.Size = new System.Drawing.Size(217, 26);
             this.mnuBaoCaoDoanhThu.Text = "Báo cáo doanh thu";
             this.mnuBaoCaoDoanhThu.Click += new System.EventHandler(this.mnuBaoCaoDoanhThu_Click);
             // 
             // inDoanhThuToolStripMenuItem
             // 
             this.inDoanhThuToolStripMenuItem.Name = "inDoanhThuToolStripMenuItem";
-            this.inDoanhThuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.inDoanhThuToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
             this.inDoanhThuToolStripMenuItem.Text = "In Doanh Thu";
             this.inDoanhThuToolStripMenuItem.Click += new System.EventHandler(this.inDoanhThuToolStripMenuItem_Click);
             // 
@@ -317,7 +318,8 @@
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblNguoiDung});
+            this.lblNguoiDung,
+            this.toolStripSplitButton1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 577);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1082, 26);
@@ -329,6 +331,16 @@
             this.lblNguoiDung.Name = "lblNguoiDung";
             this.lblNguoiDung.Size = new System.Drawing.Size(151, 20);
             this.lblNguoiDung.Text = "toolStripStatusLabel1";
+            // 
+            // toolStripSplitButton1
+            // 
+            this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripSplitButton1.Image = global::QLSV.Properties.Resources.pngtree_vector_logout_icon_png_image_4233257;
+            this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
+            this.toolStripSplitButton1.Size = new System.Drawing.Size(39, 24);
+            this.toolStripSplitButton1.Text = "Đăng xuất";
+            this.toolStripSplitButton1.ButtonClick += new System.EventHandler(this.toolStripSplitButton1_ButtonClick);
             // 
             // frmMain
             // 
@@ -390,5 +402,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuHocKy;
         private System.Windows.Forms.ToolStripButton toolStripButtonOverride1;
         private System.Windows.Forms.ToolStripMenuItem mnuTheme;
+        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
     }
 }

@@ -174,6 +174,16 @@ namespace QLSV.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pngtree_vector_logout_icon_png_image_4233257 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-vector-logout-icon-png-image_4233257", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap top_phan_mem_quan_ly_hoc_sinh {
             get {
                 object obj = ResourceManager.GetObject("top-phan-mem-quan-ly-hoc-sinh", resourceCulture);

@@ -453,6 +453,7 @@
     <None Include="Resources\del.png" />
     <None Include="Resources\block.png" />
     <Content Include="Resources\a-wooden-dock-stretches-out-into-the-ocean-at-sunset-ai-generated-free-photo.jpg" />
+    <None Include="Resources\pngtree-vector-logout-icon-png-image_4233257.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -64,9 +64,7 @@ namespace QLSV.Forms.HeThong
                 return;
             }
 
-            lblNguoiDung.Text =
-                "Người dùng: " + nd.TenDangNhap +
-                "   |   Nhóm quyền: " + nd.MaNhom;
+            lblNguoiDung.Text = "Người dùng: " + nd.TenDangNhap + "   |   Nhóm quyền: " + nd.MaNhom;
 
             PhanQuyenMenu();
             MoFormMacDinh();
@@ -79,9 +77,8 @@ namespace QLSV.Forms.HeThong
         private void PhanQuyenMenu()
         {
             // Hệ thống
-            mnuQuanLyNguoiDung.Visible =
-                SessionManager.HasPermission(MaChucNang.QL_USER);
-
+            mnuQuanLyNguoiDung.Visible = SessionManager.HasPermission(MaChucNang.QL_USER);
+          
             mnuPhanQuyen.Visible =
                 SessionManager.HasPermission(MaChucNang.QL_ROLE);
 
@@ -154,7 +151,7 @@ namespace QLSV.Forms.HeThong
 
             T frm = createForm();
             frm.MdiParent = this;
-            frm.FormBorderStyle = FormBorderStyle.None;   // bỏ thanh tiêu đề và viền
+             // bỏ thanh tiêu đề và viền
             frm.Dock = DockStyle.Fill;
 
             // Tô màu theo giao diện hiện tại khi form chưa hiện, tránh vẽ lại hai lần.
@@ -168,16 +165,35 @@ namespace QLSV.Forms.HeThong
         // Form tự mở sau khi đăng nhập: form đầu tiên mà nhóm quyền này được dùng.
         private void MoFormMacDinh()
         {
-            if (mnuDangKyHocPhan.Visible) OpenMdiChild(() => new frmDangKyHocPhan());
-            else if (mnuNhapDiem.Visible) OpenMdiChild(() => new frmNhapDiem());
-            else if (mnuSinhVien.Visible) OpenMdiChild(() => new frmSinhVien());
-            else if (mnuThuHocPhi.Visible) OpenMdiChild(() => new frmThuHocPhi());
-            else if (mnuQuanLyNguoiDung.Visible) OpenMdiChild(() => new frmUserManagement());
+            if (mnuDangKyHocPhan.Visible)
+                OpenMdiChild(() => new frmDangKyHocPhan());
+
+            else if (mnuNhapDiem.Visible)
+                OpenMdiChild(() => new frmNhapDiem());
+
+            else if (mnuSinhVien.Visible)
+                OpenMdiChild(() => new frmSinhVien());
+
+            else if (mnuThuHocPhi.Visible)
+                OpenMdiChild(() => new frmThuHocPhi());
+
+            else if (mnuQuanLyNguoiDung.Visible)
+                OpenMdiChild(() => new frmUserManagement());
+
+            else
+            {
+                MessageBox.Show(
+                    "Tài khoản hiện tại chưa có quyền mở màn hình mặc định.",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
         }
 
-       
+
         // ĐĂNG XUẤT - THOÁT
-   
+
 
         private void mnuDangXuat_Click(object sender, EventArgs e)
         {
@@ -360,6 +376,11 @@ namespace QLSV.Forms.HeThong
         private void mnuLichSuDiem_Click(object sender, EventArgs e)
         {
             //OpenMdiChild(() => new frmLichSuDiem());
+        }
+
+        private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
+        {
+            mnuDangXuat_Click(sender, e);
         }
     }
 }
