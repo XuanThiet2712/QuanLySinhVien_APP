@@ -48,12 +48,12 @@ namespace QLSV.Forms.HeThong
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            lblThongBao.Text = "";
+            
             var r = _auth.DangNhap(txtTenDangNhap.Text, txtMatKhau.Text);
 
             if (!r.Success)
             {
-                lblThongBao.Text = r.Message;
+                errorProvider1.SetError(txtMatKhau, r.Message);
                 txtMatKhau.Clear();
                 txtMatKhau.Focus();
                 return;

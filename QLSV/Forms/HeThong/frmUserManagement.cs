@@ -26,11 +26,23 @@ namespace QLSV.Forms.HeThong
 
         private void frmUserManagement_Load(object sender, EventArgs e)
         {
+            if (!SessionManager.HasPermission(MaChucNang.QL_USER))
+            {
+                MessageBox.Show(
+                    "Bạn không có quyền quản lý người dùng.",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                Close();
+                return;
+            }
+
             cboNhom.DisplayMember = "TenNhom";
             cboNhom.ValueMember = "MaNhom";
             cboNhom.DataSource = _role.GetAllNhom();
+
             TaiLai();
-      
         }
 
         private void TaiLai()
@@ -148,6 +160,11 @@ namespace QLSV.Forms.HeThong
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

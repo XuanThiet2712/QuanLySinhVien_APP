@@ -78,8 +78,8 @@ namespace QLSV.Forms.HeThong
         {
             // Hệ thống
             mnuQuanLyNguoiDung.Visible = SessionManager.HasPermission(MaChucNang.QL_USER);
-            MessageBox.Show(SessionManager.HasPermission(MaChucNang.QL_USER).ToString());
-            MessageBox.Show(mnuQuanLyNguoiDung.Visible.ToString());
+            //MessageBox.Show(SessionManager.HasPermission(MaChucNang.QL_USER).ToString());
+            //MessageBox.Show(mnuQuanLyNguoiDung.Visible.ToString());
             mnuPhanQuyen.Visible =
                 SessionManager.HasPermission(MaChucNang.QL_ROLE);
 
@@ -87,6 +87,8 @@ namespace QLSV.Forms.HeThong
                 SessionManager.HasPermission(MaChucNang.CAU_HINH);
 
             // Danh mục
+            mnuHocKy.Visible =
+                SessionManager.HasPermission(MaChucNang.QL_LOPHOCPHAN);
             mnuKhoa.Visible =
                 SessionManager.HasPermission(MaChucNang.QL_KHOA);
 
@@ -306,12 +308,17 @@ namespace QLSV.Forms.HeThong
 
         private void mnuHocKy_Click(object sender, EventArgs e)
         {
+            if (!SessionManager.HasPermission(MaChucNang.QL_LOPHOCPHAN))
+            {
+                MessageBox.Show("Bạn không có quyền quản lý học kỳ.");
+                return;
+            }
+
             OpenMdiChild(() => new frmHocKy());
         }
 
-       
         // HỌC VỤ
-    
+
         private void mnuLopHocPhan_Click(object sender, EventArgs e)
         {
             OpenMdiChild(() => new frmLopHocPhan());

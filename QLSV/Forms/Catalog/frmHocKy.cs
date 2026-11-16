@@ -28,10 +28,25 @@ namespace QLSV.Forms.Catalog
 
         private void frmHocKy_Load(object sender, EventArgs e)
         {
-            // Bảng phân quyền không có mã riêng cho học kỳ nên dùng chung QL_LOPHOCPHAN 
-            btnThem.Enabled = btnLuu.Enabled = btnXoa.Enabled =
-                SessionManager.HasPermission(MaChucNang.QL_LOPHOCPHAN);
-     
+            bool coQuyen = SessionManager.HasPermission(
+      MaChucNang.QL_LOPHOCPHAN);
+
+            if (!coQuyen)
+            {
+                MessageBox.Show(
+                    "Bạn không có quyền quản lý học kỳ.",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                Close();
+                return;
+            }
+
+            btnThem.Enabled = true;
+            btnLuu.Enabled = true;
+            btnXoa.Enabled = true;
+
             LoadData();
             LamMoi();
         }
