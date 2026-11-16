@@ -34,9 +34,18 @@ namespace QLSV.Services
             return Result.Ok();
         }
 
+        private bool CoQuyenQuanLy()
+        {
+            return SessionManager.HasPermission(
+                MaChucNang.QL_LOPHOCPHAN);
+        }
+
         //Lưu học kỳ: sửa
         public Result Luu(HocKy h)
         {
+            if (!CoQuyenQuanLy())
+                return Result.Fail("Bạn không có quyền cập nhật học kỳ.");
+
             Result kt = KiemTra(h);
             if (!kt.Success) return kt;
             try
@@ -62,6 +71,8 @@ namespace QLSV.Services
         //Thêm học kỳ mới, chặn trùng mã
         public Result ThemMoi(HocKy h)
         {
+            if (!CoQuyenQuanLy())
+                return Result.Fail("Bạn không có quyền thêm học kỳ.");
             Result kt = KiemTra(h); 
             if (!kt.Success) return kt;
             try
@@ -82,6 +93,10 @@ namespace QLSV.Services
         //Xóa học kỳ; chặn nếu đã có lớp học phần
         public Result Xoa(string maHK)
         {
+            if (!CoQuyenQuanLy())
+                return Result.Fail("Bạn không có quyền thêm học kỳ.");
+            if (string.IsNullOrWhiteSpace(maHK))
+                return Result.Fail("Mã học kỳ không được để trống.");
             try
             {
                 using (var db = DbFactory.Create())

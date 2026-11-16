@@ -15,6 +15,10 @@ namespace QLSV.Services
     {
         public List<NguoiDungDTO> GetAll(string keyword)
         {
+            if (!SessionManager.HasPermission(MaChucNang.QL_USER))
+                throw new UnauthorizedAccessException(
+                    "Bạn không có quyền xem danh sách người dùng.");
+
             using (var db = DbFactory.Create())
             {
                 return new NguoiDungRepository(db).Search(keyword);

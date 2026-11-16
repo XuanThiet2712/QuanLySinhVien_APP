@@ -41,19 +41,17 @@
             // 
             // txtMaSV
             // 
-            this.txtMaSV.Location = new System.Drawing.Point(193, 37);
-            this.txtMaSV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaSV.Location = new System.Drawing.Point(145, 30);
             this.txtMaSV.Name = "txtMaSV";
-            this.txtMaSV.Size = new System.Drawing.Size(132, 22);
+            this.txtMaSV.Size = new System.Drawing.Size(100, 20);
             this.txtMaSV.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 40);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(32, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 16);
+            this.label2.Size = new System.Drawing.Size(101, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nhập mã sinh viên :";
             // 
@@ -61,18 +59,16 @@
             // 
             this.cboHocKy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboHocKy.FormattingEnabled = true;
-            this.cboHocKy.Location = new System.Drawing.Point(193, 94);
-            this.cboHocKy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboHocKy.Location = new System.Drawing.Point(145, 76);
             this.cboHocKy.Name = "cboHocKy";
-            this.cboHocKy.Size = new System.Drawing.Size(160, 24);
+            this.cboHocKy.Size = new System.Drawing.Size(121, 21);
             this.cboHocKy.TabIndex = 3;
             // 
             // btnXem
             // 
-            this.btnXem.Location = new System.Drawing.Point(35, 130);
-            this.btnXem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXem.Location = new System.Drawing.Point(26, 106);
             this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(131, 33);
+            this.btnXem.Size = new System.Drawing.Size(98, 27);
             this.btnXem.TabIndex = 4;
             this.btnXem.Text = "Xem bảng điểm";
             this.btnXem.UseVisualStyleBackColor = true;
@@ -83,30 +79,27 @@
             this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.reportViewer1.Location = new System.Drawing.Point(35, 171);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reportViewer1.Location = new System.Drawing.Point(26, 139);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(947, 370);
+            this.reportViewer1.Size = new System.Drawing.Size(711, 301);
             this.reportViewer1.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 98);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(32, 80);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 16);
+            this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Chọn học kỳ :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(515, 40);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(386, 32);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 16);
+            this.label4.Size = new System.Drawing.Size(103, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Chọn lớp học phần :";
             // 
@@ -114,18 +107,16 @@
             // 
             this.cboLopHocPhan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboLopHocPhan.FormattingEnabled = true;
-            this.cboLopHocPhan.Location = new System.Drawing.Point(670, 40);
-            this.cboLopHocPhan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboLopHocPhan.Location = new System.Drawing.Point(502, 32);
             this.cboLopHocPhan.Name = "cboLopHocPhan";
-            this.cboLopHocPhan.Size = new System.Drawing.Size(312, 24);
+            this.cboLopHocPhan.Size = new System.Drawing.Size(235, 21);
             this.cboLopHocPhan.TabIndex = 8;
             // 
             // btnDanhSachLop
             // 
-            this.btnDanhSachLop.Location = new System.Drawing.Point(518, 81);
-            this.btnDanhSachLop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDanhSachLop.Location = new System.Drawing.Point(388, 66);
             this.btnDanhSachLop.Name = "btnDanhSachLop";
-            this.btnDanhSachLop.Size = new System.Drawing.Size(147, 33);
+            this.btnDanhSachLop.Size = new System.Drawing.Size(110, 27);
             this.btnDanhSachLop.TabIndex = 9;
             this.btnDanhSachLop.Text = "Xem danh sách lớp";
             this.btnDanhSachLop.UseVisualStyleBackColor = true;
@@ -133,9 +124,9 @@
             // 
             // frmReportBangDiem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnDanhSachLop);
             this.Controls.Add(this.cboLopHocPhan);
             this.Controls.Add(this.label4);
@@ -145,7 +136,7 @@
             this.Controls.Add(this.cboHocKy);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtMaSV);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReportBangDiem";
             this.Text = "BẢNG ĐIỂM SINH VIÊN";
             this.Load += new System.EventHandler(this.frmReportBangDiem_Load);
