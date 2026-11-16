@@ -78,7 +78,8 @@ namespace QLSV.Forms.HeThong
         {
             // Hệ thống
             mnuQuanLyNguoiDung.Visible = SessionManager.HasPermission(MaChucNang.QL_USER);
-          
+            MessageBox.Show(SessionManager.HasPermission(MaChucNang.QL_USER).ToString());
+            MessageBox.Show(mnuQuanLyNguoiDung.Visible.ToString());
             mnuPhanQuyen.Visible =
                 SessionManager.HasPermission(MaChucNang.QL_ROLE);
 
@@ -165,19 +166,19 @@ namespace QLSV.Forms.HeThong
         // Form tự mở sau khi đăng nhập: form đầu tiên mà nhóm quyền này được dùng.
         private void MoFormMacDinh()
         {
-            if (mnuDangKyHocPhan.Visible)
+            if (SessionManager.HasPermission(MaChucNang.DANG_KY))
                 OpenMdiChild(() => new frmDangKyHocPhan());
 
-            else if (mnuNhapDiem.Visible)
+            else if (SessionManager.HasPermission(MaChucNang.NHAP_DIEM))
                 OpenMdiChild(() => new frmNhapDiem());
 
-            else if (mnuSinhVien.Visible)
+            else if (SessionManager.HasPermission(MaChucNang.QL_SINHVIEN))
                 OpenMdiChild(() => new frmSinhVien());
 
-            else if (mnuThuHocPhi.Visible)
+            else if (SessionManager.HasPermission(MaChucNang.THU_HOC_PHI))
                 OpenMdiChild(() => new frmThuHocPhi());
 
-            else if (mnuQuanLyNguoiDung.Visible)
+            else if (SessionManager.HasPermission(MaChucNang.QL_USER))
                 OpenMdiChild(() => new frmUserManagement());
 
             else
@@ -190,6 +191,7 @@ namespace QLSV.Forms.HeThong
                 );
             }
         }
+        
 
 
         // ĐĂNG XUẤT - THOÁT

@@ -54,6 +54,7 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiangVien)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -333,6 +334,14 @@
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // domainUpDown1
+            // 
+            this.domainUpDown1.Location = new System.Drawing.Point(561, 330);
+            this.domainUpDown1.Name = "domainUpDown1";
+            this.domainUpDown1.Size = new System.Drawing.Size(8, 19);
+            this.domainUpDown1.TabIndex = 22;
+            this.domainUpDown1.Text = "domainUpDown1";
+            // 
             // frmGiangVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -340,6 +349,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(825, 528);
+            this.Controls.Add(this.domainUpDown1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cboLocKhoa);
             this.Controls.Add(this.label7);
@@ -397,5 +407,6 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.DomainUpDown domainUpDown1;
     }
 }
