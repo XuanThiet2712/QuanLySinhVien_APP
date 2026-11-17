@@ -134,7 +134,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLichSuDiem";
-            this.Text = "frmLichSuDiem";
+            this.Text = "QLSV - Lịch sử điểm";
             this.Load += new System.EventHandler(this.frmLichSuDiem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSu)).EndInit();
             this.ResumeLayout(false);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRoleManagement));
             this.cboNhom = new System.Windows.Forms.ComboBox();
             this.clbQuyen = new System.Windows.Forms.CheckedListBox();
             this.btnLuu = new System.Windows.Forms.Button();
@@ -90,6 +91,7 @@
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.clbQuyen);
             this.Controls.Add(this.cboNhom);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmRoleManagement";
             this.Text = "Quản lý phân quyền";
             this.Load += new System.EventHandler(this.frmRoleManagement_Load);

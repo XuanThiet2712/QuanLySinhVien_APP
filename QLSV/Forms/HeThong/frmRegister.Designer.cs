@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegister));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,8 +44,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lnkClose = new System.Windows.Forms.LinkLabel();
             this.btnTheme = new System.Windows.Forms.Button();
+            this.lnkClose = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -190,16 +191,6 @@
             this.panel1.Size = new System.Drawing.Size(542, 375);
             this.panel1.TabIndex = 15;
             // 
-            // lnkClose
-            // 
-            this.lnkClose.AutoSize = true;
-            this.lnkClose.Location = new System.Drawing.Point(160, 338);
-            this.lnkClose.Name = "lnkClose";
-            this.lnkClose.Size = new System.Drawing.Size(225, 16);
-            this.lnkClose.TabIndex = 16;
-            this.lnkClose.TabStop = true;
-            this.lnkClose.Text = "Đã có tài khoản? Quay lại đăng nhập";
-            // 
             // btnTheme
             // 
             this.btnTheme.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -213,12 +204,23 @@
             this.btnTheme.UseVisualStyleBackColor = true;
             this.btnTheme.Click += new System.EventHandler(this.btnTheme_Click);
             // 
+            // lnkClose
+            // 
+            this.lnkClose.AutoSize = true;
+            this.lnkClose.Location = new System.Drawing.Point(160, 338);
+            this.lnkClose.Name = "lnkClose";
+            this.lnkClose.Size = new System.Drawing.Size(225, 16);
+            this.lnkClose.TabIndex = 16;
+            this.lnkClose.TabStop = true;
+            this.lnkClose.Text = "Đã có tài khoản? Quay lại đăng nhập";
+            // 
             // frmRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 393);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmRegister";
             this.Text = "QLSV - Đăng ký tài khoản";
             this.Load += new System.EventHandler(this.frmRegister_Load);

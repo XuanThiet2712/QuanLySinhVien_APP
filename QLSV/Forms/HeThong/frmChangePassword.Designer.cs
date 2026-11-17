@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChangePassword));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,11 +38,11 @@
             this.btnDoi = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnXacNhanMatKhau = new System.Windows.Forms.Button();
+            this.btnHienMatKhauMoi = new System.Windows.Forms.Button();
+            this.btnHienMatKhauCu = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnHienMatKhauCu = new System.Windows.Forms.Button();
-            this.btnHienMatKhauMoi = new System.Windows.Forms.Button();
-            this.btnXacNhanMatKhau = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -140,6 +141,36 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ĐỔI MẬT KHẨU";
             // 
+            // btnXacNhanMatKhau
+            // 
+            this.btnXacNhanMatKhau.Location = new System.Drawing.Point(405, 96);
+            this.btnXacNhanMatKhau.Name = "btnXacNhanMatKhau";
+            this.btnXacNhanMatKhau.Size = new System.Drawing.Size(40, 32);
+            this.btnXacNhanMatKhau.TabIndex = 11;
+            this.btnXacNhanMatKhau.Text = "👁";
+            this.btnXacNhanMatKhau.UseVisualStyleBackColor = true;
+            this.btnXacNhanMatKhau.Click += new System.EventHandler(this.btnXacNhanMatKhau_Click);
+            // 
+            // btnHienMatKhauMoi
+            // 
+            this.btnHienMatKhauMoi.Location = new System.Drawing.Point(405, 62);
+            this.btnHienMatKhauMoi.Name = "btnHienMatKhauMoi";
+            this.btnHienMatKhauMoi.Size = new System.Drawing.Size(40, 32);
+            this.btnHienMatKhauMoi.TabIndex = 10;
+            this.btnHienMatKhauMoi.Text = "👁";
+            this.btnHienMatKhauMoi.UseVisualStyleBackColor = true;
+            this.btnHienMatKhauMoi.Click += new System.EventHandler(this.btnHienMatKhauMoi_Click);
+            // 
+            // btnHienMatKhauCu
+            // 
+            this.btnHienMatKhauCu.Location = new System.Drawing.Point(403, 28);
+            this.btnHienMatKhauCu.Name = "btnHienMatKhauCu";
+            this.btnHienMatKhauCu.Size = new System.Drawing.Size(40, 32);
+            this.btnHienMatKhauCu.TabIndex = 9;
+            this.btnHienMatKhauCu.Text = "👁";
+            this.btnHienMatKhauCu.UseVisualStyleBackColor = true;
+            this.btnHienMatKhauCu.Click += new System.EventHandler(this.button1_Click);
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(56, 147);
@@ -161,36 +192,6 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // btnHienMatKhauCu
-            // 
-            this.btnHienMatKhauCu.Location = new System.Drawing.Point(403, 28);
-            this.btnHienMatKhauCu.Name = "btnHienMatKhauCu";
-            this.btnHienMatKhauCu.Size = new System.Drawing.Size(40, 32);
-            this.btnHienMatKhauCu.TabIndex = 9;
-            this.btnHienMatKhauCu.Text = "👁";
-            this.btnHienMatKhauCu.UseVisualStyleBackColor = true;
-            this.btnHienMatKhauCu.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnHienMatKhauMoi
-            // 
-            this.btnHienMatKhauMoi.Location = new System.Drawing.Point(405, 62);
-            this.btnHienMatKhauMoi.Name = "btnHienMatKhauMoi";
-            this.btnHienMatKhauMoi.Size = new System.Drawing.Size(40, 32);
-            this.btnHienMatKhauMoi.TabIndex = 10;
-            this.btnHienMatKhauMoi.Text = "👁";
-            this.btnHienMatKhauMoi.UseVisualStyleBackColor = true;
-            this.btnHienMatKhauMoi.Click += new System.EventHandler(this.btnHienMatKhauMoi_Click);
-            // 
-            // btnXacNhanMatKhau
-            // 
-            this.btnXacNhanMatKhau.Location = new System.Drawing.Point(405, 96);
-            this.btnXacNhanMatKhau.Name = "btnXacNhanMatKhau";
-            this.btnXacNhanMatKhau.Size = new System.Drawing.Size(40, 32);
-            this.btnXacNhanMatKhau.TabIndex = 11;
-            this.btnXacNhanMatKhau.Text = "👁";
-            this.btnXacNhanMatKhau.UseVisualStyleBackColor = true;
-            this.btnXacNhanMatKhau.Click += new System.EventHandler(this.btnXacNhanMatKhau_Click);
-            // 
             // frmChangePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -198,6 +199,7 @@
             this.ClientSize = new System.Drawing.Size(755, 396);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmChangePassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đổi Mật Khẩu";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConnectionConfig));
             this.txtServer = new System.Windows.Forms.TextBox();
             this.txtDatabase = new System.Windows.Forms.TextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
@@ -41,6 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pnlHeader = new System.Windows.Forms.Panel();
+            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlMain = new System.Windows.Forms.Panel();
@@ -181,11 +183,20 @@
             // pnlHeader
             // 
             this.pnlHeader.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pnlHeader.Controls.Add(this.domainUpDown1);
             this.pnlHeader.Controls.Add(this.label5);
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(904, 100);
             this.pnlHeader.TabIndex = 13;
+            // 
+            // domainUpDown1
+            // 
+            this.domainUpDown1.Location = new System.Drawing.Point(707, 63);
+            this.domainUpDown1.Name = "domainUpDown1";
+            this.domainUpDown1.Size = new System.Drawing.Size(8, 22);
+            this.domainUpDown1.TabIndex = 1;
+            this.domainUpDown1.Text = "domainUpDown1";
             // 
             // label5
             // 
@@ -236,10 +247,11 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmConnectionConfig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmConnectionConfig";
+            this.Text = "QLSV - Cấu hình kết nối CSDL";
             this.Load += new System.EventHandler(this.frmConnectionConfig_Load);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
@@ -267,5 +279,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.DomainUpDown domainUpDown1;
     }
 }
