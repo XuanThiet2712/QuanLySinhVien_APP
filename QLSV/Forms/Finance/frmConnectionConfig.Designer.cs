@@ -55,7 +55,7 @@
             this.txtServer.BackColor = System.Drawing.Color.White;
             this.txtServer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtServer.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtServer.Location = new System.Drawing.Point(172, 168);
+            this.txtServer.Location = new System.Drawing.Point(172, 26);
             this.txtServer.Name = "txtServer";
             this.txtServer.Size = new System.Drawing.Size(179, 30);
             this.txtServer.TabIndex = 0;
@@ -75,7 +75,7 @@
             this.txtUser.BackColor = System.Drawing.Color.White;
             this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUser.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.Location = new System.Drawing.Point(173, 26);
+            this.txtUser.Location = new System.Drawing.Point(172, 171);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(178, 30);
             this.txtUser.TabIndex = 3;

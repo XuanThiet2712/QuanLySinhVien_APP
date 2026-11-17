@@ -41,11 +41,36 @@ namespace QLSV.Services
         // Phải có quyền DANG_KY
         private static string KiemTraQuyen(string maSV)
         {
+            if (!SessionManager.IsLoggedIn)
+                return "Vui lòng đăng nhập để sử dụng chức năng.";
+
+            // ADMIN được phép truy cập
+            if (SessionManager.IsInRole(MaNhom.ADMIN))
+                return null;
+
+            // Sinh viên chỉ được đăng ký cho chính mình
+            if (SessionManager.IsInRole(MaNhom.SV))
+            {
+                string svCuaToi = SessionManager.CurrentUser.MaSV;
+
+                if (string.IsNullOrWhiteSpace(svCuaToi))
+                    return "Tài khoản chưa được liên kết với mã sinh viên.";
+
+                if (!string.Equals(
+                    svCuaToi.Trim(),
+                    maSV.Trim(),
+                    StringComparison.OrdinalIgnoreCase))
+                {
+                    return "Bạn chỉ được đăng ký học phần cho chính mình.";
+                }
+
+                return null;
+            }
+
+            // Các nhóm khác phải được cấp quyền DANG_KY
             if (!SessionManager.HasPermission(MaChucNang.DANG_KY))
                 return "Bạn không có quyền đăng ký học phần.";
-            string svCuaToi = SessionManager.CurrentUser.MaSV;
-            if (!string.IsNullOrEmpty(svCuaToi) && svCuaToi != maSV)
-                return "Bạn chỉ được đăng ký cho chính mình.";
+
             return null;
         }
 
