@@ -111,10 +111,11 @@
             this.chkNho.Location = new System.Drawing.Point(8, 219);
             this.chkNho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkNho.Name = "chkNho";
-            this.chkNho.Size = new System.Drawing.Size(131, 20);
+            this.chkNho.Size = new System.Drawing.Size(162, 20);
             this.chkNho.TabIndex = 6;
-            this.chkNho.Text = "Ghi nhớ mật khẩu";
+            this.chkNho.Text = "Ghi nhớ tên đăng nhập";
             this.chkNho.UseVisualStyleBackColor = true;
+            this.chkNho.CheckedChanged += new System.EventHandler(this.chkNho_CheckedChanged);
             // 
             // btnDangNhap
             // 

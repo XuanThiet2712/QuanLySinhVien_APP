@@ -132,5 +132,10 @@ namespace QLSV.Forms.HeThong
 
             btnTheme.Text = ThemeManager.IsDark ? "🌙Tối" : "☀Sáng";
         }
+
+        private void chkNho_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
