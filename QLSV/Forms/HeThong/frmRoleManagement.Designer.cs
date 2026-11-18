@@ -91,7 +91,10 @@
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.clbQuyen);
             this.Controls.Add(this.cboNhom);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmRoleManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Quản lý phân quyền";
