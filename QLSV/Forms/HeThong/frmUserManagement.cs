@@ -83,13 +83,14 @@ namespace QLSV.Forms.HeThong
             if (MessageBox.Show("Xóa tài khoản " + u.TenDangNhap + "?",
                 "Xác nhận", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
             HienKetQua(_user.Xoa(u.MaND));
+                
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             NguoiDungDTO u = DongDangChon();
             if (u == null) return;
-            if (MessageBox.Show("Đặt lại mật khẩu của " + u.TenDangNhap + " về 123456?",
+            if (MessageBox.Show("Đặt lại mật khẩu của " + u.TenDangNhap + " về " + TaiKhoan.MatKhauMacDinh + 
                 "Xác nhận", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
             HienKetQua(new AuthService().ResetMatKhau(u.MaND));
         }
