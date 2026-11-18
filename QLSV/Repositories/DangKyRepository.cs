@@ -97,6 +97,27 @@ namespace QLSV.Repositories
             MonHoc m = _db.MonHocs.FirstOrDefault(x => x.MaMon == maMon);
             return m == null ? maMon : m.TenMon;
         }
+        // Thông tin sinh viên (kèm lớp, khoa, ảnh) cho khung "Thông tin sinh viên"
+        public ThongTinSvDangKyDTO GetThongTinSV(string maSV)
+        {
+            var q = from s in _db.SinhViens
+                    join l in _db.LopSinhHoats on s.MaLop equals l.MaLop
+                    join n in _db.Nganhs on l.MaNganh equals n.MaNganh
+                    join k in _db.Khoas on n.MaKhoa equals k.MaKhoa
+                    where s.MaSV == maSV
+                    select new { s.MaSV, s.HoTen, k.TenKhoa, l.TenLop, s.AnhDaiDien };
+            var r = q.FirstOrDefault();
+            if (r == null) return null;
+            return new ThongTinSvDangKyDTO
+            {
+                MaSV = r.MaSV,
+                HoTen = r.HoTen,
+                TenKhoa = r.TenKhoa,
+                TenLop = r.TenLop,
+                Anh = r.AnhDaiDien == null ? null : r.AnhDaiDien.ToArray()
+            };
+        }
+
         // Kiem tra sinh vien co ton tai ko 
         public bool ExistsSinhVien(string maSV)
         {
@@ -130,4 +151,4 @@ namespace QLSV.Repositories
             _db.DangKyHocPhans.DeleteOnSubmit(dk);
         }
     }
-    }
+}

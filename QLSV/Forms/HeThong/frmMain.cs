@@ -168,10 +168,7 @@ namespace QLSV.Forms.HeThong
         // Form tự mở sau khi đăng nhập: form đầu tiên mà nhóm quyền này được dùng.
         private void MoFormMacDinh()
         {
-            if (SessionManager.HasPermission(MaChucNang.DANG_KY))
-                OpenMdiChild(() => new frmDangKyHocPhan());
-
-            else if (SessionManager.HasPermission(MaChucNang.NHAP_DIEM))
+            if (SessionManager.HasPermission(MaChucNang.NHAP_DIEM))
                 OpenMdiChild(() => new frmNhapDiem());
 
             else if (SessionManager.HasPermission(MaChucNang.QL_SINHVIEN))
@@ -326,7 +323,11 @@ namespace QLSV.Forms.HeThong
 
         private void mnuDangKyHocPhan_Click(object sender, EventArgs e)
         {
-            OpenMdiChild(() => new frmDangKyHocPhan());
+            using (var f = new frmDangKyHocPhan())
+            {
+                ThemeManager.Apply(f);
+                f.ShowDialog(this);
+            }
         }
 
         private void mnuNhapDiem_Click(object sender, EventArgs e)
