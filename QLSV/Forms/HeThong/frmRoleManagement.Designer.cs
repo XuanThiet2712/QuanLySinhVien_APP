@@ -96,7 +96,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmRoleManagement";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Quản lý phân quyền";
             this.Load += new System.EventHandler(this.frmRoleManagement_Load);
             this.ResumeLayout(false);
